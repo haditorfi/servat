@@ -18,7 +18,7 @@
 		<?php echo $this->Html->link(__('لیست خواسته ها'),array('action'=>'index',$demand['Demand']['id']),array('class' => 'btn btn-block btn-primary')); ?>
 	</div>	
 	<div class="col-xs-3">
-		<?php echo $this->Html->link(__('افزودن تصویر'),array('action'=>'attach',$demand['Demand']['id']),array('class' => 'btn btn-block btn-success')); ?>
+		<?php echo $this->Html->link(__('مدیریت تصاویر'),array('action'=>'attach',$demand['Demand']['id']),array('class' => 'btn btn-block btn-success')); ?>
 	</div>	
 	<div class="col-xs-3">
 		<?php echo $this->Html->link(__('ویرایش خواسته'),array('action'=>'edit',$demand['Demand']['id']),array('class' => 'btn btn-block btn-info')); ?>
@@ -39,7 +39,7 @@
 	</div>
 	<h1 style="text-align: center;color: red">خواسته : <?php echo $demand['Demand']['name'];?></h1>
 	</div>
-</div>
+</div><h4  style="color: blue; margin-top: 51px;">شرح خواسته: </h4><br/>
 <?php echo $demand['Demand']['content'];?>
 <h4  style="color: blue; margin-top: 51px;">شکرگزاری: </h4><br/>
 <?php echo $demand['Demand']['thank'];?>

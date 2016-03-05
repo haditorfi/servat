@@ -108,26 +108,29 @@
                         ?>
                         </li>
                         <li>
+                          <?php echo $this->Html->link('<span class="fa fa-list-ul"></span>&nbsp;&nbsp;لیست ﺧواسته ها'.__(''), array('controller' => 'demands', 'action' => 'index'), array('escape' => false)); ?>
+                        </li>
+                        <li>
                           <?php echo $this->Html->link('<span class="fa fa-plus"></span>&nbsp;&nbsp;اﻓﺰﻭﺩﻥ ﺧواسته'.__(''), array('controller' => 'demands', 'action' => 'add'), array('escape' => false)); ?>
                         </li>
                         <li>
-                             <?php echo $this->Html->link('<span class="fa fa-check-square-o"></span>&nbsp;&nbsp;سوالات صبح'.__(''), array('controller' => 'lanterns', 'action' => 'add'), array('escape' => false)); ?>
+                             <?php echo $this->Html->link('<span class="fa fa-sun-o"></span>&nbsp;&nbsp;سوالات صبح'.__(''), array('controller' => 'lanterns', 'action' => 'add'), array('escape' => false)); ?>
                         </li>
                         <li>
-                             <?php echo $this->Html->link('<span class="fa fa-check-square-o"></span>&nbsp;&nbsp;سوالات شب'.__(''), array('controller' => 'lanterns', 'action' => 'addnight'), array('escape' => false)); ?>
+                             <?php echo $this->Html->link('<span class="fa fa-moon-o"></span>&nbsp;&nbsp;سوالات شب'.__(''), array('controller' => 'lanterns', 'action' => 'addnight'), array('escape' => false)); ?>
                         </li>
                         <li>
                              <?php echo $this->Html->link('<span class="fa fa-search"></span>&nbsp;&nbsp;ﺟﺴﺘﺠﻮ'.__(''), array('controller' => 'items', 'action' => 'search'), array('escape' => false)); ?>
                         </li>
                         <li>
-                        <?php echo $this->Html->link('<span class="fa fa-sitemap fa-fw"></span>&nbsp;&nbsp;فانوس دریایی'.__('<span class="fa arrow"></span>'), array('controller' => 'items', 'action' => 'index'), array('escape' => false)); 
+                        <?php echo $this->Html->link('<span class="fa fa-lightbulb-o fa-fw"></span>&nbsp;&nbsp;فانوس دریایی'.__('<span class="fa arrow"></span>'), array('controller' => 'items', 'action' => 'index'), array('escape' => false)); 
                         ?>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <?php echo $this->Html->link('<span class="fa fa-plus"></span>&nbsp;&nbsp;سوالات صبح'.__(''), array('controller' => 'lanterns', 'action' => 'add'), array('escape' => false)); ?>
+                                    <?php echo $this->Html->link('<span class="fa fa-sun-o"></span>&nbsp;&nbsp;سوالات صبح'.__(''), array('controller' => 'lanterns', 'action' => 'add'), array('escape' => false)); ?>
                                 </li>
                                 <li>
-                                   <?php echo $this->Html->link('<span class="fa fa-check-square-o"></span>&nbsp;&nbsp;سوالات شب'.__(''), array('controller' => 'lanterns', 'action' => 'addnight'), array('escape' => false)); ?>
+                                   <?php echo $this->Html->link('<span class="fa fa-moon-o"></span>&nbsp;&nbsp;سوالات شب'.__(''), array('controller' => 'lanterns', 'action' => 'addnight'), array('escape' => false)); ?>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
