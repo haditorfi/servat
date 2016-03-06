@@ -8,7 +8,13 @@
 		<div class="col-sm-12 col-md-4">
 			<div class="panel panel-default">
 			  <div class="panel-body">
-			    <?php echo $this->Html->image('demand.jpg');?>
+			    <?php foreach($demand['AttachmentPicture'] as $attach):?>
+			<?php if($attach['featured'] == true):?>
+				<div class="indexImg">
+				<?php echo $this->Attach->image($attach,'picture'); ?>
+				</div>
+			<?php endif;?>
+		<?php endforeach;?>
 			    <div class="text-center">
 			    	<h3><?php echo $this->Html->link($demand['Demand']['name'],array('controller'=>'demands','action'=>'view',$demand['Demand']['id'])); ?></h3>
 			    </div>

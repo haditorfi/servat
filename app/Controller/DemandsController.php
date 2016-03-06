@@ -35,6 +35,7 @@ class DemandsController extends AppController {
 			$demand = $this->request->data = $this->Demand->find('first', $options);
 		
 		$this->set(compact('demand'));
+		$this->set('id',$id);
 	}
 
 	public function featured($id){
@@ -64,7 +65,9 @@ class DemandsController extends AppController {
  * @return void
  */
 	public function index() {
-		$this->Demand->recursive = 0;
+		$options = array('conditions' => array('Demand.id'));
+		$this->set('demand', $this->Demand->find('first', $options));
+		$this->Demand->recursive = 1;
 		$this->set('demands', $this->Paginator->paginate());
 	}
 

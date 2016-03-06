@@ -1,5 +1,5 @@
 <?php
- 	 $this->assign('title', 'افزدون تصویر');
+ 	 $this->assign('title', 'مدیریت تصاویر');
  	echo $this->Element('sidebar');
    ?>
 <style>
@@ -25,9 +25,9 @@
 	<div class="row">
 		<div class="col-md-3">
 			<div class="well">
-				<?php echo $this->Form->submit(__('ارسال'), array('class' => 'btn btn-block btn-default')); ?>
+				<?php echo $this->Form->submit(__('ذخیره'), array('class' => 'btn btn-block btn-default')); ?>
 				<br/>
-				<?php echo $this->Html->link(__('انصراف'),array('action'=>'index'), array('class' => 'btn btn-block btn-danger')); ?>
+				<?php echo $this->Html->link(__('انصراف'),array('action'=>"view/$id"), array('class' => 'btn btn-block btn-danger')); ?>
 			
 			</div>	
 		</div><!-- end col md 3 -->
