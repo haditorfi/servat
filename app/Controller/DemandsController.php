@@ -24,9 +24,10 @@ class DemandsController extends AppController {
 		}
 		if (!$this->request->is('get')) {
 			if ($this->Demand->save($this->request->data)) {
-				$this->Session->setFlash(__('The demands has been saved.'), 'default', array('class' => 'alert alert-success'));
+	        			$this->Flash->success(__('تصویر با موفقیت ذخیره شد.'), 'default', array('class' => 'alert alert-success'));
 			} else {
-				$this->Session->setFlash(__('The demands could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
+
+	       			 $this->Flash->error(__('متاسفانه در ذخیره تصویر مشکل پیش آمد.'), 'default', array('class' => 'alert alert-danger'));
 			}
 		}
 
@@ -56,7 +57,9 @@ class DemandsController extends AppController {
 		$this->Demand->deleteAllFiles($attach);
 		$attachModel->id = $attach['Attachment']['id'];
 		$attachModel->delete();
+	       	 $this->Flash->error(__('تصویر مورد نظر با موفقیت حذف شد.'), 'default', array('class' => 'alert alert-danger'));
 		return $this->redirect($this->referer());
+
 	}
 /**
  * index method

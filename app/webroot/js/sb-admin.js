@@ -2,6 +2,7 @@ $(document).ready(function(){
 
     $('#side-menu').metisMenu();
 
+    $(".example").hovereffect();
 
 
 //Loads the correct sidebar on window load,

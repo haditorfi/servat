@@ -22,10 +22,10 @@
 	</div>	
 	<hr>
 	</div>	
-	<div class="imgf">
+	<div  class="imgf">
 		<?php foreach($demand['AttachmentPicture'] as $attach):?>
 			<?php if($attach['featured'] == true):?>
-				<div class="imgbox">
+				<div>
 				<?php echo $this->Attach->image($attach,'picture'); ?>
 				</div>
 			<?php endif;?>
@@ -36,19 +36,19 @@
 	</div>
 </div>
 	<h4  style="color: #b94a48; margin-top: 51px;">شرح خواسته: </h4>
-	<br/>
+<br/>
 	<?php echo $demand['Demand']['content'];?>
 		<h4  style="color: #b94a48; margin-top: 51px;">شکرگزاری: </h4><br/>
 	<?php echo $demand['Demand']['thank'];?>
 <hr/>
-	<div class="row">
-		<?php foreach($demand['AttachmentPicture'] as $attach):?>
-			<?php if($attach['featured'] == false):?>
-<div class="col-sm-12 col-md-6">
-	<div class="imgbox2">
-		<?php echo $this->Attach->image($attach,'picture'); ?>
+<div class="row">
+	<?php foreach($demand['AttachmentPicture'] as $attach):?>
+		<?php if($attach['featured'] == false):?>
+	<div class="col-sm-4">
+		<div class="imgbox2 myhovereffect">
+			<?php echo $this->Attach->image($attach,'picture'); ?>
+		</div>
 	</div>
-</div>
-	<?php endif;?>
-<?php endforeach;?>
+		<?php endif;?>
+	<?php endforeach;?>
 </div>

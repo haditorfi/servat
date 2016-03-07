@@ -40,10 +40,10 @@
 			  	<?php echo $this->Html->link('مشاهده جزئیات',array('controller'=>'Demands','action'=>'view',$demand['Demand']['id']),array('class'=>"btn btn-block btn-primary",'style'=>"margin-top:10px;")); ?>
 			  	</div>
 			  	<div class="col-xs-6">
-			  	<?php echo $this->Html->link('ویرایش',array('controller'=>'Demands','action'=>'edit',$demand['Demand']['id']),array('class'=>"btn btn-warning",'style'=>"margin-top:10px;")); ?>
+			  	<?php echo $this->Html->link(' تصاویر',array('controller'=>'Demands','action'=>'attach',$demand['Demand']['id']),array('class'=>"btn btn-block btn-success",'style'=>"margin-top:10px;")); ?>
 			  	</div>
-			  	<div class="col-xs-6">
-			  	<?php echo $this->Html->link(' تصاویر',array('controller'=>'Demands','action'=>'attach',$demand['Demand']['id']),array('class'=>"btn btn-success",'style'=>"margin-top:10px;")); ?>
+			  	<div class="col-xs-6 pull-left">
+			  	<?php echo $this->Html->link('ویرایش',array('controller'=>'Demands','action'=>'edit',$demand['Demand']['id']),array('class'=>"btn btn-block btn-warning",'style'=>"margin-top:10px;")); ?>
 			  	</div>
 			  </div>
 			  </div>
