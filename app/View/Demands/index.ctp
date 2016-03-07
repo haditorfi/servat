@@ -5,7 +5,7 @@
 <br/>
    <div class="row">
 		<?php foreach ($demands as $demand): ?>
-		<div class="col-sm-12 col-md-4">
+		<div class="col-xs-12 col-md-4 ">
 			<div class="panel panel-default">
 			  <div class="panel-body">
 			    <?php foreach($demand['AttachmentPicture'] as $attach):?>
@@ -19,10 +19,10 @@
 			    	<h3><?php echo $this->Html->link($demand['Demand']['name'],array('controller'=>'demands','action'=>'view',$demand['Demand']['id'])); ?></h3>
 			    </div>
 			  </div>
-			  <div class="panel-footer">
+			  <div class="panel-footer pan">
 			  <div class="row">
-			  	<div class="col-md-12">
-			  	<div> <?php echo $demand['Demand']['content']; ?></div>
+			  	<div class="col-xs-12">
+			  	<div> <?php echo $demand['Demand']['title']; ?></div>
 			  	</div>
 			  </div>
 			  <hr/>

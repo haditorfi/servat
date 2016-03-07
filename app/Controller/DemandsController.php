@@ -25,7 +25,6 @@ class DemandsController extends AppController {
 		if (!$this->request->is('get')) {
 			if ($this->Demand->save($this->request->data)) {
 				$this->Session->setFlash(__('The demands has been saved.'), 'default', array('class' => 'alert alert-success'));
-				return $this->redirect(array('action' => 'view/'.$id));
 			} else {
 				$this->Session->setFlash(__('The demands could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
 			}

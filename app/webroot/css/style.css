@@ -23,6 +23,9 @@ h1,h2,h3,h4,h5,h6{
     max-width: 100% !important;
     min-height: 150px !important;
   }
+ .pan{
+    min-height: 150px !important;
+ }
 .panel-title{
 	font-family:IRANSans,tahoma !important;
 	color: black;

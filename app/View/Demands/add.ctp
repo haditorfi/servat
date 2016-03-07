@@ -26,6 +26,9 @@
 					<?php echo $this->Form->input('name', array('class' => 'form-control', 'placeholder' => 'عنوان خواسته','label'=>'عنوان'));?>
 				</div>
 				<div class="form-group">
+					<?php echo $this->Form->input('title', array('class' => 'form-control', 'placeholder' => 'توضیح کوتاه','label'=>'توضیح'));?>
+				</div>
+				<div class="form-group">
 					<?php echo $this->Form->input('content', array('class' => 'form-control', 'placeholder' => 'شرح خواسته','label'=>'شرح'));?>
 				</div>
 				<div class="form-group">

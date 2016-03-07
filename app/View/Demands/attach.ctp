@@ -22,7 +22,7 @@
 			<div class="well">
 				<?php echo $this->Form->submit(__('ذخیره'), array('class' => 'btn btn-block btn-default')); ?>
 				<br/>
-				<?php echo $this->Html->link(__('انصراف'),array('action'=>"view/$id"), array('class' => 'btn btn-block btn-danger')); ?>
+				<?php echo $this->Html->link(__('بازگشت'),array('action'=>"view/$id"), array('class' => 'btn btn-block btn-danger')); ?>
 			
 			</div>	
 		</div><!-- end col md 4 -->

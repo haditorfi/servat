@@ -37,11 +37,12 @@
 			<?php endif;?>
 		<?php endforeach;?>
 	</div>
-	<h1 style="text-align: center;color: red">خواسته : <?php echo $demand['Demand']['name'];?></h1>
+	<h1 style="text-align: center;color: red;margin-top: 51px;"><?php echo $demand['Demand']['name'];?></h1>
+	<h4  style="text-align: center;color: blue; margin-top: 51px;"><?php echo $demand['Demand']['title'];?></h4>
 	</div>
-</div><h4  style="color: blue; margin-top: 51px;">شرح خواسته: </h4><br/>
+</div><h4  style="color: #b94a48; margin-top: 51px;">شرح خواسته: </h4><br/>
 <?php echo $demand['Demand']['content'];?>
-<h4  style="color: blue; margin-top: 51px;">شکرگزاری: </h4><br/>
+<h4  style="color: #b94a48; margin-top: 51px;">شکرگزاری: </h4><br/>
 <?php echo $demand['Demand']['thank'];?>
 <hr/>
 <div class="row">
