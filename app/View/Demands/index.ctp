@@ -8,13 +8,22 @@
 		<div class="col-xs-12 col-md-4 ">
 			<div class="panel panel-default">
 			  <div class="panel-body">
-			    <?php foreach($demand['AttachmentPicture'] as $attach):?>
+			    <?php
+			    $hasPic=0;
+			     foreach($demand['AttachmentPicture'] as $attach):?>
 			<?php if($attach['featured'] == true):?>
 				<div class="indexImg">
-				<?php echo $this->Attach->image($attach,'picture'); ?>
+				<?php echo $this->Attach->image($attach,'picture');
+				$hasPic++;
+				 ?>
 				</div>
 			<?php endif;?>
 		<?php endforeach;?>
+			  <?php
+			  if ($hasPic<1) {
+			   echo $this->html->image('demand.jpg'); 
+			   };
+			   ?>
 			    <div class="text-center">
 			    	<h3><?php echo $this->Html->link($demand['Demand']['name'],array('controller'=>'demands','action'=>'view',$demand['Demand']['id'])); ?></h3>
 			    </div>
@@ -29,6 +38,12 @@
 			  <div class="row">
 			  	<div class="col-xs-12">
 			  	<?php echo $this->Html->link('مشاهده جزئیات',array('controller'=>'Demands','action'=>'view',$demand['Demand']['id']),array('class'=>"btn btn-block btn-primary",'style'=>"margin-top:10px;")); ?>
+			  	</div>
+			  	<div class="col-xs-6">
+			  	<?php echo $this->Html->link('ویرایش',array('controller'=>'Demands','action'=>'edit',$demand['Demand']['id']),array('class'=>"btn btn-warning",'style'=>"margin-top:10px;")); ?>
+			  	</div>
+			  	<div class="col-xs-6">
+			  	<?php echo $this->Html->link(' تصاویر',array('controller'=>'Demands','action'=>'attach',$demand['Demand']['id']),array('class'=>"btn btn-success",'style'=>"margin-top:10px;")); ?>
 			  	</div>
 			  </div>
 			  </div>

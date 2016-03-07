@@ -10,7 +10,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="page-header">
-				<h1><?php echo __('مدیریت تصاویر'); ?></h1>
+				<h3 style="text-align: center;color: red"><?php echo __('مدیریت تصاویر '.$demand['Demand']['name']); ?></h3>
 			</div>
 		</div>
 	</div>

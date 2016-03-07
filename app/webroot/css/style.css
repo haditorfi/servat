@@ -20,11 +20,19 @@ h1,h2,h3,h4,h5,h6{
 	font-family:IRANSans,tahoma !important;
 }
  img {
-    max-width: 100% !important;
-    min-height: 150px !important;
+    max-width: 100% ;
+    min-height: 150px ;
   }
+  .imgbox2{
+  	width: 300px;
+  	height: 250px;
+  }
+.imgf{
+	width:200px;
+	float:left;
+}
  .pan{
-    min-height: 150px !important;
+    min-height: 190px !important;
  }
 .panel-title{
 	font-family:IRANSans,tahoma !important;

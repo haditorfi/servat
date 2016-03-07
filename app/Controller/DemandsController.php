@@ -131,6 +131,9 @@ class DemandsController extends AppController {
 		$users = $this->Demand->User->find('list');
 		$this->set(compact('users'));
 		$this->set('id',$id);
+		
+		$options = array('conditions' => array('Demand.' . $this->Demand->primaryKey => $id));
+		$this->set('demand', $this->Demand->find('first', $options));
 	}
 
 /**
@@ -145,7 +148,7 @@ class DemandsController extends AppController {
 		if (!$this->Demand->exists()) {
 			throw new NotFoundException(__('Invalid demand'));
 		}
-		$this->request->onlyAllow('post', 'delete');
+		$this->request->onlyAllow('post','get', 'delete');
 		if ($this->Demand->delete()) {
 			$this->Flash(__('The demand has been deleted.'), 'default', array('class' => 'alert alert-success'));
 		} else {

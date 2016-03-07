@@ -6,26 +6,14 @@
 
 
 <div class="demands form">
-
 	<div class="row">
-		<div class="col-md-12">
-			<div class="page-header">
-				<h4><?php echo __('افزدون خواسته'); ?></h4>
-			</div>
-		</div>
-	</div>
-
-
-
-	<div class="row">
-		<div class="col-md-3">
-		</div><!-- end col md 3 -->
+		     <h4 style="text-align: center;color: red"><?php echo __('افزدون خواسته'); ?></h4>
 		<div class="col-md-12 well">
 
-				<div class="form-group">
+				<div class="form-group col-md-6">
 					<?php echo $this->Form->input('name', array('class' => 'form-control', 'placeholder' => 'عنوان خواسته','label'=>'عنوان'));?>
 				</div>
-				<div class="form-group">
+				<div class="form-group col-md-6">
 					<?php echo $this->Form->input('title', array('class' => 'form-control', 'placeholder' => 'توضیح کوتاه','label'=>'توضیح'));?>
 				</div>
 				<div class="form-group">

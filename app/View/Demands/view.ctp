@@ -1,11 +1,5 @@
 <style>
-.well > img{
-	width:100%;
-}
-.imgf{
-	width:200px;
-	float:left;
-}
+
 </style>
 <?php
  	 $this->assign('title', 'مشاهده خواسته');
@@ -31,25 +25,27 @@
 	<div class="imgf">
 		<?php foreach($demand['AttachmentPicture'] as $attach):?>
 			<?php if($attach['featured'] == true):?>
-				<div class="well imgbox">
+				<div class="imgbox">
 				<?php echo $this->Attach->image($attach,'picture'); ?>
 				</div>
 			<?php endif;?>
 		<?php endforeach;?>
 	</div>
-	<h1 style="text-align: center;color: red;margin-top: 51px;"><?php echo $demand['Demand']['name'];?></h1>
-	<h4  style="text-align: center;color: blue; margin-top: 51px;"><?php echo $demand['Demand']['title'];?></h4>
+		<h1 style="text-align: center;color: red;margin-top: 51px;"><?php echo $demand['Demand']['name'];?></h1>
+		<h4  style="text-align: center;color: blue; margin-top: 51px;"><?php echo $demand['Demand']['title'];?></h4>
 	</div>
-</div><h4  style="color: #b94a48; margin-top: 51px;">شرح خواسته: </h4><br/>
-<?php echo $demand['Demand']['content'];?>
-<h4  style="color: #b94a48; margin-top: 51px;">شکرگزاری: </h4><br/>
-<?php echo $demand['Demand']['thank'];?>
+</div>
+	<h4  style="color: #b94a48; margin-top: 51px;">شرح خواسته: </h4>
+	<br/>
+	<?php echo $demand['Demand']['content'];?>
+		<h4  style="color: #b94a48; margin-top: 51px;">شکرگزاری: </h4><br/>
+	<?php echo $demand['Demand']['thank'];?>
 <hr/>
-<div class="row">
-<?php foreach($demand['AttachmentPicture'] as $attach):?>
-	<?php if($attach['featured'] == false):?>
+	<div class="row">
+		<?php foreach($demand['AttachmentPicture'] as $attach):?>
+			<?php if($attach['featured'] == false):?>
 <div class="col-sm-12 col-md-6">
-	<div class="well imgbox">
+	<div class="imgbox2">
 		<?php echo $this->Attach->image($attach,'picture'); ?>
 	</div>
 </div>
