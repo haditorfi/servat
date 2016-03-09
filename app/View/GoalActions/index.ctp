@@ -1,10 +1,10 @@
-<div class="demandActions index">
+<div class="goalActions index">
 
 	<div class="row">
 		<div class="col-md-12">
 			<div class="page-header">
-				<div class='pull-left'><?php echo $this->Html->link('<span class="fa fa-plus"></span>&nbsp;&nbsp;New'.__(''), array('controller' => 'demandActions', 'action' => 'add'), array('escape' => false,'class'=>'btn btn-raised btn-primary')); ?> </div>
-				<h1><?php echo __('Demand Actions'); ?></h1>
+				<div class='pull-left'><?php echo $this->Html->link('<span class="fa fa-plus"></span>&nbsp;&nbsp;New'.__(''), array('controller' => 'goalActions', 'action' => 'add'), array('escape' => false,'class'=>'btn btn-raised btn-primary')); ?> </div>
+				<h1><?php echo __('Goal Actions'); ?></h1>
 			</div>
 		</div><!-- end col md 12 -->
 	</div><!-- end row -->
@@ -18,7 +18,7 @@
 				<thead>
 					<tr>
 						<th nowrap><?php echo $this->Paginator->sort('id'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('demand_id'); ?></th>
+						<th nowrap><?php echo $this->Paginator->sort('goal_id'); ?></th>
 						<th nowrap><?php echo $this->Paginator->sort('action'); ?></th>
 						<th nowrap><?php echo $this->Paginator->sort('created'); ?></th>
 						<th nowrap><?php echo $this->Paginator->sort('updated'); ?></th>
@@ -26,19 +26,19 @@
 					</tr>
 				</thead>
 				<tbody>
-				<?php foreach ($demandActions as $demandAction): ?>
+				<?php foreach ($goalActions as $goalAction): ?>
 					<tr>
-						<td nowrap><?php echo h($demandAction['DemandAction']['id']); ?>&nbsp;</td>
+						<td nowrap><?php echo h($goalAction['GoalAction']['id']); ?>&nbsp;</td>
 								<td>
-			<?php echo $this->Html->link($demandAction['Demand']['name'], array('controller' => 'demands', 'action' => 'view', $demandAction['Demand']['id'])); ?>
+			<?php echo $this->Html->link($goalAction['Goal']['title'], array('controller' => 'goals', 'action' => 'view', $goalAction['Goal']['id'])); ?>
 		</td>
-						<td nowrap><?php echo h($demandAction['DemandAction']['action']); ?>&nbsp;</td>
-						<td nowrap><?php echo h($demandAction['DemandAction']['created']); ?>&nbsp;</td>
-						<td nowrap><?php echo h($demandAction['DemandAction']['updated']); ?>&nbsp;</td>
+						<td nowrap><?php echo h($goalAction['GoalAction']['action']); ?>&nbsp;</td>
+						<td nowrap><?php echo h($goalAction['GoalAction']['created']); ?>&nbsp;</td>
+						<td nowrap><?php echo h($goalAction['GoalAction']['updated']); ?>&nbsp;</td>
 						<td class="actions">
-							<?php echo $this->Html->link('<span class="fa fa-eye fa-2"></span>', array('action' => 'view', $demandAction['DemandAction']['id']), array('escape' => false)); ?>
-							<?php echo $this->Html->link('<span class="fa fa-pencil-square-o fa-2"></span>', array('action' => 'edit', $demandAction['DemandAction']['id']), array('escape' => false)); ?>
-							<?php echo $this->Form->postLink('<span class="fa fa-trash-o fa-2"></span>', array('action' => 'delete', $demandAction['DemandAction']['id']), array('escape' => false), __('Are you sure you want to delete # %s?', $demandAction['DemandAction']['id'])); ?>
+							<?php echo $this->Html->link('<span class="fa fa-eye fa-2"></span>', array('action' => 'view', $goalAction['GoalAction']['id']), array('escape' => false)); ?>
+							<?php echo $this->Html->link('<span class="fa fa-pencil-square-o fa-2"></span>', array('action' => 'edit', $goalAction['GoalAction']['id']), array('escape' => false)); ?>
+							<?php echo $this->Form->postLink('<span class="fa fa-trash-o fa-2"></span>', array('action' => 'delete', $goalAction['GoalAction']['id']), array('escape' => false), __('Are you sure you want to delete # %s?', $goalAction['GoalAction']['id'])); ?>
 						</td>
 					</tr>
 				<?php endforeach; ?>

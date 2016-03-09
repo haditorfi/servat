@@ -1,12 +1,13 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * Demand Model
+ * Goal Model
  *
  * @property User $User
- * @property DemandAction $DemandAction
+ * @property GoalType $GoalType
+ * @property GoalAction $GoalAction
  */
-class Demand extends AppModel {
+class Goal extends AppModel {
 
 /**
  * Validation rules
@@ -15,6 +16,16 @@ class Demand extends AppModel {
  */
 	public $validate = array(
 		'user_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'goal_type_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -64,6 +75,16 @@ class Demand extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+		'receive' => array(
+			'date' => array(
+				'rule' => array('date'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
 		'status' => array(
 			'boolean' => array(
 				'rule' => array('boolean'),
@@ -75,14 +96,7 @@ class Demand extends AppModel {
 			),
 		),
 	);
-	public $actsAs = array(
-		'FileManager.Upload' => array(
-			'picture' => array(
-			    'dir' => 'webroot{DS}uploads{DS}demand',
-			    'multiple'=>true
-			)
-		)
-	);
+
 	// The Associations below have been created with all possible keys, those that are not needed can be removed
 
 /**
@@ -97,8 +111,35 @@ class Demand extends AppModel {
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
+		),
+		'GoalType' => array(
+			'className' => 'GoalType',
+			'foreignKey' => 'goal_type_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
 		)
 	);
 
+/**
+ * hasMany associations
+ *
+ * @var array
+ */
+	public $hasMany = array(
+		'GoalAction' => array(
+			'className' => 'GoalAction',
+			'foreignKey' => 'goal_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		)
+	);
 
 }

@@ -1,10 +1,10 @@
 <?php
-App::uses('DemandAction', 'Model');
+App::uses('TypeGoal', 'Model');
 
 /**
- * DemandAction Test Case
+ * TypeGoal Test Case
  */
-class DemandActionTest extends CakeTestCase {
+class TypeGoalTest extends CakeTestCase {
 
 /**
  * Fixtures
@@ -12,8 +12,7 @@ class DemandActionTest extends CakeTestCase {
  * @var array
  */
 	public $fixtures = array(
-		'app.demand_action',
-		'app.demand'
+		'app.type_goal'
 	);
 
 /**
@@ -23,7 +22,7 @@ class DemandActionTest extends CakeTestCase {
  */
 	public function setUp() {
 		parent::setUp();
-		$this->DemandAction = ClassRegistry::init('DemandAction');
+		$this->TypeGoal = ClassRegistry::init('TypeGoal');
 	}
 
 /**
@@ -32,7 +31,7 @@ class DemandActionTest extends CakeTestCase {
  * @return void
  */
 	public function tearDown() {
-		unset($this->DemandAction);
+		unset($this->TypeGoal);
 
 		parent::tearDown();
 	}

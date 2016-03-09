@@ -1,11 +1,11 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * DemandAction Model
+ * GoalAction Model
  *
- * @property Demand $Demand
+ * @property Goal $Goal
  */
-class DemandAction extends AppModel {
+class GoalAction extends AppModel {
 
 /**
  * Validation rules
@@ -13,7 +13,7 @@ class DemandAction extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'demand_id' => array(
+		'goal_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -43,9 +43,9 @@ class DemandAction extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'Demand' => array(
-			'className' => 'Demand',
-			'foreignKey' => 'demand_id',
+		'Goal' => array(
+			'className' => 'Goal',
+			'foreignKey' => 'goal_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

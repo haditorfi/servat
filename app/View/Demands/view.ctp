@@ -44,7 +44,7 @@
 <div class="row">
 	<?php foreach($demand['AttachmentPicture'] as $attach):?>
 		<?php if($attach['featured'] == false):?>
-	<div class="col-sm-4">
+	<div class="col-md-6 col-sm-4">
 		<div class="imgbox2 myhovereffect">
 			<?php echo $this->Attach->image($attach,'picture'); ?>
 		</div>

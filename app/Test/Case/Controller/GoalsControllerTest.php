@@ -1,10 +1,10 @@
 <?php
-App::uses('DemandActionsController', 'Controller');
+App::uses('GoalsController', 'Controller');
 
 /**
- * DemandActionsController Test Case
+ * GoalsController Test Case
  */
-class DemandActionsControllerTest extends ControllerTestCase {
+class GoalsControllerTest extends ControllerTestCase {
 
 /**
  * Fixtures
@@ -12,8 +12,16 @@ class DemandActionsControllerTest extends ControllerTestCase {
  * @var array
  */
 	public $fixtures = array(
-		'app.demand_action',
-		'app.demand'
+		'app.goal',
+		'app.user',
+		'app.role',
+		'app.demand',
+		'app.attachment',
+		'app.lantern',
+		'app.question',
+		'app.node',
+		'app.goal_type',
+		'app.goal_action'
 	);
 
 /**

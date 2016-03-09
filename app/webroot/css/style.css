@@ -30,6 +30,11 @@ h1,h2,h3,h4,h5,h6{
     height: 230px;
     min-height: 150px ;
   }
+  @media(min-width:768px) {
+   img {
+    height: 150px;
+  }
+}
   img:hover { 
     cursor:pointer;
   }

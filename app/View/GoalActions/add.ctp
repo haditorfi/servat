@@ -1,0 +1,37 @@
+<?php echo $this->Form->create('GoalAction', array('role' => 'form')); ?>
+
+
+<div class="goalActions form">
+
+	<div class="row">
+		<div class="col-md-12">
+			<div class="page-header">
+				<h1><?php echo __('Add Goal Action'); ?></h1>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="row">
+		<div class="col-md-3">
+			<div class="well">
+									<?php echo $this->Form->submit(__('Submit'), array('class' => 'btn btn-block btn-default')); ?>
+				<br/>
+									<?php echo $this->Html->link(__('Cancle'),array('action'=>'index'), array('class' => 'btn btn-block btn-danger')); ?>
+			
+			</div>			
+		</div><!-- end col md 3 -->
+		<div class="col-md-9">
+
+				<div class="form-group">
+					<?php echo $this->Form->input('goal_id', array('class' => 'form-control', 'placeholder' => 'Goal Id'));?>
+				</div>
+				<div class="form-group">
+					<?php echo $this->Form->input('action', array('class' => 'form-control', 'placeholder' => 'Action'));?>
+				</div>
+		</div><!-- end col md 12 -->
+	</div><!-- end row -->
+</div>
+			<?php echo $this->Form->end() ?>
+

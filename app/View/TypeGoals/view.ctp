@@ -1,8 +1,8 @@
-<div class="demandActions view">
+<div class="typeGoals view">
 	<div class="row">
 		<div class="col-md-12">
 			<div class="page-header">
-				<h1><?php echo __('Demand Action'); ?></h1>
+				<h1><?php echo __('Type Goal'); ?></h1>
 			</div>
 		</div>
 	</div>
@@ -22,35 +22,21 @@
 				<tr>
 		<th><?php echo __('Id'); ?></th>
 		<td>
-			<?php echo h($demandAction['DemandAction']['id']); ?>
+			<?php echo h($typeGoal['TypeGoal']['id']); ?>
 			&nbsp;
 		</td>
 </tr>
 <tr>
-		<th><?php echo __('Demand'); ?></th>
+		<th><?php echo __('Name'); ?></th>
 		<td>
-			<?php echo $this->Html->link($demandAction['Demand']['name'], array('controller' => 'demands', 'action' => 'view', $demandAction['Demand']['id'])); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('Action'); ?></th>
-		<td>
-			<?php echo h($demandAction['DemandAction']['action']); ?>
+			<?php echo h($typeGoal['TypeGoal']['name']); ?>
 			&nbsp;
 		</td>
 </tr>
 <tr>
 		<th><?php echo __('Created'); ?></th>
 		<td>
-			<?php echo h($demandAction['DemandAction']['created']); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('Updated'); ?></th>
-		<td>
-			<?php echo h($demandAction['DemandAction']['updated']); ?>
+			<?php echo h($typeGoal['TypeGoal']['created']); ?>
 			&nbsp;
 		</td>
 </tr>

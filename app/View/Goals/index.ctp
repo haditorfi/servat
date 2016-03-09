@@ -4,13 +4,13 @@
 ?>
 <br/>
    <div class="row">
-		<?php foreach ($demands as $demand): ?>
+		<?php foreach ($goals as $goal): ?>
 		<div class="col-xs-12 col-md-4">
 			<div class="panel panel-default">
 			  <div class="panel-body">
 			    <?php
 			    $hasPic=0;
-			     foreach($demand['AttachmentPicture'] as $attach):?>
+			     foreach($goals['AttachmentPicture'] as $attach):?>
 			<?php if($attach['featured'] == true):?>
 				<div class="indexImg">
 				<?php echo $this->Attach->image($attach,'picture');
@@ -25,25 +25,25 @@
 			   };
 			   ?>
 			    <div class="text-center">
-			    	<h3><?php echo $this->Html->link($demand['Demand']['name'],array('controller'=>'demands','action'=>'view',$demand['Demand']['id'])); ?></h3>
+			    	<h3><?php echo $this->Html->link($goals['goal']['name'],array('controller'=>'goals','action'=>'view',$goals['goal']['id'])); ?></h3>
 			    </div>
 			  </div>
 			  <div class="panel-footer pan">
 			  <div class="row">
 			  	<div class="col-xs-12">
-			  	<div> <?php echo $demand['Demand']['title']; ?></div>
+			  	<div> <?php echo $goals['goal']['title']; ?></div>
 			  	</div>
 			  </div>
 			  <hr/>
 			  <div class="row">
 			  	<div class="col-xs-12">
-			  	<?php echo $this->Html->link('مشاهده جزئیات',array('controller'=>'Demands','action'=>'view',$demand['Demand']['id']),array('class'=>"btn btn-block btn-primary",'style'=>"margin-top:10px;")); ?>
+			  	<?php echo $this->Html->link('مشاهده جزئیات',array('controller'=>'goals','action'=>'view',$goals['goal']['id']),array('class'=>"btn btn-block btn-primary",'style'=>"margin-top:10px;")); ?>
 			  	</div>
 			  	<div class="col-xs-6">
-			  	<?php echo $this->Html->link(' تصاویر',array('controller'=>'Demands','action'=>'attach',$demand['Demand']['id']),array('class'=>"btn btn-block btn-success",'style'=>"margin-top:10px;")); ?>
+			  	<?php echo $this->Html->link(' تصاویر',array('controller'=>'goals','action'=>'attach',$goals['goal']['id']),array('class'=>"btn btn-block btn-success",'style'=>"margin-top:10px;")); ?>
 			  	</div>
 			  	<div class="col-xs-6 pull-left">
-			  	<?php echo $this->Html->link('ویرایش',array('controller'=>'Demands','action'=>'edit',$demand['Demand']['id']),array('class'=>"btn btn-block btn-warning",'style'=>"margin-top:10px;")); ?>
+			  	<?php echo $this->Html->link('ویرایش',array('controller'=>'goals','action'=>'edit',$goals['goal']['id']),array('class'=>"btn btn-block btn-warning",'style'=>"margin-top:10px;")); ?>
 			  	</div>
 			  </div>
 			  </div>
