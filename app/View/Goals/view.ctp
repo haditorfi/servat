@@ -15,7 +15,7 @@
 		<?php echo $this->Html->link(__('<span class="fa fa-photo"></span>  مدیریت تصاویر'),array('action'=>'attach',$goal['Goal']['id']),array('escape'=> false,'class' => 'btn btn-block btn-info')); ?>
 	</div>		
 	<div class="col-xs-2">
-		<?php echo $this->Html->link('<span class="fa fa-trash"></span> حذف هدف', array('action' => 'delete', $goal['Goal']['id']), array('escape' => false,'class' => 'btn btn-block btn-danger'), __('آیا از حذف هدف # %s # مطمئن هستید?', $goal['Goal']['name']));?>
+		<?php echo $this->Form->postLink('<span class="fa fa-trash"></span> حذف هدف', array('action' => 'delete', $goal['Goal']['id']), array('escape' => false,'class' => 'btn btn-block btn-danger'), __('آیا از حذف هدف # %s # مطمئن هستید?', $goal['Goal']['name']));?>
 	</div>	
 	<div class="col-xs-3">
 		<?php echo $this->Html->link(__('<span class="fa fa-plus"></span>  افزودن اقدام'),array('controller'=>'goal_actions','action'=>'add',$goal['Goal']['id']),array('escape'=> false,'class' => 'btn btn-block btn-success')); ?>

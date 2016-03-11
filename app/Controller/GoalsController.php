@@ -129,7 +129,7 @@ class GoalsController extends AppController {
 		if (!$this->Goal->exists()) {
 			throw new NotFoundException(__('Invalid goal'));
 		}
-		$this->request->onlyAllow('post','get', 'delete');
+		$this->request->onlyAllow('post', 'delete');
 		if ($this->Goal->delete()) {
 			$this->Flash(__('The goal has been deleted.'), 'default', array('class' => 'alert alert-success'));
 		} else {

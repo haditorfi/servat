@@ -128,7 +128,7 @@ class DemandsController extends AppController {
 		if (!$this->Demand->exists()) {
 			throw new NotFoundException(__('Invalid demand'));
 		}
-		$this->request->onlyAllow('post','get', 'delete');
+		$this->request->onlyAllow('post', 'delete');
 		if ($this->Demand->delete()) {
 			$this->Flash(__('The demand has been deleted.'), 'default', array('class' => 'alert alert-success'));
 		} else {

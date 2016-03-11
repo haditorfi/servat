@@ -76,7 +76,7 @@ class Lantern extends AppModel {
 			'foreignKey' => 'question_id',
 			'conditions' => '',
 			'fields' => '',
-			'order' => ''
+			'order' => 'question_id'
 		)
 	);
 }
