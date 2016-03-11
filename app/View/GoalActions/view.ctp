@@ -1,3 +1,7 @@
+<?php
+ 	 $this->assign('title', 'لیست خواسته ها');
+ 	echo $this->Element('sidebar');
+?>
 <div class="goalActions view">
 	<div class="row">
 		<div class="col-md-12">
@@ -11,7 +15,7 @@
 
 		<div class="col-md-3">
 			<div class="well">
-									<?php echo $this->Html->link(__('Back To List'),array('action'=>'index'), array('class' => 'btn btn-block btn-danger')); ?>
+				<?php echo $this->Html->link(__('Back To List'),array('action'=>'index'), array('class' => 'btn btn-block btn-danger')); ?>
 			
 			</div>
 		</div><!-- end col md 3 -->

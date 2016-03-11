@@ -15,13 +15,38 @@ class GoalsController extends AppController {
  */
 	public $components = array('Paginator');
 
+	public $helpers = array('Html','Form','FileManager.Attach');
+
+
+	public function attach($id = null) {
+		if (!$this->Goal->exists($id)) {
+			throw new NotFoundException(__('Invalid demands'));
+		}
+		if (!$this->request->is('get')) {
+			if ($this->Goal->save($this->request->data)) {
+	        			$this->Flash->success(__('تصویر با موفقیت ذخیره شد.'), 'default', array('class' => 'alert alert-success'));
+			} else {
+
+	       			 $this->Flash->error(__('متاسفانه در ذخیره تصویر مشکل پیش آمد.'), 'default', array('class' => 'alert alert-danger'));
+			}
+		}
+
+			$options = array('conditions' => array('Goal.' . $this->Goal->primaryKey => $id));
+			$goal = $this->request->data = $this->Goal->find('first', $options);
+		
+		$this->set(compact('goal'));
+		$this->set('id',$id);
+	}
+
 /**
  * index method
  *
  * @return void
  */
 	public function index() {
-		$this->Goal->recursive = 0;
+		$options = array('conditions' => array('Goal.id'));
+		$this->set('goal', $this->Goal->find('first', $options));
+		$this->Goal->recursive = 1;
 		$this->set('goals', $this->Paginator->paginate());
 	}
 
@@ -48,6 +73,8 @@ class GoalsController extends AppController {
 	public function add() {
 		if ($this->request->is('post')) {
 			$this->Goal->create();
+     			$this->request->data['Goal']['user_id'] = $this->Auth->user('id');
+     			$this->request->data['Goal']['status'] = 1;
 			if ($this->Goal->save($this->request->data)) {
 				$this->Flash(__('The goal has been saved.'), 'default', array('class' => 'alert alert-success'));
 				return $this->redirect(array('action' => 'index'));
@@ -85,6 +112,9 @@ class GoalsController extends AppController {
 		$users = $this->Goal->User->find('list');
 		$goalTypes = $this->Goal->GoalType->find('list');
 		$this->set(compact('users', 'goalTypes'));
+		$this->set('id',$id);
+		$options = array('conditions' => array('Goal.' . $this->Goal->primaryKey => $id));
+		$this->set('goal', $this->Goal->find('first', $options));
 	}
 
 /**
@@ -99,7 +129,7 @@ class GoalsController extends AppController {
 		if (!$this->Goal->exists()) {
 			throw new NotFoundException(__('Invalid goal'));
 		}
-		$this->request->onlyAllow('post', 'delete');
+		$this->request->onlyAllow('post','get', 'delete');
 		if ($this->Goal->delete()) {
 			$this->Flash(__('The goal has been deleted.'), 'default', array('class' => 'alert alert-success'));
 		} else {

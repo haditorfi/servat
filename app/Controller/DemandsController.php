@@ -38,29 +38,6 @@ class DemandsController extends AppController {
 		$this->set('id',$id);
 	}
 
-	public function featured($id){
-		$attachModel = ClassRegistry::init('FileManager.Attachment');
-		$attach = $attachModel->find('first',array('conditions'=>array('Attachment.id'=>$id)));
-		$target = $attachModel->find('first',array('conditions'=>array('model'=>$attach['Attachment']['model'],'foreign_key'=>$attach['Attachment']['foreign_key'],'featured'=>true)));
-		if($target){
-			$attachModel->id = $target['Attachment']['id'];
-			$attachModel->saveField('featured',false);
-		}
-		$attachModel->id = $attach['Attachment']['id'];
-		$attachModel->saveField('featured',true);
-		return $this->redirect($this->referer());
-	}
-
-	public function delete_attachment($id = null) {
-		$attachModel = ClassRegistry::init('FileManager.Attachment');
-		$attach = $attachModel->find('first',array('conditions'=>array('Attachment.id'=>$id)));
-		$this->Demand->deleteAllFiles($attach);
-		$attachModel->id = $attach['Attachment']['id'];
-		$attachModel->delete();
-	       	 $this->Flash->error(__('تصویر مورد نظر با موفقیت حذف شد.'), 'default', array('class' => 'alert alert-danger'));
-		return $this->redirect($this->referer());
-
-	}
 /**
  * index method
  *

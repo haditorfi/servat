@@ -45,8 +45,8 @@ class Lantern extends AppModel {
 			),
 		),
 		'creaetd' => array(
-			'datetime' => array(
-				'rule' => array('datetime'),
+			'date' => array(
+				'rule' => array('date'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -55,30 +55,7 @@ class Lantern extends AppModel {
 			),
 		),
 	);
-	public $actsAs = array(
-		'Search.Searchable'
-	);
-	
-	public $filterArgs = array(
-		'user_id' => array(
-			'type' => 'value',
-			'field' => 'user_id'
-		),
-		'question_id' => array(
-			'type' => 'value',
-			'field' => 'question_id'
-		),
-		'answer' => array(
-			'type' => 'like',
-			'field' => 'answer'
-		),
-		'date' => array(
-			'type' => 'value',
-			'field' => 'created'
-		)
-		
-		
-	);
+
 	// The Associations below have been created with all possible keys, those that are not needed can be removed
 
 /**

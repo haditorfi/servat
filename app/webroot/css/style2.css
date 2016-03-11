@@ -20,27 +20,28 @@ h1,h2,h3,h4,h5,h6{
 	font-family:IRANSans,tahoma !important;
 }
  img {
-    max-width: 100% ;
-    min-height: 150px ;
+    width: 100% ;
+    height: auto;
+  } 
+.indexImg{
   }
+.imgf{
+  max-width: 300px;
+  float:left;
+}
+.imgbox{
+  margin-bottom: 50px;
+}
   @media(max-width:768px) {
-         img {
-            height: 150px;
-          }
-    }
-      @media(min-width:768px) {
-         img {
-            height: 230px;
-          }
-    }
+   .btnha {
+    display: none;
+  }
+}
+
   img:hover { 
     cursor:pointer;
   }
-  .imgbox2{
-  }
-.imgf{
-	float:left;
-}
+
  .pan{
     min-height: 190px !important;
  }

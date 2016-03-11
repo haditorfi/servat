@@ -1,3 +1,7 @@
+<?php
+ 	 $this->assign('title', 'لیست خواسته ها');
+ 	echo $this->Element('sidebar');
+?>
 <?php echo $this->Form->create('GoalType', array('role' => 'form')); ?>
 
 

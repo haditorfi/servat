@@ -1,15 +1,15 @@
 <?php
- 	 $this->assign('title', 'مدیریت تصاویر خواسته ها');
+ 	 $this->assign('title', 'مدیریت تصاویر اهداف');
  	echo $this->Element('sidebar');
    ?>
-<?php echo $this->Form->create('Demand', array('role' => 'form','type'=>'file')); ?>
+<?php echo $this->Form->create('Goal', array('role' => 'form','type'=>'file')); ?>
 
 
-<div class="demands form">
+<div class="goals form">
 	<div class="row">
 		<div class="col-md-12">
 			<div class="page-header">
-			         <h3 style="text-align: center;color: red"><?php echo __('مدیریت تصاویر خواسته '.$demand['Demand']['name']); ?></h3>
+			         <h3 style="text-align: center;color: red"><?php echo __('مدیریت تصاویر هدف '.$goal['Goal']['name']); ?></h3>
 			</div>
 
     <?php echo $this->Flash->render() ?>
@@ -35,7 +35,7 @@
 	</div>
 		<hr/>
 	<div class="row">
-		<?php foreach($demand['AttachmentPicture'] as $attach):?>
+		<?php foreach($goal['AttachmentPicture'] as $attach):?>
 		<div class="col-sm-4 ">
 			<div class="panel">
 				<div class="panel-body">

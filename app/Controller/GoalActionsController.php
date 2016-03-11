@@ -36,8 +36,7 @@ class GoalActionsController extends AppController {
 		if (!$this->GoalAction->exists($id)) {
 			throw new NotFoundException(__('Invalid goal action'));
 		}
-		$options = array('conditions' => array('GoalAction.' . $this->GoalAction->primaryKey => $id));
-		$this->set('goalAction', $this->GoalAction->find('first', $options));
+		return $this->redirect(array('controller' => 'goals','action' => 'view/'.$id));
 	}
 
 /**
@@ -45,12 +44,12 @@ class GoalActionsController extends AppController {
  *
  * @return void
  */
-	public function add() {
+	public function add($id=null) {
 		if ($this->request->is('post')) {
 			$this->GoalAction->create();
+     			$this->request->data['GoalAction']['goal_id'] = $id;
 			if ($this->GoalAction->save($this->request->data)) {
-				$this->Flash(__('The goal action has been saved.'), 'default', array('class' => 'alert alert-success'));
-				return $this->redirect(array('action' => 'index'));
+			return $this->redirect(array('controller' => 'goals','action' => 'view/'.$id));
 			} else {
 				$this->Flash(__('The goal action could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
 			}
@@ -73,7 +72,7 @@ class GoalActionsController extends AppController {
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->GoalAction->save($this->request->data)) {
 				$this->Flash(__('The goal action has been saved.'), 'default', array('class' => 'alert alert-success'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('controller'=>'goals','action' => 'index'));
 			} else {
 				$this->Flash(__('The goal action could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
 			}
@@ -97,7 +96,7 @@ class GoalActionsController extends AppController {
 		if (!$this->GoalAction->exists()) {
 			throw new NotFoundException(__('Invalid goal action'));
 		}
-		$this->request->onlyAllow('post', 'delete');
+		$this->request->onlyAllow('post', 'delete','get');
 		if ($this->GoalAction->delete()) {
 			$this->Flash(__('The goal action has been deleted.'), 'default', array('class' => 'alert alert-success'));
 		} else {

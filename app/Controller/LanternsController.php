@@ -13,7 +13,7 @@ class LanternsController extends AppController {
  *
  * @var array
  */
-  public $components = array('Paginator','Search.Prg');
+	public $components = array('Paginator');
 
 /**
  * index method
@@ -21,17 +21,6 @@ class LanternsController extends AppController {
  * @return void
  */
 	public function index() {
-		$this->Lantern->recursive = 0;
-		   echo $dayDate=date('Y-m-d');
-		    $this->Paginator->settings = array(
-		     'conditions' => array('Lantern.created LIKE' =>$dayDate ,
-		     	'Lantern.user_id LIKE' => $this->Auth->user('id')),
-		     'limit' => 7
-		      );
-		$this->set('lanterns', $this->Paginator->paginate());
-	}
-
-	public function lists() {
 		$this->Lantern->recursive = 0;
 		$this->set('lanterns', $this->Paginator->paginate());
 	}
@@ -59,7 +48,7 @@ class LanternsController extends AppController {
 	public function add() {
 		if ($this->request->is('post')) {
 			$this->Lantern->create();
-     			$this->request->data['Lantern']['user_id'] = $this->Auth->user('id');
+			$this->request->data['Lantern']['user_id'] = $this->Auth->user('id');
 			if ($this->Lantern->save($this->request->data)) {
 				$this->Flash(__('The lantern has been saved.'), 'default', array('class' => 'alert alert-success'));
 				return $this->redirect(array('action' => 'index'));

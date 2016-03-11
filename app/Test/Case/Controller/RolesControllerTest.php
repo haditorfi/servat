@@ -12,7 +12,13 @@ class RolesControllerTest extends ControllerTestCase {
  * @var array
  */
 	public $fixtures = array(
-		'app.role'
+		'app.role',
+		'app.user',
+		'app.demand',
+		'app.attachment',
+		'app.lantern',
+		'app.question',
+		'app.node'
 	);
 
 /**

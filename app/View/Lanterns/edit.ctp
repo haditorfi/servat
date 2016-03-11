@@ -1,7 +1,7 @@
 <?php
- 	 $this->assign('title', 'فانوس امروز');
+ 	 $this->assign('title', 'ویرایش سوالات');
  	echo $this->Element('sidebar');
-  ?>
+   ?>
 <?php echo $this->Form->create('Lantern', array('role' => 'form')); ?>
 
 

@@ -1,69 +1,40 @@
-<div class="goalActions index">
-
-	<div class="row">
-		<div class="col-md-12">
-			<div class="page-header">
-				<div class='pull-left'><?php echo $this->Html->link('<span class="fa fa-plus"></span>&nbsp;&nbsp;New'.__(''), array('controller' => 'goalActions', 'action' => 'add'), array('escape' => false,'class'=>'btn btn-raised btn-primary')); ?> </div>
-				<h1><?php echo __('Goal Actions'); ?></h1>
+<?php
+ 	 $this->assign('title', 'لیست خواسته ها');
+ 	echo $this->Element('sidebar');
+?>
+<br/>
+   <div class="col-xs-12">
+   <div class="row">
+		<?php foreach ($goalActions as $goalAction): ?>
+		<div class="col-xs-12 ">
+			<div class="panel panel-default">
+			  <div class="panel-body">
+			    <div class="text-center">
+			    	<h4>هدف: <?php echo $this->Html->link($goalAction['Goal']['name'], array('controller' => 'goals', 'action' => 'view', $goalAction['Goal']['id'])); ?></h4>
+			    </div>
+			  </div>
+			  <div class="panel-footer">
+			  <div class="row">
+			  	<div class="col-xs-12">
+			  	<div>اقدام: <h3 style="color: red"><?php echo h($goalAction['GoalAction']['action']); ?></h3></div>
+			  	</div>
+			  </div>
+			  <hr/>
+			  <div class="row">
+			  	<div class="col-xs-12 col-sm-4 col-md-3">
+			  	<?php echo $this->Html->link('مشاهده هدف',array('controller' => 'goals', 'action' => 'view', $goalAction['Goal']['id']),array('class'=>"btn btn-block btn-primary",'style'=>"margin-top:10px;")); ?>
+			  	</div>
+			  	<div class="col-xs-12 pull-left col-sm-3 col-md-2">
+			  	<?php echo $this->Html->link('ویرایش اقدام',array('controller'=>'goal_actions','action'=>'edit',$goalAction['GoalAction']['id']),array('class'=>"btn btn-block btn-success",'style'=>"margin-top:10px;")); ?>
+			  	</div>
+			  	<div class="col-xs-12 pull-left col-sm-3 col-md-2">
+			  	<?php echo $this->Html->link('حذف اقدام',array('controller'=>'goal_actions','action'=>'delete',$goalAction['GoalAction']['id']),array('class'=>"btn btn-block btn-danger",'style'=>"margin-top:10px;"), __('آیا از حذف # %s # مطمئن هستید؟', $goalAction['GoalAction']['action'])); ?>
+			  	</div>
+			  	</div>
+			  </div>
+			  </div>
 			</div>
-		</div><!-- end col md 12 -->
-	</div><!-- end row -->
-
-
-
-	<div class="row">
-
-		<div class="col-md-12">
-			<table cellpadding="0" cellspacing="0" class="table table-striped table-hover">
-				<thead>
-					<tr>
-						<th nowrap><?php echo $this->Paginator->sort('id'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('goal_id'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('action'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('created'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('updated'); ?></th>
-						<th class="actions"></th>
-					</tr>
-				</thead>
-				<tbody>
-				<?php foreach ($goalActions as $goalAction): ?>
-					<tr>
-						<td nowrap><?php echo h($goalAction['GoalAction']['id']); ?>&nbsp;</td>
-								<td>
-			<?php echo $this->Html->link($goalAction['Goal']['title'], array('controller' => 'goals', 'action' => 'view', $goalAction['Goal']['id'])); ?>
-		</td>
-						<td nowrap><?php echo h($goalAction['GoalAction']['action']); ?>&nbsp;</td>
-						<td nowrap><?php echo h($goalAction['GoalAction']['created']); ?>&nbsp;</td>
-						<td nowrap><?php echo h($goalAction['GoalAction']['updated']); ?>&nbsp;</td>
-						<td class="actions">
-							<?php echo $this->Html->link('<span class="fa fa-eye fa-2"></span>', array('action' => 'view', $goalAction['GoalAction']['id']), array('escape' => false)); ?>
-							<?php echo $this->Html->link('<span class="fa fa-pencil-square-o fa-2"></span>', array('action' => 'edit', $goalAction['GoalAction']['id']), array('escape' => false)); ?>
-							<?php echo $this->Form->postLink('<span class="fa fa-trash-o fa-2"></span>', array('action' => 'delete', $goalAction['GoalAction']['id']), array('escape' => false), __('Are you sure you want to delete # %s?', $goalAction['GoalAction']['id'])); ?>
-						</td>
-					</tr>
-				<?php endforeach; ?>
-				</tbody>
-			</table>
-
-			<p>
-				<small><?php echo $this->Paginator->counter(array('format' => __('Page {:page} of {:pages}, showing {:current} records ')));?></small>
-			</p>
-
-			<?php
-			$params = $this->Paginator->params();
-			if ($params['pageCount'] > 1) {
-			?>
-			<ul class="pagination pagination-sm">
-				<?php
-					echo $this->Paginator->prev('&larr; Previous', array('class' => 'prev','tag' => 'li','escape' => false), '<a onclick="return false;">&larr; Previous</a>', array('class' => 'prev disabled','tag' => 'li','escape' => false));
-					echo $this->Paginator->numbers(array('separator' => '','tag' => 'li','currentClass' => 'active','currentTag' => 'a'));
-					echo $this->Paginator->next('Next &rarr;', array('class' => 'next','tag' => 'li','escape' => false), '<a onclick="return false;">Next &rarr;</a>', array('class' => 'next disabled','tag' => 'li','escape' => false));
-				?>
-			</ul>
-			<?php } ?>
-
-		</div> <!-- end col md 9 -->
-	</div><!-- end row -->
-
-
-</div><!-- end containing of content -->
+		<?php endforeach;?>
+		</div>
+	</div>
+</div>

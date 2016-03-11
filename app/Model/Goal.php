@@ -97,6 +97,14 @@ class Goal extends AppModel {
 		),
 	);
 
+	public $actsAs = array(
+		'FileManager.Upload' => array(
+			'picture' => array(
+			    'dir' => 'webroot{DS}uploads{DS}pic',
+			    'multiple'=>true
+			)
+		)
+	);
 	// The Associations below have been created with all possible keys, those that are not needed can be removed
 
 /**

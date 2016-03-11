@@ -78,7 +78,7 @@ class Demand extends AppModel {
 	public $actsAs = array(
 		'FileManager.Upload' => array(
 			'picture' => array(
-			    'dir' => 'webroot{DS}uploads{DS}demand',
+			    'dir' => 'webroot{DS}uploads{DS}pic',
 			    'multiple'=>true
 			)
 		)

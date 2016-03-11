@@ -113,6 +113,12 @@
                              <?php echo $this->Html->link('<span class="fa fa-moon-o"></span>&nbsp;&nbsp;سوالات شب'.__(''), array('controller' => 'lanterns', 'action' => 'addnight'), array('escape' => false)); ?>
                         </li>
                         <li>
+                          <?php echo $this->Html->link('<span class="fa fa-list-ul"></span>&nbsp;&nbsp;لیست اهداف'.__(''), array('controller' => 'goals', 'action' => 'index'), array('escape' => false)); ?>
+                        </li>
+                        <li>
+                          <?php echo $this->Html->link('<span class="fa fa-plus"></span>&nbsp;&nbsp;اﻓﺰﻭﺩﻥ هدف'.__(''), array('controller' => 'goals', 'action' => 'add'), array('escape' => false)); ?>
+                        </li>
+                        <li>
                              <?php echo $this->Html->link('<span class="fa fa-search fa-fw"></span>&nbsp;&nbsp;جستجو'.__('<span class="fa arrow"></span>'), array(), array('escape' => false)); 
                         ?>
 

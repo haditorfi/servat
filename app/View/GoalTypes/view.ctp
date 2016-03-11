@@ -1,3 +1,8 @@
+
+<?php
+ 	 $this->assign('title', 'لیست خواسته ها');
+ 	echo $this->Element('sidebar');
+?>
 <div class="goalTypes view">
 	<div class="row">
 		<div class="col-md-12">

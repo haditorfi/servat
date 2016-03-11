@@ -14,6 +14,10 @@ class LanternTest extends CakeTestCase {
 	public $fixtures = array(
 		'app.lantern',
 		'app.user',
+		'app.role',
+		'app.demand',
+		'app.attachment',
+		'app.node',
 		'app.question'
 	);
 
