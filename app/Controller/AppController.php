@@ -49,17 +49,6 @@ class AppController extends Controller {
         return $this->redirect($this->referer());
     }
 
-    public function delete_attachment($id = null) {
-        $attachModel = ClassRegistry::init('FileManager.Attachment');
-        $attach = $attachModel->find('first',array('conditions'=>array('Attachment.id'=>$id)));
-        $this->Goal->deleteAllFiles($attach);
-        $attachModel->id = $attach['Attachment']['id'];
-        $attachModel->delete();
-             $this->Flash->error(__('تصویر مورد نظر با موفقیت حذف شد.'), 'default', array('class' => 'alert alert-danger'));
-        return $this->redirect($this->referer());
-
-    }
-
     public function beforeFilter() {
         $name=$this->Auth->user('name');
         $family=$this->Auth->user('family');

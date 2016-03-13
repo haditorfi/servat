@@ -1,10 +1,10 @@
 <?php
-App::uses('QuestionsController', 'Controller');
+App::uses('MorningsController', 'Controller');
 
 /**
- * QuestionsController Test Case
+ * MorningsController Test Case
  */
-class QuestionsControllerTest extends ControllerTestCase {
+class MorningsControllerTest extends ControllerTestCase {
 
 /**
  * Fixtures
@@ -12,9 +12,14 @@ class QuestionsControllerTest extends ControllerTestCase {
  * @var array
  */
 	public $fixtures = array(
-		'app.question',
+		'app.morning',
+		'app.node',
+		'app.user',
+		'app.role',
+		'app.demand',
+		'app.attachment',
 		'app.lantern',
-		'app.user'
+		'app.night'
 	);
 
 /**

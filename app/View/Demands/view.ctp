@@ -32,7 +32,7 @@
 		<?php endforeach;?>
 	</div>
 		<h1 style="text-align: center;color: red;margin-top: 51px;"><?php echo $demand['Demand']['name'];?></h1>
-		<h4  style="text-align: center;color: blue; margin-top: 51px;"><?php echo $demand['Demand']['title'];?></h4>
+		<h4  style="text-align: center;color: blue; margin-top: 51px;"><?php echo $demand['Node']['title'];?></h4>
 	</div>
 </div>
 	<h4  style="color: #b94a48; margin-top: 51px;">شرح خواسته: </h4>

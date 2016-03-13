@@ -31,7 +31,7 @@
 			  <div class="panel-footer pan">
 			  <div class="row">
 			  	<div class="col-xs-12">
-			  	<div> <?php echo $demand['Demand']['title']; ?></div>
+			  	<div> <?php echo $demand['Node']['title']; ?></div>
 			  	</div>
 			  </div>
 			  <hr/>

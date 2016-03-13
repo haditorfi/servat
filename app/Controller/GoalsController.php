@@ -38,6 +38,16 @@ class GoalsController extends AppController {
 		$this->set('id',$id);
 	}
 
+    public function delete_attachment($id = null) {
+        $attachModel = ClassRegistry::init('FileManager.Attachment');
+        $attach = $attachModel->find('first',array('conditions'=>array('Attachment.id'=>$id)));
+        $this->Goal->deleteAllFiles($attach);
+        $attachModel->id = $attach['Attachment']['id'];
+        $attachModel->delete();
+             $this->Flash->error(__('تصویر مورد نظر با موفقیت حذف شد.'), 'default', array('class' => 'alert alert-danger'));
+        return $this->redirect($this->referer());
+
+    }
 /**
  * index method
  *
@@ -73,18 +83,18 @@ class GoalsController extends AppController {
 	public function add() {
 		if ($this->request->is('post')) {
 			$this->Goal->create();
-     			$this->request->data['Goal']['user_id'] = $this->Auth->user('id');
-     			$this->request->data['Goal']['status'] = 1;
-			if ($this->Goal->save($this->request->data)) {
+			$this->request->data['Node']['user_id'] = $this->Auth->user('id');
+			$this->request->data['Node']['type'] = 'goal';
+			if ($this->Goal->saveAll($this->request->data)) {
 				$this->Flash(__('The goal has been saved.'), 'default', array('class' => 'alert alert-success'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Flash(__('The goal could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
 			}
 		}
-		$users = $this->Goal->User->find('list');
+		$nodes = $this->Goal->Node->find('list');
 		$goalTypes = $this->Goal->GoalType->find('list');
-		$this->set(compact('users', 'goalTypes'));
+		$this->set(compact('nodes', 'goalTypes'));
 	}
 
 /**
@@ -99,7 +109,7 @@ class GoalsController extends AppController {
 			throw new NotFoundException(__('Invalid goal'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
-			if ($this->Goal->save($this->request->data)) {
+			if ($this->Goal->saveAll($this->request->data)) {
 				$this->Flash(__('The goal has been saved.'), 'default', array('class' => 'alert alert-success'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
@@ -109,9 +119,9 @@ class GoalsController extends AppController {
 			$options = array('conditions' => array('Goal.' . $this->Goal->primaryKey => $id));
 			$this->request->data = $this->Goal->find('first', $options);
 		}
-		$users = $this->Goal->User->find('list');
+		$nodes = $this->Goal->Node->find('list');
 		$goalTypes = $this->Goal->GoalType->find('list');
-		$this->set(compact('users', 'goalTypes'));
+		$this->set(compact('nodes', 'goalTypes'));
 		$this->set('id',$id);
 		$options = array('conditions' => array('Goal.' . $this->Goal->primaryKey => $id));
 		$this->set('goal', $this->Goal->find('first', $options));

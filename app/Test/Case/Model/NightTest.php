@@ -1,10 +1,10 @@
 <?php
-App::uses('Question', 'Model');
+App::uses('Night', 'Model');
 
 /**
- * Question Test Case
+ * Night Test Case
  */
-class QuestionTest extends CakeTestCase {
+class NightTest extends CakeTestCase {
 
 /**
  * Fixtures
@@ -12,9 +12,14 @@ class QuestionTest extends CakeTestCase {
  * @var array
  */
 	public $fixtures = array(
-		'app.question',
+		'app.night',
+		'app.node',
+		'app.user',
+		'app.role',
+		'app.demand',
+		'app.attachment',
 		'app.lantern',
-		'app.user'
+		'app.morning'
 	);
 
 /**
@@ -24,7 +29,7 @@ class QuestionTest extends CakeTestCase {
  */
 	public function setUp() {
 		parent::setUp();
-		$this->Question = ClassRegistry::init('Question');
+		$this->Night = ClassRegistry::init('Night');
 	}
 
 /**
@@ -33,7 +38,7 @@ class QuestionTest extends CakeTestCase {
  * @return void
  */
 	public function tearDown() {
-		unset($this->Question);
+		unset($this->Night);
 
 		parent::tearDown();
 	}

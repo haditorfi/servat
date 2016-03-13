@@ -37,13 +37,7 @@
 					<?php echo $this->Form->input('type', array('class' => 'form-control', 'placeholder' => 'Type'));?>
 				</div>
 				<div class="form-group">
-					<?php echo $this->Form->input('url', array('class' => 'form-control', 'placeholder' => 'Url'));?>
-				</div>
-				<div class="form-group">
 					<?php echo $this->Form->input('status', array('class' => 'form-control', 'placeholder' => 'Status'));?>
-				</div>
-				<div class="form-group">
-					<?php echo $this->Form->input('visibility', array('class' => 'form-control', 'placeholder' => 'Visibility'));?>
 				</div>
 		</div><!-- end col md 12 -->
 	</div><!-- end row -->

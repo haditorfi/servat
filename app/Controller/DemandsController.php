@@ -72,20 +72,30 @@ class DemandsController extends AppController {
  */
 	public function add() {
 		if ($this->request->is('post')) {
+			$this->request->data['Node']['user_id'] = $this->Auth->user('id');
+			$this->request->data['Node']['type'] = 'demand';
 			$this->Demand->create();
-     			$this->request->data['Demand']['user_id'] = $this->Auth->user('id');
-     			$this->request->data['Demand']['status'] = 1;
-			if ($this->Demand->save($this->request->data)) {
+			if ($this->Demand->saveAll($this->request->data)) {
 				$this->Flash(__('The demand has been saved.'), 'default', array('class' => 'alert alert-success'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Flash(__('The demand could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
 			}
 		}
-		$users = $this->Demand->User->find('list');
-		$this->set(compact('users'));
+		$nodes = $this->Demand->Node->find('list');
+		$this->set(compact('nodes'));
 	}
 
+    public function delete_attachment($id = null) {
+        $attachModel = ClassRegistry::init('FileManager.Attachment');
+        $attach = $attachModel->find('first',array('conditions'=>array('Attachment.id'=>$id)));
+        $this->Demand->deleteAllFiles($attach);
+        $attachModel->id = $attach['Attachment']['id'];
+        $attachModel->delete();
+             $this->Flash->error(__('تصویر مورد نظر با موفقیت حذف شد.'), 'default', array('class' => 'alert alert-danger'));
+        return $this->redirect($this->referer());
+
+    }
 /**
  * edit method
  *
@@ -98,7 +108,7 @@ class DemandsController extends AppController {
 			throw new NotFoundException(__('Invalid demand'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
-			if ($this->Demand->save($this->request->data)) {
+			if ($this->Demand->saveAll($this->request->data)) {
 				$this->Flash(__('The demand has been saved.'), 'default', array('class' => 'alert alert-success'));
 				return $this->redirect(array('action' => 'view/'.$id));
 			} else {
@@ -108,8 +118,8 @@ class DemandsController extends AppController {
 			$options = array('conditions' => array('Demand.' . $this->Demand->primaryKey => $id));
 			$this->request->data = $this->Demand->find('first', $options);
 		}
-		$users = $this->Demand->User->find('list');
-		$this->set(compact('users'));
+		$nodes = $this->Demand->Node->find('list');
+		$this->set(compact('nodes'));
 		$this->set('id',$id);
 		
 		$options = array('conditions' => array('Demand.' . $this->Demand->primaryKey => $id));

@@ -13,7 +13,16 @@ class NodesControllerTest extends ControllerTestCase {
  */
 	public $fixtures = array(
 		'app.node',
-		'app.user'
+		'app.user',
+		'app.role',
+		'app.demand',
+		'app.attachment',
+		'app.lantern',
+		'app.goal',
+		'app.goal_type',
+		'app.goal_action',
+		'app.morning',
+		'app.night'
 	);
 
 /**

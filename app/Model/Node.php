@@ -4,6 +4,10 @@ App::uses('AppModel', 'Model');
  * Node Model
  *
  * @property User $User
+ * @property Demand $Demand
+ * @property Goal $Goal
+ * @property Morning $Morning
+ * @property Night $Night
  */
 class Node extends AppModel {
 
@@ -43,16 +47,6 @@ class Node extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'url' => array(
-			'notBlank' => array(
-				'rule' => array('notBlank'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
 		'status' => array(
 			'boolean' => array(
 				'rule' => array('boolean'),
@@ -81,4 +75,65 @@ class Node extends AppModel {
 			'order' => ''
 		)
 	);
+
+/**
+ * hasMany associations
+ *
+ * @var array
+ */
+	public $hasMany = array(
+		'Demand' => array(
+			'className' => 'Demand',
+			'foreignKey' => 'node_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
+		'Goal' => array(
+			'className' => 'Goal',
+			'foreignKey' => 'node_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
+		'Morning' => array(
+			'className' => 'Morning',
+			'foreignKey' => 'node_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
+		'Night' => array(
+			'className' => 'Night',
+			'foreignKey' => 'node_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		)
+	);
+
 }

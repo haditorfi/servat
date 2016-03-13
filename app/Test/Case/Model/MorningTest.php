@@ -1,10 +1,10 @@
 <?php
-App::uses('Lantern', 'Model');
+App::uses('Morning', 'Model');
 
 /**
- * Lantern Test Case
+ * Morning Test Case
  */
-class LanternTest extends CakeTestCase {
+class MorningTest extends CakeTestCase {
 
 /**
  * Fixtures
@@ -12,13 +12,14 @@ class LanternTest extends CakeTestCase {
  * @var array
  */
 	public $fixtures = array(
-		'app.lantern',
+		'app.morning',
+		'app.node',
 		'app.user',
 		'app.role',
 		'app.demand',
 		'app.attachment',
-		'app.node',
-		'app.question'
+		'app.lantern',
+		'app.night'
 	);
 
 /**
@@ -28,7 +29,7 @@ class LanternTest extends CakeTestCase {
  */
 	public function setUp() {
 		parent::setUp();
-		$this->Lantern = ClassRegistry::init('Lantern');
+		$this->Morning = ClassRegistry::init('Morning');
 	}
 
 /**
@@ -37,7 +38,7 @@ class LanternTest extends CakeTestCase {
  * @return void
  */
 	public function tearDown() {
-		unset($this->Lantern);
+		unset($this->Morning);
 
 		parent::tearDown();
 	}

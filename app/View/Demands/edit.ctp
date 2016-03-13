@@ -17,7 +17,7 @@
 					<?php echo $this->Form->input('name', array('class' => 'form-control', 'placeholder' => 'عنوان خواسته','label'=>'عنوان'));?>
 				</div>
 				<div class="form-group col-md-6">
-					<?php echo $this->Form->input('title', array('class' => 'form-control', 'placeholder' => 'توضیح کوتاه','label'=>'توضیح'));?>
+					<?php echo $this->Form->input('Node.title', array('class' => 'form-control', 'placeholder' => 'توضیح کوتاه','label'=>'توضیح'));?>
 				</div>
 				<div class="form-group">
 					<?php echo $this->Form->input('content', array('class' => 'form-control', 'placeholder' => 'شرح خواسته','label'=>'شرح'));?>

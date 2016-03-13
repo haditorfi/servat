@@ -32,7 +32,7 @@
 			  <div class="panel-footer pan">
 			  <div class="row">
 			  	<div class="col-xs-12">
-			  	<div> <?php echo $goal['Goal']['title']; ?></div>
+			  	<div> <?php echo $goal['Node']['title']; ?></div>
 			  	</div>
 			  </div>
 			  <hr/>
