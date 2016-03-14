@@ -3,12 +3,11 @@
  	echo $this->Element('sidebar');
    ?>
 <div class="nights index">
-
 	<div class="row">
 		<div class="col-md-12">
 			<div class="page-header">
-				<div class='pull-left'><?php echo $this->Html->link('<span class="fa fa-plus"></span>&nbsp;&nbsp;New'.__(''), array('controller' => 'nights', 'action' => 'add'), array('escape' => false,'class'=>'btn btn-raised btn-primary')); ?> </div>
-				<h1><?php echo __('لیست سوالات شب'); ?></h1>
+				<div class='pull-left'><?php echo $this->Html->link('<span class="fa fa-plus"></span>&nbsp;&nbsp;افزودن'.__(''), array('controller' => 'nights', 'action' => 'add'), array('escape' => false,'class'=>'btn btn-raised btn-primary')); ?> </div>
+<h4 style="text-align: center;color: red"><?php echo __('لیست سوالات شب'); ?></h4>
 			</div>
 		</div><!-- end col md 12 -->
 	</div><!-- end row -->

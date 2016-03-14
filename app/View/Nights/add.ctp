@@ -6,14 +6,7 @@
 
 
 <div class="Nights form">
-
-	<div class="row">
-		<div class="col-md-12">
-			<div class="page-header">
-				<h1><?php echo __('افزودن سوالات شب'); ?></h1>
-			</div>
-		</div>
-	</div>
+	<h4 style="text-align: center;color: red"><?php echo __('افزدون سوالات شب'); ?></h4>
 	<div class="row">
 		<div class="col-md-12 well">
 				<div class="form-group col-md-6">

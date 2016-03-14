@@ -25,6 +25,12 @@ class NodesController extends AppController {
 		$this->set('nodes', $this->Paginator->paginate());
 	}
 
+	public function lantern() {
+		// $options = array('conditions' => array('Node.id'));
+		// $this->set('node', $this->Demand->find('first', $options));
+		$this->Node->recursive = 1;
+		$this->set('nodes', $this->Paginator->paginate());
+	}
 /**
  * view method
  *

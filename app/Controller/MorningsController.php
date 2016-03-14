@@ -17,6 +17,22 @@ class MorningsController extends AppController {
 
 	public $helpers = array('Html','Form');
 
+	public function beforeFilter() {
+	    parent::beforeFilter();
+	    $ans1 = '1- به خاطر چه چیری همین الان سپاسگزارم؟' ;
+	    $ans2 = '2- به خاطر چه کسی سپاسگزارم؟' ;
+	    $ans3 = '3- امروز دوست دارم چه اتفاقی را تجربه کنم؟' ;
+	    $ans4 = '4- دوست دارم خدا به چه وظایفی در مورد من عمل کند؟' ;
+	    $ans5 = '5- هدف اصلی امسال من چیست و امروز چه کاری برای نزدیکتر شدن به آن انجام می دهم؟' ;
+	    $ans6 = '6- اگر امروز فقط بتوانم 3 کار انجام بدهم آن 3 کار چه خواهند بود؟' ;
+
+	    $this->set('ans1',$ans1);
+	    $this->set('ans2',$ans2);
+	    $this->set('ans3',$ans3);
+	    $this->set('ans4',$ans4);
+	    $this->set('ans5',$ans5);
+	    $this->set('ans6',$ans6);
+	}
 /**
  * index method
  *

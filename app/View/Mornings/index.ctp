@@ -1,5 +1,5 @@
 <?php
- 	 $this->assign('title', 'افزدون هدف');
+ 	 $this->assign('title', 'لیست سوالات صبح');
  	echo $this->Element('sidebar');
    ?>
 <div class="mornings index">
@@ -8,7 +8,7 @@
 		<div class="col-md-12">
 			<div class="page-header">
 				<div class='pull-left'><?php echo $this->Html->link('<span class="fa fa-plus"></span>&nbsp;&nbsp;New'.__(''), array('controller' => 'mornings', 'action' => 'add'), array('escape' => false,'class'=>'btn btn-raised btn-primary')); ?> </div>
-				<h1><?php echo __('Mornings'); ?></h1>
+<h4 style="text-align: center;color: red"><?php echo __('لیست سوالات صبح'); ?></h4>
 			</div>
 		</div><!-- end col md 12 -->
 	</div><!-- end row -->
@@ -21,20 +21,18 @@
 			<table cellpadding="0" cellspacing="0" class="table table-striped table-hover">
 				<thead>
 					<tr>
-						<th nowrap><?php echo $this->Paginator->sort('id'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('answer1'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('answer2'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('answer3'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('answer4'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('answer5'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('answer6'); ?></th>
+						<th nowrap><?php echo ($ans1); ?></th>
+						<th nowrap><?php echo ($ans2); ?></th>
+						<th nowrap><?php echo ($ans3); ?></th>
+						<th nowrap><?php echo ($ans4); ?></th>
+						<th nowrap><?php echo ($ans5); ?></th>
+						<th nowrap><?php echo ($ans6); ?></th>
 						<th class="actions"></th>
 					</tr>
 				</thead>
 				<tbody>
 				<?php foreach ($mornings as $morning): ?>
 					<tr>
-						<td nowrap><?php echo h($morning['Morning']['id']); ?>&nbsp;</td>
 						<td nowrap><?php echo h($morning['Morning']['answer1']); ?>&nbsp;</td>
 						<td nowrap><?php echo h($morning['Morning']['answer2']); ?>&nbsp;</td>
 						<td nowrap><?php echo h($morning['Morning']['answer3']); ?>&nbsp;</td>

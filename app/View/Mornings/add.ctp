@@ -6,23 +6,7 @@
 
 
 <div class="mornings form">
-
-	<div class="row">
-		<div class="col-md-12">
-			<div class="page-header">
-				<h1><?php echo __('افزودن سوالات صبح'); ?></h1>
-			</div>
-		</div>
-	</div>
-<?php 
-$ans1 = '1- به خاطر چه چیری همین الان سپاسگزارم؟' ;
-$ans2 = '2- به خاطر چه کسی سپاسگزارم؟' ;
-$ans3 = '3- امروز دوست دارم چه اتفاقی را تجربه کنم؟' ;
-$ans4 = '4- دوست دارم خدا به چه وظایفی در مورد من عمل کند؟' ;
-$ans5 = '5- هدف اصلی امسالم چیست، کاری برای نزدیکتر شدن به آن انجام می دهم؟' ;
-$ans6 = '6- اگر امروز فقط بتوانم 3 کار انجام بدهم آن 3 کار چه خواهند بود؟' ;
-?>
-
+<h4 style="text-align: center;color: red"><?php echo __('افزدون سوالات صبح'); ?></h4>
 <div class="mornings form">
 	<div class="row">
 		<div class="col-xs-12 well">
