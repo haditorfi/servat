@@ -1,5 +1,7 @@
 <?php
 App::uses('AppController', 'Controller');
+App::uses('ClassRegistry', 'Utility');
+
 /**
  * Mornings Controller
  *
@@ -55,7 +57,11 @@ class MorningsController extends AppController {
 			throw new NotFoundException(__('Invalid morning'));
 		}
 		$options = array('conditions' => array('Morning.' . $this->Morning->primaryKey => $id));
-		$this->set('morning', $this->Morning->find('first', $options));
+		$morning = $this->Morning->find('first', $options);
+		 $h=ClassRegistry::init('Night');
+		$opt = array('conditions' => array('Night.id','Night.node_id'));
+		$night = ClassRegistry::init('Night')->find('all', $opt);
+    	$this->set(compact('morning', 'night'));
 	}
 /**
  * add method

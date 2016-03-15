@@ -1,5 +1,6 @@
 <?php
 App::uses('AppController', 'Controller');
+App::uses('ClassRegistry', 'Utility');
 /**
  * Nodes Controller
  *
@@ -22,13 +23,6 @@ class NodesController extends AppController {
  */
 	public function index() {
 		$this->Node->recursive = 0;
-		$this->set('nodes', $this->Paginator->paginate());
-	}
-
-	public function lantern() {
-		// $options = array('conditions' => array('Node.id'));
-		// $this->set('node', $this->Demand->find('first', $options));
-		$this->Node->recursive = 1;
 		$this->set('nodes', $this->Paginator->paginate());
 	}
 /**
