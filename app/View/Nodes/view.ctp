@@ -48,23 +48,9 @@
 		</td>
 </tr>
 <tr>
-		<th><?php echo __('Url'); ?></th>
-		<td>
-			<?php echo h($node['Node']['url']); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
 		<th><?php echo __('Status'); ?></th>
 		<td>
 			<?php echo h($node['Node']['status']); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('Visibility'); ?></th>
-		<td>
-			<?php echo h($node['Node']['visibility']); ?>
 			&nbsp;
 		</td>
 </tr>
@@ -76,9 +62,9 @@
 		</td>
 </tr>
 <tr>
-		<th><?php echo __('Modified'); ?></th>
+		<th><?php echo __('Updated'); ?></th>
 		<td>
-			<?php echo h($node['Node']['modified']); ?>
+			<?php echo h($node['Node']['updated']); ?>
 			&nbsp;
 		</td>
 </tr>

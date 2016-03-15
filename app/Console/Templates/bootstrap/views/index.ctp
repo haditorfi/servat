@@ -77,7 +77,7 @@
 			</table>
 
 			<p>
-				<small><?php echo "<?php echo \$this->Paginator->counter(array('format' => __('Page {:page} of {:pages}, showing {:current} records ')));?>"; ?></small>
+				<small><?php echo "<?php echo \$this->Paginator->counter(array('format' => __('صفحه {:page} از {:pages}, تعدا {:current} رکورد ')));?>"; ?></small>
 			</p>
 
 			<?php

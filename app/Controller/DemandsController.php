@@ -38,29 +38,6 @@ class DemandsController extends AppController {
 		$this->set('id',$id);
 	}
 
-	public function featured($id){
-		$attachModel = ClassRegistry::init('FileManager.Attachment');
-		$attach = $attachModel->find('first',array('conditions'=>array('Attachment.id'=>$id)));
-		$target = $attachModel->find('first',array('conditions'=>array('model'=>$attach['Attachment']['model'],'foreign_key'=>$attach['Attachment']['foreign_key'],'featured'=>true)));
-		if($target){
-			$attachModel->id = $target['Attachment']['id'];
-			$attachModel->saveField('featured',false);
-		}
-		$attachModel->id = $attach['Attachment']['id'];
-		$attachModel->saveField('featured',true);
-		return $this->redirect($this->referer());
-	}
-
-	public function delete_attachment($id = null) {
-		$attachModel = ClassRegistry::init('FileManager.Attachment');
-		$attach = $attachModel->find('first',array('conditions'=>array('Attachment.id'=>$id)));
-		$this->Demand->deleteAllFiles($attach);
-		$attachModel->id = $attach['Attachment']['id'];
-		$attachModel->delete();
-	       	 $this->Flash->error(__('تصویر مورد نظر با موفقیت حذف شد.'), 'default', array('class' => 'alert alert-danger'));
-		return $this->redirect($this->referer());
-
-	}
 /**
  * index method
  *
@@ -95,20 +72,30 @@ class DemandsController extends AppController {
  */
 	public function add() {
 		if ($this->request->is('post')) {
+			$this->request->data['Node']['user_id'] = $this->Auth->user('id');
+			$this->request->data['Node']['type'] = 'demand';
 			$this->Demand->create();
-     			$this->request->data['Demand']['user_id'] = $this->Auth->user('id');
-     			$this->request->data['Demand']['status'] = 1;
-			if ($this->Demand->save($this->request->data)) {
+			if ($this->Demand->saveAll($this->request->data)) {
 				$this->Flash(__('The demand has been saved.'), 'default', array('class' => 'alert alert-success'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Flash(__('The demand could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
 			}
 		}
-		$users = $this->Demand->User->find('list');
-		$this->set(compact('users'));
+		$nodes = $this->Demand->Node->find('list');
+		$this->set(compact('nodes'));
 	}
 
+    public function delete_attachment($id = null) {
+        $attachModel = ClassRegistry::init('FileManager.Attachment');
+        $attach = $attachModel->find('first',array('conditions'=>array('Attachment.id'=>$id)));
+        $this->Demand->deleteAllFiles($attach);
+        $attachModel->id = $attach['Attachment']['id'];
+        $attachModel->delete();
+             $this->Flash->error(__('تصویر مورد نظر با موفقیت حذف شد.'), 'default', array('class' => 'alert alert-danger'));
+        return $this->redirect($this->referer());
+
+    }
 /**
  * edit method
  *
@@ -121,7 +108,7 @@ class DemandsController extends AppController {
 			throw new NotFoundException(__('Invalid demand'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
-			if ($this->Demand->save($this->request->data)) {
+			if ($this->Demand->saveAll($this->request->data)) {
 				$this->Flash(__('The demand has been saved.'), 'default', array('class' => 'alert alert-success'));
 				return $this->redirect(array('action' => 'view/'.$id));
 			} else {
@@ -131,8 +118,8 @@ class DemandsController extends AppController {
 			$options = array('conditions' => array('Demand.' . $this->Demand->primaryKey => $id));
 			$this->request->data = $this->Demand->find('first', $options);
 		}
-		$users = $this->Demand->User->find('list');
-		$this->set(compact('users'));
+		$nodes = $this->Demand->Node->find('list');
+		$this->set(compact('nodes'));
 		$this->set('id',$id);
 		
 		$options = array('conditions' => array('Demand.' . $this->Demand->primaryKey => $id));
@@ -151,7 +138,7 @@ class DemandsController extends AppController {
 		if (!$this->Demand->exists()) {
 			throw new NotFoundException(__('Invalid demand'));
 		}
-		$this->request->onlyAllow('post','get', 'delete');
+		$this->request->onlyAllow('post', 'delete');
 		if ($this->Demand->delete()) {
 			$this->Flash(__('The demand has been deleted.'), 'default', array('class' => 'alert alert-success'));
 		} else {

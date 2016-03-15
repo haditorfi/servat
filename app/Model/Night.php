@@ -1,13 +1,11 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * Goal Model
+ * Night Model
  *
- * @property User $User
- * @property GoalType $GoalType
- * @property GoalAction $GoalAction
+ * @property Node $Node
  */
-class Goal extends AppModel {
+class Night extends AppModel {
 
 /**
  * Validation rules
@@ -25,17 +23,7 @@ class Goal extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'goal_type_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'name' => array(
+		'answer1' => array(
 			'notBlank' => array(
 				'rule' => array('notBlank'),
 				//'message' => 'Your custom message here',
@@ -45,7 +33,7 @@ class Goal extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'content' => array(
+		'answer2' => array(
 			'notBlank' => array(
 				'rule' => array('notBlank'),
 				//'message' => 'Your custom message here',
@@ -55,7 +43,7 @@ class Goal extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'thank' => array(
+		'answer3' => array(
 			'notBlank' => array(
 				'rule' => array('notBlank'),
 				//'message' => 'Your custom message here',
@@ -65,9 +53,39 @@ class Goal extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'receive' => array(
-			'date' => array(
-				'rule' => array('date'),
+		'answer4' => array(
+			'notBlank' => array(
+				'rule' => array('notBlank'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'answer5' => array(
+			'notBlank' => array(
+				'rule' => array('notBlank'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'answer6' => array(
+			'notBlank' => array(
+				'rule' => array('notBlank'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'answer7' => array(
+			'notBlank' => array(
+				'rule' => array('notBlank'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -77,14 +95,6 @@ class Goal extends AppModel {
 		),
 	);
 
-	public $actsAs = array(
-		'FileManager.Upload' => array(
-			'picture' => array(
-			    'dir' => 'webroot{DS}uploads{DS}pic',
-			    'multiple'=>true
-			)
-		)
-	);
 	// The Associations below have been created with all possible keys, those that are not needed can be removed
 
 /**
@@ -99,35 +109,6 @@ class Goal extends AppModel {
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
-		),
-		'GoalType' => array(
-			'className' => 'GoalType',
-			'foreignKey' => 'goal_type_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
-
-/**
- * hasMany associations
- *
- * @var array
- */
-	public $hasMany = array(
-		'GoalAction' => array(
-			'className' => 'GoalAction',
-			'foreignKey' => 'goal_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		)
-	);
-
 }

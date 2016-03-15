@@ -1,105 +1,68 @@
-<div class="goals view">
-	<div class="row">
-		<div class="col-md-12">
-			<div class="page-header">
-				<h1><?php echo __('Goal'); ?></h1>
+<?php
+ 	 $this->assign('title', 'مشاهده هدف');
+ 	echo $this->Element('sidebar');
+   ?>
+<div class="row">
+	<div class="col-sm-12">
+	<div class="btnha well"  style="margin-top: 10px">
+		<?php echo $this->Html->link('<span class="fa fa-list"></span>    لیست اهداف',array('action'=>'index',$goal['Goal']['id']),array('escape'=> false,'class' => 'btn btn-primary')); ?>
+	
+		<?php echo $this->Html->link(__('<span class="fa fa-edit"></span>  ویرایش هدف'),array('action'=>'edit',$goal['Goal']['id']),array('escape'=> false,'class' => 'btn btn-warning')); ?>
+	
+		<?php echo $this->Html->link(__('<span class="fa fa-photo"></span>  مدیریت تصاویر'),array('action'=>'attach',$goal['Goal']['id']),array('escape'=> false,'class' => 'btn btn-info')); ?>
+	
+		<?php echo $this->Form->postLink('<span class="fa fa-trash"></span> حذف هدف', array('action' => 'delete', $goal['Goal']['id']), array('escape' => false,'class' => 'btn btn-danger'), __('آیا از حذف هدف # %s # مطمئن هستید?', $goal['Goal']['name']));?>
+	
+		<?php echo $this->Html->link(__('<span class="fa fa-plus"></span>  افزودن اقدام'),array('controller'=>'goal_actions','action'=>'add',$goal['Goal']['id']),array('escape'=> false,'class' => 'btn btn-success pull-left')); ?>
+	</div>	
+	</div>	
+	<div  class="imgf">
+		<?php foreach($goal['AttachmentPicture'] as $attach):?>
+			<?php if($attach['featured'] == true):?>
+				<div>
+				<?php echo $this->Attach->image($attach,'picture'); ?>
+				</div>
+			<?php endif;?>
+		<?php endforeach;?>
+	</div>
+
+		<h1 style="text-align: center;color: red;margin-top: 51px;"><?php echo $goal['Goal']['name'];?></h1>
+		<h4  style="text-align: center;color: blue; margin-top: 51px;"><?php echo $goal['Node']['title'];?></h4>
+	</div>
+</div>
+	<h4  style="color: #b94a48; margin-top: 51px;">شرح هدف: </h4>
+<br/>
+	<?php echo $goal['Goal']['content'];?>
+		<h4  style="color: #b94a48; margin-top: 51px;">شکرگزاری: </h4><br/>
+	<?php echo $goal['Goal']['thank'];?>
+	<h4 style="color: #b94a48; margin-top: 51px;">کارهای که باید انجام داد: </h4><?php echo $this->Html->link(__('لیست اقدامات'),  array('controller' =>'goal_actions' ,'action'=>'index')); ?> <br/>
+	<?php foreach ($goal['GoalAction'] as $goalAction): ?>
+			<div>
+			<h4>
+			<?php echo $this->Html->link(__('<span class="fa fa-edit"></span>'), array('controller' => 'goal_actions', 'action' => 'edit', $goalAction['id']), array('data-toggle'=>'tooltip','title'=>'ویرایش اقدام!','escape' => false)); ?>
+
+			
+			<span>
+				<?php echo $goalAction['action']; ?>
+			</h4>
 			</div>
+			<br/>
+	<?php endforeach; ?>
+<hr/>
+<div class="row">
+	<?php foreach($goal['AttachmentPicture'] as $attach):?>
+		<?php if($attach['featured'] == false):?>
+	<div class="col-xs-12 col-md-6 col-sm-4">
+		<div class="imgbox">
+			<?php echo $this->Attach->image($attach,'picture'); ?>
 		</div>
 	</div>
+		<?php endif;?>
+	<?php endforeach;?>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
 
-	<div class="row">
-
-		<div class="col-md-3">
-			<div class="well">
-									<?php echo $this->Html->link(__('Back To List'),array('action'=>'index'), array('class' => 'btn btn-block btn-danger')); ?>
-			
-			</div>
-		</div><!-- end col md 3 -->
-
-		<div class="col-md-9">			
-			<table cellpadding="0" cellspacing="0" class="table table-striped">
-				<tbody>
-				<tr>
-		<th><?php echo __('Id'); ?></th>
-		<td>
-			<?php echo h($goal['Goal']['id']); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('User'); ?></th>
-		<td>
-			<?php echo $this->Html->link($goal['User']['name'], array('controller' => 'users', 'action' => 'view', $goal['User']['id'])); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('Goal Type'); ?></th>
-		<td>
-			<?php echo $this->Html->link($goal['GoalType']['name'], array('controller' => 'goal_types', 'action' => 'view', $goal['GoalType']['id'])); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('Name'); ?></th>
-		<td>
-			<?php echo h($goal['Goal']['name']); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('Title'); ?></th>
-		<td>
-			<?php echo h($goal['Goal']['title']); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('Content'); ?></th>
-		<td>
-			<?php echo h($goal['Goal']['content']); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('Thank'); ?></th>
-		<td>
-			<?php echo h($goal['Goal']['thank']); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('Receive'); ?></th>
-		<td>
-			<?php echo h($goal['Goal']['receive']); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('Status'); ?></th>
-		<td>
-			<?php echo h($goal['Goal']['status']); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('Created'); ?></th>
-		<td>
-			<?php echo h($goal['Goal']['created']); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('Updated'); ?></th>
-		<td>
-			<?php echo h($goal['Goal']['updated']); ?>
-			&nbsp;
-		</td>
-</tr>
-				</tbody>
-			</table>
-
-		</div><!-- end col md 9 -->
-
-	</div>
 </div>

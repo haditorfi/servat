@@ -14,7 +14,7 @@ class Demand extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'user_id' => array(
+		'node_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -25,16 +25,6 @@ class Demand extends AppModel {
 			),
 		),
 		'name' => array(
-			'notBlank' => array(
-				'rule' => array('notBlank'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'title' => array(
 			'notBlank' => array(
 				'rule' => array('notBlank'),
 				//'message' => 'Your custom message here',
@@ -64,21 +54,11 @@ class Demand extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'status' => array(
-			'boolean' => array(
-				'rule' => array('boolean'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
 	);
 	public $actsAs = array(
 		'FileManager.Upload' => array(
 			'picture' => array(
-			    'dir' => 'webroot{DS}uploads{DS}demand',
+			    'dir' => 'webroot{DS}uploads{DS}pic',
 			    'multiple'=>true
 			)
 		)
@@ -91,9 +71,9 @@ class Demand extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'User' => array(
-			'className' => 'User',
-			'foreignKey' => 'user_id',
+		'Node' => array(
+			'className' => 'Node',
+			'foreignKey' => 'node_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

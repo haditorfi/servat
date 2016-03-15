@@ -3,6 +3,7 @@
  	echo $this->Element('sidebar');
 ?>
 <br/>
+<h4 style="text-align: center;color: red"><?php echo __('لیست خواسته ها'); ?></h4>
    <div class="row">
 		<?php foreach ($demands as $demand): ?>
 		<div class="col-xs-12 col-md-4">
@@ -31,7 +32,7 @@
 			  <div class="panel-footer pan">
 			  <div class="row">
 			  	<div class="col-xs-12">
-			  	<div> <?php echo $demand['Demand']['title']; ?></div>
+			  	<div> <?php echo $demand['Node']['title']; ?></div>
 			  	</div>
 			  </div>
 			  <hr/>
@@ -50,4 +51,11 @@
 			</div>
 		</div>
 		<?php endforeach;?>
+
+<?php if(count($demands) == 0):?>
+	
+			  	<div class="well text-center" style="color: blue">در حال حاظر خواسته ای ایجاد نشده ، جهت ایجاد "افزودن خواسته"  را بفشارید.<br/><br/><br/>
+			  	<?php echo $this->Html->link('افزودن خواسته',array('action'=>'add'),array('class'=>"btn btn-success",'style'=>"margin-top:10px;")); ?>
+			  	</div>
+<?php endif;?>
 	</div>

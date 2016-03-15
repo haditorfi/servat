@@ -21,11 +21,9 @@
 						<th nowrap><?php echo $this->Paginator->sort('user_id'); ?></th>
 						<th nowrap><?php echo $this->Paginator->sort('title'); ?></th>
 						<th nowrap><?php echo $this->Paginator->sort('type'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('url'); ?></th>
 						<th nowrap><?php echo $this->Paginator->sort('status'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('visibility'); ?></th>
 						<th nowrap><?php echo $this->Paginator->sort('created'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('modified'); ?></th>
+						<th nowrap><?php echo $this->Paginator->sort('updated'); ?></th>
 						<th class="actions"></th>
 					</tr>
 				</thead>
@@ -38,15 +36,13 @@
 		</td>
 						<td nowrap><?php echo h($node['Node']['title']); ?>&nbsp;</td>
 						<td nowrap><?php echo h($node['Node']['type']); ?>&nbsp;</td>
-						<td nowrap><?php echo h($node['Node']['url']); ?>&nbsp;</td>
 						<td nowrap><?php echo h($node['Node']['status']); ?>&nbsp;</td>
-						<td nowrap><?php echo h($node['Node']['visibility']); ?>&nbsp;</td>
 						<td nowrap><?php echo h($node['Node']['created']); ?>&nbsp;</td>
-						<td nowrap><?php echo h($node['Node']['modified']); ?>&nbsp;</td>
+						<td nowrap><?php echo h($node['Node']['updated']); ?>&nbsp;</td>
 						<td class="actions">
 							<?php echo $this->Html->link('<span class="fa fa-eye fa-2"></span>', array('action' => 'view', $node['Node']['id']), array('escape' => false)); ?>
 							<?php echo $this->Html->link('<span class="fa fa-pencil-square-o fa-2"></span>', array('action' => 'edit', $node['Node']['id']), array('escape' => false)); ?>
-	<?php echo $this->Form->postLink('<span class="fa fa-trash-o fa-2"></span>', array('action' => 'delete', $node['Node']['id']), array('escape' => false), __('Are you sure you want to delete # %s?', $node['Node']['id'])); ?>
+							<?php echo $this->Form->postLink('<span class="fa fa-trash-o fa-2"></span>', array('action' => 'delete', $node['Node']['id']), array('escape' => false), __('Are you sure you want to delete # %s?', $node['Node']['id'])); ?>
 						</td>
 					</tr>
 				<?php endforeach; ?>
@@ -54,7 +50,7 @@
 			</table>
 
 			<p>
-				<small><?php echo $this->Paginator->counter(array('format' => __('Page {:page} of {:pages}, showing {:current} records ')));?></small>
+				<small><?php echo $this->Paginator->counter(array('format' => __('صفحه {:page} از {:pages}, تعدا {:current} رکورد ')));?></small>
 			</p>
 
 			<?php
