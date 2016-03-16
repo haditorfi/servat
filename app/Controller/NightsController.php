@@ -13,11 +13,16 @@ class NightsController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator');
 
 	public $helpers = array('Html','Form');
 
 	public function beforeFilter() {
+        if ($this->Auth->user('id')!== null) {
+        $this->Paginator->settings = array(
+             'conditions' => array('Node.user_id LIKE' => $this->Auth->user('id'))
+              );
+        $this->set('Model', $this->Paginator->paginate());
+    }
 	    parent::beforeFilter();
 	    $ans1 = '1- آیا در طول روز کارهایی برای هدف امسالم انجام دادم؟' ;
 	    $ans2 = '2- چه کارهایی برای فردا باید انجام بدهم؟ (کارهای مانده از امروز)' ;
@@ -77,6 +82,12 @@ class NightsController extends AppController {
 				$this->Flash(__('The night could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
 			}
 		}
+		$this->Night->recursive = 0; 
+		$dayDate=date('Y-m-d');
+		    $this->Paginator->settings = array(
+		     'conditions' => array('Node.created LIKE' =>$dayDate,'Node.user_id LIKE' => $this->Auth->user('id'))
+		      );
+		$this->set('nights', $this->Paginator->paginate());
 		$nodes = $this->Night->Node->find('list');
 		$this->set(compact('nodes'));
 	}

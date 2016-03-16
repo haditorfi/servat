@@ -15,7 +15,7 @@
 
 		<div class="col-md-3">
 			<div class="well">
-									<?php echo $this->Html->link(__('Back To List'),array('action'=>'index'), array('class' => 'btn btn-block btn-danger')); ?>
+			     <?php echo $this->Html->link(__('Back To List'),array('action'=>'index'), array('class' => 'btn btn-block btn-danger')); ?>
 			
 			</div>
 		</div><!-- end col md 3 -->
@@ -86,3 +86,8 @@
 
 	</div>
 </div>
+<?php
+echo $night[0]["Night"]["answer1"];
+    	echo '<pre>';
+    	var_dump($night);
+?>

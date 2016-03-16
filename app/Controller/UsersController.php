@@ -13,7 +13,6 @@ class UsersController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator');
 	public function beforeFilter() {
 	    parent::beforeFilter();
 	    // Allow users to register and logout.
@@ -31,6 +30,7 @@ class UsersController extends AppController {
 	}
 
 	public function logout() {
+		$this->Model->false;
 	    return $this->redirect($this->Auth->logout());
 	}
 

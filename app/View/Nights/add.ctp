@@ -3,17 +3,10 @@
  	echo $this->Element('sidebar');
    ?>
 <?php echo $this->Form->create('Night', array('role' => 'form')); ?>
-
+   <?php if(count($nights) == 0):?>
 
 <div class="Nights form">
-
-	<div class="row">
-		<div class="col-md-12">
-			<div class="page-header">
-				<h1><?php echo __('افزودن سوالات شب'); ?></h1>
-			</div>
-		</div>
-	</div>
+	<h4 style="text-align: center;color: red"><?php echo __('افزدون سوالات شب'); ?></h4>
 	<div class="row">
 		<div class="col-md-12 well">
 				<div class="form-group col-md-6">
@@ -47,3 +40,12 @@
 </div>
 			<?php echo $this->Form->end() ?>
 
+<?php endif;?>
+<?php if(count($nights) !== 0): ?>
+	<br/><br/><br/>
+          <div class="well text-center" style="color: blue">سوالات امشب پاسخ داده شده است ، شما می توانید سوالات را مشاهده نمایید.<br/><br/><br/>
+          <div class="form-group">
+			<?php echo $this->Html->link(__('مشاهده سوالات'),array('controller'=>'mornings','action'=>'lantern'), array('class' => 'btn btn-warning ', 'style'=>'margin:15px')); ?>
+	</div>	
+          </div>
+<?php endif;?>

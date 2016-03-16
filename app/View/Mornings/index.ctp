@@ -1,75 +1,52 @@
 <?php
- 	 $this->assign('title', 'افزدون هدف');
- 	echo $this->Element('sidebar');
-   ?>
-<div class="mornings index">
+   $this->assign('title', 'لیست سوالات صبح');
+  echo $this->Element('sidebar');
+   ?> 
+ <br/>
+      <div class="col-md-12">
+ <div class="row">  
+    <?php foreach ($mornings as $morning): 
+                $date = new DateTime(h($morning['Node']['created']));
+                $time = $date->getTimestamp();
+    ?> 
+        </div> 
+  <div class="panel panel-info">
+     <div class="panel-heading">
+       <h4 class="panel-title" style="text-align: center;color: red"><?php echo __(' سوالات صبح').'  '. $this->jDateTime->date("d / m / Y", $time , true,true,"Asia/Tehran"); ?></h4>
+     </div>
+     <div class="panel-body" style="color: blue;background-color: rgba(251, 238, 213, 0.15);">
+       <div><?php echo ($ans1); ?><br/><br/>
+      <?php echo h($morning['Morning']['answer1']); ?>
+      </div><hr/>
+      <div ><?php echo ($ans2); ?><br/><br/>
+      <?php echo h($morning['Morning']['answer2']); ?>
+      </div><hr/>
+      <div ><?php echo ($ans3); ?><br/><br/>
+      <?php echo h($morning['Morning']['answer3']); ?>
+      </div><hr/>
+      <div ><?php echo ($ans4); ?><br/><br/>
+      <?php echo h($morning['Morning']['answer4']); ?>
+      </div><hr/>
+      <div ><?php echo ($ans5); ?><br/><br/>
+      <?php echo h($morning['Morning']['answer5']); ?>
+      </div><hr/>
+      <div><?php echo ($ans6); ?><br/><br/>
+      <?php echo h($morning['Morning']['answer6']); ?>
+      </div> 
+    <div class="form-group">
+      <?php echo $this->Form->postLink(__('حذف'),array('action'=>'delete',$morning['Morning']['id']), array('class' => 'btn btn-danger pull-left', 'style'=>'margin:15px')); ?>
 
-	<div class="row">
-		<div class="col-md-12">
-			<div class="page-header">
-				<div class='pull-left'><?php echo $this->Html->link('<span class="fa fa-plus"></span>&nbsp;&nbsp;New'.__(''), array('controller' => 'mornings', 'action' => 'add'), array('escape' => false,'class'=>'btn btn-raised btn-primary')); ?> </div>
-				<h1><?php echo __('Mornings'); ?></h1>
-			</div>
-		</div><!-- end col md 12 -->
-	</div><!-- end row -->
-
-
-
-	<div class="row">
-
-		<div class="col-md-12">
-			<table cellpadding="0" cellspacing="0" class="table table-striped table-hover">
-				<thead>
-					<tr>
-						<th nowrap><?php echo $this->Paginator->sort('id'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('answer1'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('answer2'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('answer3'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('answer4'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('answer5'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('answer6'); ?></th>
-						<th class="actions"></th>
-					</tr>
-				</thead>
-				<tbody>
-				<?php foreach ($mornings as $morning): ?>
-					<tr>
-						<td nowrap><?php echo h($morning['Morning']['id']); ?>&nbsp;</td>
-						<td nowrap><?php echo h($morning['Morning']['answer1']); ?>&nbsp;</td>
-						<td nowrap><?php echo h($morning['Morning']['answer2']); ?>&nbsp;</td>
-						<td nowrap><?php echo h($morning['Morning']['answer3']); ?>&nbsp;</td>
-						<td nowrap><?php echo h($morning['Morning']['answer4']); ?>&nbsp;</td>
-						<td nowrap><?php echo h($morning['Morning']['answer5']); ?>&nbsp;</td>
-						<td nowrap><?php echo h($morning['Morning']['answer6']); ?>&nbsp;</td>
-						<td class="actions">
-							<?php echo $this->Html->link('<span class="fa fa-eye fa-2"></span>', array('action' => 'view', $morning['Morning']['id']), array('escape' => false)); ?>
-							<?php echo $this->Html->link('<span class="fa fa-pencil-square-o fa-2"></span>', array('action' => 'edit', $morning['Morning']['id']), array('escape' => false)); ?>
-							<?php echo $this->Form->postLink('<span class="fa fa-trash-o fa-2"></span>', array('action' => 'delete', $morning['Morning']['id']), array('escape' => false), __('Are you sure you want to delete # %s?', $morning['Morning']['id'])); ?>
-						</td>
-					</tr>
-				<?php endforeach; ?>
-				</tbody>
-			</table>
-
-			<p>
-				<small><?php echo $this->Paginator->counter(array('format' => __('صفحه {:page} از {:pages}, تعدا {:current} رکورد ')));?></small>
-			</p>
-
-			<?php
-			$params = $this->Paginator->params();
-			if ($params['pageCount'] > 1) {
-			?>
-			<ul class="pagination pagination-sm">
-				<?php
-					echo $this->Paginator->prev('&larr; Previous', array('class' => 'prev','tag' => 'li','escape' => false), '<a onclick="return false;">&larr; Previous</a>', array('class' => 'prev disabled','tag' => 'li','escape' => false));
-					echo $this->Paginator->numbers(array('separator' => '','tag' => 'li','currentClass' => 'active','currentTag' => 'a'));
-					echo $this->Paginator->next('Next &rarr;', array('class' => 'next','tag' => 'li','escape' => false), '<a onclick="return false;">Next &rarr;</a>', array('class' => 'next disabled','tag' => 'li','escape' => false));
-				?>
-			</ul>
-			<?php } ?>
-
-		</div> <!-- end col md 9 -->
-	</div><!-- end row -->
-
-
-</div><!-- end containing of content -->
+      <?php echo $this->Html->link(__('ویرایش'),array('controller'=>'mornings','action'=>'edit',$morning['Morning']['id']), array('class' => 'btn btn-warning pull-left', 'style'=>'margin:15px')); ?>
+        
+    </div>  
+          </div>
+     </div>   
+    <?php endforeach; ?>
+   <?php if(count($mornings) == 0):?>
+  
+          <div class="well text-center" style="color: blue">سوالات صبح ثبت نشده ، جهت پاسخ "سوالات صبح"  را بفشارید.<br/><br/><br/>
+          <?php echo $this->Html->link('سوالات صبح',array('controller'=>'mornings','action'=>'add'),array('class'=>"btn btn-success",'style'=>"margin-top:10px;")); ?>
+          </div>
+  </div>
+ </div><!-- end row -->
+<?php endif;?>

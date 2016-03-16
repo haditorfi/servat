@@ -13,11 +13,19 @@ class GoalsController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator');
 
 	public $helpers = array('Html','Form','FileManager.Attach');
 
 
+	public function beforeFilter() {
+	    parent::beforeFilter();
+        if ($this->Auth->user('id')!== null) {
+        $this->Paginator->settings = array(
+             'conditions' => array('Node.user_id LIKE' => $this->Auth->user('id'))
+              );
+        $this->set('Model', $this->Paginator->paginate());
+    }
+}
 	public function attach($id = null) {
 		if (!$this->Goal->exists($id)) {
 			throw new NotFoundException(__('Invalid demands'));

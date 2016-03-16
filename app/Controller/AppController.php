@@ -5,7 +5,7 @@ App::uses('Controller', 'Controller');
 
 class AppController extends Controller {
     public $components = array(
-     'Flash',
+     'Flash','Paginator',
      'Session',
         'Auth' => array(
             'loginRedirect' => array(
@@ -54,5 +54,5 @@ class AppController extends Controller {
         $family=$this->Auth->user('family');
         $this->set('profile',$name .' '.$family);
         $this->Auth->allow('display');
-    }
+        }
 }

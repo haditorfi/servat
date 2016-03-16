@@ -3,9 +3,8 @@
  	echo $this->Element('sidebar');
    ?>
 <?php echo $this->Form->create('Night', array('role' => 'form')); ?>
-
 <div class="nights form">
-
+<h4 style="text-align: center;color: red"><?php echo __('ویرایش سوالات شب'); ?></h4>
 	<div class="row">
 		<div class="col-md-12 well">
 				<div class="form-group">

@@ -1,8 +1,9 @@
 <?php
- 	 $this->assign('title', 'لیست خواسته ها');
+ 	 $this->assign('title', 'لیست اهداف');
  	echo $this->Element('sidebar');
 ?>
 <br/>
+<h4 style="text-align: center;color: red"><?php echo __('لیست اهداف'); ?></h4>
    <div class="row">
    <div class="col-xs-12">
 		<?php foreach ($goals as $goal): ?>
@@ -48,6 +49,12 @@
 			  </div>
 			</div>
 		<?php endforeach;?>
+<?php if(count($goals) == 0):?>
+	
+			  	<div class="well text-center" style="color: blue">در حال حاظر هدفی ایجاد نشده ، جهت ایجاد "افزودن هدف"  را بفشارید.<br/><br/><br/>
+			  	<?php echo $this->Html->link('افزودن هدف',array('action'=>'add'),array('class'=>"btn btn-success",'style'=>"margin-top:10px;")); ?>
+			  	</div>
+<?php endif;?>
 		</div>
 	</div>
 </div>

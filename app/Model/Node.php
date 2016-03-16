@@ -8,6 +8,7 @@ App::uses('AppModel', 'Model');
  * @property Goal $Goal
  * @property Morning $Morning
  * @property Night $Night
+ * @property Page $Page
  */
 class Node extends AppModel {
 
@@ -123,6 +124,19 @@ class Node extends AppModel {
 		),
 		'Night' => array(
 			'className' => 'Night',
+			'foreignKey' => 'node_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
+		'Page' => array(
+			'className' => 'Page',
 			'foreignKey' => 'node_id',
 			'dependent' => false,
 			'conditions' => '',

@@ -76,7 +76,7 @@
             <br/>
      <div class="centerDate">       
           <?php 
-             echo $this->jDateTime->date("l j F Y", time() , true,true,"Asia/Tehran");
+             echo 'امروز : '. $this->jDateTime->date("l j F Y", time() , true,true,"Asia/Tehran");
              echo "<br>";
          ?> 
         </div>
@@ -109,7 +109,7 @@
 
                         <li>
                         <li>
-                             <?php echo $this->Html->link('<span class="fa fa-lightbulb-o"></span>&nbsp;&nbsp;فانوس دریایی'.__(''), array('controller' => 'lanterns', 'action' => 'index'), array('escape' => false)); ?>
+                             <?php echo $this->Html->link('<span class="fa fa-list-ul"></span>&nbsp;&nbsp;فانوس دریایی امروز'.__(''), array('controller' => 'mornings', 'action' => 'lantern'), array('escape' => false)); ?>
                         </li>
                         <li>
                              <?php echo $this->Html->link('<span class="fa fa-sun-o"></span>&nbsp;&nbsp;سوالات صبح'.__(''), array('controller' => 'mornings', 'action' => 'add'), array('escape' => false)); ?>
@@ -122,19 +122,6 @@
                         </li>
                         <li>
                           <?php echo $this->Html->link('<span class="fa fa-plus"></span>&nbsp;&nbsp;اﻓﺰﻭﺩﻥ هدف'.__(''), array('controller' => 'goals', 'action' => 'add'), array('escape' => false)); ?>
-                        </li>
-                        <li>
-                        <?php echo $this->Html->link('<span class="fa fa-lightbulb-o fa-fw"></span>&nbsp;&nbsp;فانوس دریایی'.__('<span class="fa arrow"></span>'), array(), array('escape' => false)); 
-                        ?>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <?php echo $this->Html->link('<span class="fa fa-sun-o"></span>&nbsp;&nbsp;سوالات صبح'.__(''), array('controller' => 'mornings', 'action' => 'add'), array('escape' => false)); ?>
-                                </li>
-                                <li>
-                                   <?php echo $this->Html->link('<span class="fa fa-moon-o"></span>&nbsp;&nbsp;سوالات شب'.__(''), array('controller' => 'nights', 'action' => 'add'), array('escape' => false)); ?>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
                         </li>
                         <li class="active">
                             <a href="#"><i class="fa fa-users fa-fw"></i> ﻧﺎﺣﯿﻪ ﮐﺎﺭﺑﺮﯼ<span class="fa arrow"></span></a>

@@ -1,10 +1,10 @@
 <?php
-App::uses('NodesController', 'Controller');
+App::uses('PagesController', 'Controller');
 
 /**
- * NodesController Test Case
+ * PagesController Test Case
  */
-class NodesControllerTest extends ControllerTestCase {
+class PagesControllerTest extends ControllerTestCase {
 
 /**
  * Fixtures
@@ -12,6 +12,7 @@ class NodesControllerTest extends ControllerTestCase {
  * @var array
  */
 	public $fixtures = array(
+		'app.page',
 		'app.node',
 		'app.user',
 		'app.role',
@@ -22,7 +23,6 @@ class NodesControllerTest extends ControllerTestCase {
 		'app.goal_type',
 		'app.goal_action',
 		'app.morning',
-		'app.page',
 		'app.night'
 	);
 
