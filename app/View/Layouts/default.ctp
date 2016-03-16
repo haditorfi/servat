@@ -22,6 +22,8 @@
 			'bootstrap.min',
 			'metisMenu',
 			'js-persian-cal.min',
+			'jquery.easing.min',
+			'freelancer',
 			'sb-admin'
 			));
 

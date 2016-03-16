@@ -22,53 +22,47 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
+                    <li class="page-scroll">
+                        <a href="#page-top">خانه</a>
                     </li>
                     <li class="page-scroll">
-                       <?php echo $this->Html->link('<span class="fa fa-home"></span>&nbsp;صفحه خانگی'.__(''), array('controller' => '', 'action' => 'index'), array('escape' => false)); ?>
+                        <a href="#portfolio">بخش ها</a>
                     </li>
                     <li class="page-scroll">
-                       <?php echo $this->Html->link('<span class="fa fa-gift"></span>&nbsp;خواسته ها'.__(''), array('controller' => 'demands', 'action' => 'index'), array('escape' => false)); ?>
+                        <a href="#about">توضیحات</a>
                     </li>
                     <li class="page-scroll">
-                        <?php echo $this->Html->link('<span class="fa fa-lightbulb-o"></span>&nbsp;فانوس دریایی'.__(''), array('controller' => 'mornings', 'action' => 'lantern'), array('escape' => false)); ?>
-                    </li>
-                    <li class="page-scroll">
-                        <?php echo $this->Html->link('<span class="fa  fa-sun-o fa-fw"></span>&nbsp;سوالات صبح'.__(''), array('controller' => 'mornings', 'action' => 'add'), array('escape' => false)); ?>
-                    </li>
-
-                    <li class="page-scroll">
-                        <?php echo $this->Html->link('<span class="fa   fa-moon-o fa-fw"></span>&nbsp;سوالات شب'.__(''), array('controller' => 'nights', 'action' => 'add'), array('escape' => false)); ?>
+                    <?php
+                       echo $this->Html->link("خواسته ها".__(''), array('controller' => 'demands', 'action' => 'index'), array('escape' => false));  
+                       ?>
                     </li>
                 </ul>
-                <?php
-                if ($profile !=" ") {
-                         echo $this->Html->link("خروج".__(''), array('controller' => 'users', 'action' => 'logout'), array('escape' => false,'class'=>'btn btn-danger','style'=>'margin:10px;float:left'));  
+<?php
+            if ($profile !=" ") {
+                        echo $this->Html->link("خروج".__(''), array('controller' => 'users', 'action' => 'logout'), array('escape' => false,'class'=>'btn btn-danger','style'=>'margin:10px;float:left'));  
                         
-                                }
-                 ?>
+                                     }
+?>
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
     </nav>
-
+    <section id="page-top">
     <header>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <img class="img-responsive" src="img/profile.png" alt="">
                     <div class="intro-text">
-                        <span class="name">Start Bootstrap</span>
+                        <span class="name">برنامه ثروتمندان</span>
                         <hr class="star-light">
-                        <span class="skills">Web Developer - Graphic Artist - User Experience Designer</span>
+                        <span class="skills">برنامه ای برای افرادی که می خواهند ثروتمند شوند</span>
                     </div>
                 </div>
             </div>
         </div>
     </header> 
-
+</section>
     <!-- Portfolio Grid Section -->
     <section id="portfolio">
         <div class="container">
@@ -86,7 +80,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/cabin.png" class="img-responsive" alt="">
+                        <img src="img/portfolio/cabin.png" class="img-responsive" alt="لیست اهداف">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -446,21 +440,5 @@
         </div>
     </div>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/cbpAnimatedHeader.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/freelancer.js"></script>
-
+   
