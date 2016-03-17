@@ -26,7 +26,7 @@ class MorningsController extends AppController {
               );
         $this->set('Model', $this->Paginator->paginate());
     }
-	    $ans1 = '1- به خاطر چه چیری همین الان سپاسگزارم؟' ;
+	    $ans1 = '1- به خاطر چه چیزی همین الان سپاسگزارم؟' ;
 	    $ans2 = '2- به خاطر چه کسی سپاسگزارم؟' ;
 	    $ans3 = '3- امروز دوست دارم چه اتفاقی را تجربه کنم؟' ;
 	    $ans4 = '4- دوست دارم خدا به چه وظایفی در مورد من عمل کند؟' ;
@@ -136,7 +136,7 @@ class MorningsController extends AppController {
 			throw new NotFoundException(__('Invalid morning'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
-			if ($this->Morning->save($this->request->data)) {
+			if ($this->Morning->saveAll($this->request->data)) {
 				$this->Flash(__('The morning has been saved.'), 'default', array('class' => 'alert alert-success'));
 				return $this->redirect(array('action' => 'index'));
 			} else {

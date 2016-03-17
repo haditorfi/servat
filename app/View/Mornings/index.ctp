@@ -34,7 +34,7 @@
       <?php echo h($morning['Morning']['answer6']); ?>
       </div> 
     <div class="form-group">
-      <?php echo $this->Form->postLink(__('حذف'),array('action'=>'delete',$morning['Morning']['id']), array('class' => 'btn btn-danger pull-left', 'style'=>'margin:15px')); ?>
+      <?php echo $this->Form->postLink(__('حذف'),array('action'=>'delete',$morning['Morning']['id']), array('class' => 'btn btn-danger pull-left', 'style'=>'margin:15px'), __('آیا از حذف سوالات صبح در تاریخ ( %s ) مطمئن هستید?', $this->jDateTime->date("d / m / Y", $time , true,true,"Asia/Tehran"))); ?>
 
       <?php echo $this->Html->link(__('ویرایش'),array('controller'=>'mornings','action'=>'edit',$morning['Morning']['id']), array('class' => 'btn btn-warning pull-left', 'style'=>'margin:15px')); ?>
         

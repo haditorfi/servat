@@ -29,6 +29,9 @@
 				<div class="form-group">
 					<?php echo $this->Form->input('answer6', array('class' => 'form-control','label'=>$ans6, 'placeholder' => 'سوال 6'));?>
 				</div>
+				<div class="form-group">
+					<?php echo $this->Form->input('Node.created', array('class' => 'form-control','label'=>'تاریخ'));?>
+				</div>
 		</div><!-- end col md 12 -->
 		<div class="form-group">
 			<?php echo $this->Form->submit(__('ذخیره'), array('class' => 'btn btn-success pull-left', 'style'=>'margin:15px')); ?>
