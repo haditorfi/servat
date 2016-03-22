@@ -108,6 +108,11 @@
                         </li>
 
                         <li>
+                          <?php echo $this->Html->link('<span class="fa fa-list-ul"></span>&nbsp;&nbsp;لیست اهداف'.__(''), array('controller' => 'goals', 'action' => 'index'), array('escape' => false)); ?>
+                        </li>
+                        <li>
+                          <?php echo $this->Html->link('<span class="fa fa-plus"></span>&nbsp;&nbsp;اﻓﺰﻭﺩﻥ هدف'.__(''), array('controller' => 'goals', 'action' => 'add'), array('escape' => false)); ?>
+                        </li>
                         <li>
                              <?php echo $this->Html->link('<span class="fa fa-list-ul"></span>&nbsp;&nbsp;فانوس دریایی امروز'.__(''), array('controller' => 'mornings', 'action' => 'lantern'), array('escape' => false)); ?>
                         </li>
@@ -117,12 +122,16 @@
                         <li>
                              <?php echo $this->Html->link('<span class="fa fa-moon-o"></span>&nbsp;&nbsp;سوالات شب'.__(''), array('controller' => 'nights', 'action' => 'add'), array('escape' => false)); ?>
                         </li>
+                        <li >
+                            <a href="#"><i class="fa fa-archive fa-fw"></i>   آرشیو سوالات<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
                         <li>
-                          <?php echo $this->Html->link('<span class="fa fa-list-ul"></span>&nbsp;&nbsp;لیست اهداف'.__(''), array('controller' => 'goals', 'action' => 'index'), array('escape' => false)); ?>
+                             <?php echo $this->Html->link('آرشیو سوالات صبح'.__(''), array('controller' => 'mornings', 'action' => 'index'), array('escape' => false)); ?>
                         </li>
                         <li>
-                          <?php echo $this->Html->link('<span class="fa fa-plus"></span>&nbsp;&nbsp;اﻓﺰﻭﺩﻥ هدف'.__(''), array('controller' => 'goals', 'action' => 'add'), array('escape' => false)); ?>
+                             <?php echo $this->Html->link('آرشیو سوالات شب'.__(''), array('controller' => 'nights', 'action' => 'index'), array('escape' => false)); ?>
                         </li>
+                            </ul>
                         <li class="active">
                             <a href="#"><i class="fa fa-users fa-fw"></i> ﻧﺎﺣﯿﻪ ﮐﺎﺭﺑﺮﯼ<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">

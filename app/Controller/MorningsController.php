@@ -1,7 +1,6 @@
 <?php
 App::uses('AppController', 'Controller');
 App::uses('ClassRegistry', 'Utility');
-
 /**
  * Mornings Controller
  *
@@ -10,36 +9,32 @@ App::uses('ClassRegistry', 'Utility');
  */
 class NightsController extends AppController {}
 class MorningsController extends AppController {
-
 /**
  * Components
  *
  * @var array
  */
 	public $helpers = array('Html','Form');
-
 	public function beforeFilter() {
 	    parent::beforeFilter();
         if ($this->Auth->user('id')!== null) {
-        $this->Paginator->settings = array(
-             'conditions' => array('Node.user_id LIKE' => $this->Auth->user('id'))
+      	  $this->Paginator->settings = array(
+         	    'conditions' => array('Node.user_id LIKE' => $this->Auth->user('id'))
               );
         $this->set('Model', $this->Paginator->paginate());
     }
-	    $ans1 = '1- به خاطر چه چیری همین الان سپاسگزارم؟' ;
+	    $ans1 = '1- به خاطر چه چیزی همین الان سپاسگزارم؟' ;
 	    $ans2 = '2- به خاطر چه کسی سپاسگزارم؟' ;
 	    $ans3 = '3- امروز دوست دارم چه اتفاقی را تجربه کنم؟' ;
 	    $ans4 = '4- دوست دارم خدا به چه وظایفی در مورد من عمل کند؟' ;
 	    $ans5 = '5- هدف اصلی امسال من چیست و امروز چه کاری برای نزدیکتر شدن به آن انجام می دهم؟' ;
 	    $ans6 = '6- اگر امروز فقط بتوانم 3 کار انجام بدهم آن 3 کار چه خواهند بود؟' ;
-
 	    $this->set('ans1',$ans1);
 	    $this->set('ans2',$ans2);
 	    $this->set('ans3',$ans3);
 	    $this->set('ans4',$ans4);
 	    $this->set('ans5',$ans5);
 	    $this->set('ans6',$ans6);
-
 	    $ansN1 = '1- آیا در طول روز کارهایی برای هدف امسالم انجام دادم؟' ;
 	    $ansN2 = '2- چه کارهایی برای فردا باید انجام بدهم؟ (کارهای مانده از امروز)' ;
 	    $ansN3 = '3- از 1 تا 10 چه نمره ای به خودم می دهم و چرا؟' ;
@@ -61,7 +56,7 @@ class MorningsController extends AppController {
  * @return void
  */
 	public function index() {
-		$this->Morning->recursive = 0;
+		$this->Morning->recursive = 0; 
 		$this->set('mornings', $this->Paginator->paginate());
 	}
 
@@ -76,7 +71,6 @@ class MorningsController extends AppController {
 		$this->set(compact('nights', $this->Paginator->paginate()));
 		$this->set('mornings', $this->Paginator->paginate());
 	}
-
 /**
  * view method
  *
@@ -90,10 +84,7 @@ class MorningsController extends AppController {
 		}
 		$options = array('conditions' => array('Morning.' . $this->Morning->primaryKey => $id));
 		$morning = $this->Morning->find('first', $options);
-		 $h=ClassRegistry::init('Night');
-		$opt = array('conditions' => array('Night.id','Night.node_id'));
-		$night = ClassRegistry::init('Night')->find('all', $opt);
-    	$this->set(compact('morning', 'night'));
+    		$this->set(compact('morning'));
 	}
 /**
  * add method
@@ -108,12 +99,11 @@ class MorningsController extends AppController {
 			$this->Morning->create();
 			if ($this->Morning->saveAll($this->request->data)) {
 				$this->Flash(__('The morning has been saved.'), 'default', array('class' => 'alert alert-success'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'lantern'));
 			} else {
 				$this->Flash(__('The morning could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
 			}
 		}
-
 		$this->Morning->recursive = 0; 
 		$dayDate=date('Y-m-d');
 		    $this->Paginator->settings = array(
@@ -123,7 +113,6 @@ class MorningsController extends AppController {
 		$nodes = $this->Morning->Node->find('list');
 		$this->set(compact('nodes'));
 	}
-
 /**
  * edit method
  *
@@ -136,9 +125,9 @@ class MorningsController extends AppController {
 			throw new NotFoundException(__('Invalid morning'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
-			if ($this->Morning->save($this->request->data)) {
+			if ($this->Morning->saveAll($this->request->data)) {
 				$this->Flash(__('The morning has been saved.'), 'default', array('class' => 'alert alert-success'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'lantern'));
 			} else {
 				$this->Flash(__('The morning could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
 			}
@@ -149,7 +138,6 @@ class MorningsController extends AppController {
 		$nodes = $this->Morning->Node->find('list');
 		$this->set(compact('nodes'));
 	}
-
 /**
  * delete method
  *

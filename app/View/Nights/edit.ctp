@@ -10,6 +10,9 @@
 				<div class="form-group">
 					<?php echo $this->Form->input('id', array('class' => 'form-control', 'placeholder' => 'Id'));?>
 				</div>
+				<div class="form-group">
+					<?php echo $this->Form->input('Node.id', array('class' => 'form-control', 'placeholder' => 'Node.id'));?>
+				</div>
 				<div class="form-group col-md-6">
 					<?php echo $this->Form->input('answer1', array('class' => 'form-control','label'=>$ans1, 'placeholder' => 'سوال 1'));?>
 				</div>
@@ -31,11 +34,15 @@
 				<div class="form-group">
 					<?php echo $this->Form->input('answer7', array('class' => 'form-control','label'=>$ans7, 'placeholder' => 'سوال 7'));?>
 				</div>
+
+ 				<div class="form-group">
+ 					<?php echo $this->Form->input('Node.created', array('class' => 'form-control','label'=>'تاریخ'));?>
+ 				</div>
 		</div><!-- end col md 12 -->
 		<div class="form-group">
 			<?php echo $this->Form->submit(__('ذخیره'), array('class' => 'btn btn-success pull-left', 'style'=>'margin:15px')); ?>
 				
-			<?php echo $this->Html->link(__('انصراف'),array('action'=>'index'), array('class' => 'btn btn-danger pull-left', 'style'=>'margin:15px')); ?>
+			<?php echo $this->Html->link(__('انصراف'),array('controller'=>'mornings','action'=>'lantern'), array('class' => 'btn btn-danger pull-left', 'style'=>'margin:15px')); ?>
 		</div>	
 	</div><!-- end row -->
 </div>

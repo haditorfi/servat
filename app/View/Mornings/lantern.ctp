@@ -26,10 +26,15 @@
       <div ><?php echo ($ans5); ?><br/><br/>
       <?php echo h($morning['Morning']['answer5']); ?>
       </div><hr/>
-      <div  style="margin-bottom: 82px;"><?php echo ($ans6); ?><br/><br/>
+      <div><?php echo ($ans6); ?><br/><br/>
       <?php echo h($morning['Morning']['answer6']); ?>
-      </div>
-     
+      </div><hr/>
+     <div class="form-group">
+      <?php echo $this->Html->link(__('ویرایش'),array('controller'=>'mornings','action'=>'edit',$morning['Morning']['id']), array('class' => 'btn btn-warning pull-left', 'style'=>'margin:15px')); ?>
+    </div>  
+     <div class="form-group">
+      <?php echo $this->Html->link(__('مشاهده'),array('controller'=>'mornings','action'=>'view',$morning['Morning']['id']), array('class' => 'btn btn-success pull-left', 'style'=>'margin:15px')); ?>
+    </div> 
     <?php endforeach; ?>
    <?php if(count($mornings) == 0):?>
   
@@ -67,7 +72,13 @@
       </div><hr/>
       <div ><?php echo ($ansN7); ?><br/><br/>
       <div><?php echo h($night['Night']['answer7']); ?>
-      </div>
+      </div><hr/>
+     <div class="form-group">
+      <?php echo $this->Html->link(__('ویرایش'),array('controller'=>'nights','action'=>'edit',$night['Night']['id']), array('class' => 'btn btn-warning pull-left', 'style'=>'margin:15px')); ?>
+    </div>  
+     <div class="form-group">
+      <?php echo $this->Html->link(__('مشاهده'),array('controller'=>'nights','action'=>'view',$night['Night']['id']), array('class' => 'btn btn-success pull-left', 'style'=>'margin:15px')); ?>
+    </div> 
      
     <?php endforeach; ?>
    <?php if(count($nights) == 0):?>

@@ -108,7 +108,7 @@ class Night extends AppModel {
 			'foreignKey' => 'node_id',
 			'conditions' => '',
 			'fields' => '',
-			'order' => ''
+			'order' => 'created'
 		)
 	);
 }

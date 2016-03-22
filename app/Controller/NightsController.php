@@ -77,7 +77,7 @@ class NightsController extends AppController {
 			$this->Night->create();
 			if ($this->Night->saveAll($this->request->data)) {
 				$this->Flash(__('The night has been saved.'), 'default', array('class' => 'alert alert-success'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('controller' =>'mornings','action' =>'lantern'));
 			} else {
 				$this->Flash(__('The night could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
 			}
@@ -106,7 +106,7 @@ class NightsController extends AppController {
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Night->saveAll($this->request->data)) {
 				$this->Flash(__('The night has been saved.'), 'default', array('class' => 'alert alert-success'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('controller' =>'mornings','action' =>'lantern'));
 			} else {
 				$this->Flash(__('The night could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
 			}

@@ -1,93 +1,45 @@
 <?php
- 	 $this->assign('title', 'افزدون هدف');
- 	echo $this->Element('sidebar');
-   ?>
-<div class="mornings view">
-	<div class="row">
-		<div class="col-md-12">
-			<div class="page-header">
-				<h1><?php echo __('Morning'); ?></h1>
-			</div>
-		</div>
-	</div>
+   $this->assign('title', 'مشاهده سوالات صبح');
+  echo $this->Element('sidebar');
+   ?> 
+ <br/>
+      <div class="col-md-12">
+ <div class="row">  
+    <?php
+                $date = new DateTime(h($morning['Node']['created']));
+                $time = $date->getTimestamp();
+    ?> 
+        </div> 
+  <div class="panel panel-info">
+     <div class="panel-heading">
+       <h4 class="panel-title" style="text-align: center;color: red"><?php echo __(' سوالات صبح').'  '. $this->jDateTime->date("d / m / Y", $time , true,true,"Asia/Tehran"); ?></h4>
+     </div>
+     <div class="panel-body" style="color: blue;background-color: rgba(251, 238, 213, 0.15);">
+       <div><?php echo ($ans1); ?><br/><br/>
+      <?php echo h($morning['Morning']['answer1']); ?>
+      </div><hr/>
+      <div ><?php echo ($ans2); ?><br/><br/>
+      <?php echo h($morning['Morning']['answer2']); ?>
+      </div><hr/>
+      <div ><?php echo ($ans3); ?><br/><br/>
+      <?php echo h($morning['Morning']['answer3']); ?>
+      </div><hr/>
+      <div ><?php echo ($ans4); ?><br/><br/>
+      <?php echo h($morning['Morning']['answer4']); ?>
+      </div><hr/>
+      <div ><?php echo ($ans5); ?><br/><br/>
+      <?php echo h($morning['Morning']['answer5']); ?>
+      </div><hr/>
+      <div><?php echo ($ans6); ?><br/><br/>
+      <?php echo h($morning['Morning']['answer6']); ?>
+      </div> 
+    <div class="form-group">
+      <?php echo $this->Form->postLink(__('حذف'),array('action'=>'delete',$morning['Morning']['id']), array('class' => 'btn btn-danger pull-left', 'style'=>'margin:15px'), __('آیا از حذف سوالات صبح در تاریخ ( %s ) مطمئن هستید?', $this->jDateTime->date("d / m / Y", $time , true,true,"Asia/Tehran"))); ?>
 
-	<div class="row">
-
-		<div class="col-md-3">
-			<div class="well">
-			     <?php echo $this->Html->link(__('Back To List'),array('action'=>'index'), array('class' => 'btn btn-block btn-danger')); ?>
-			
-			</div>
-		</div><!-- end col md 3 -->
-
-		<div class="col-md-9">			
-			<table cellpadding="0" cellspacing="0" class="table table-striped">
-				<tbody>
-				<tr>
-		<th><?php echo __('Id'); ?></th>
-		<td>
-			<?php echo h($morning['Morning']['id']); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('Node'); ?></th>
-		<td>
-			<?php echo $this->Html->link($morning['Node']['title'], array('controller' => 'nodes', 'action' => 'view', $morning['Node']['id'])); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('Answer1'); ?></th>
-		<td>
-			<?php echo h($morning['Morning']['answer1']); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('Answer2'); ?></th>
-		<td>
-			<?php echo h($morning['Morning']['answer2']); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('Answer3'); ?></th>
-		<td>
-			<?php echo h($morning['Morning']['answer3']); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('Answer4'); ?></th>
-		<td>
-			<?php echo h($morning['Morning']['answer4']); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('Answer5'); ?></th>
-		<td>
-			<?php echo h($morning['Morning']['answer5']); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('Answer6'); ?></th>
-		<td>
-			<?php echo h($morning['Morning']['answer6']); ?>
-			&nbsp;
-		</td>
-</tr>
-				</tbody>
-			</table>
-
-		</div><!-- end col md 9 -->
-
-	</div>
-</div>
-<?php
-echo $night[0]["Night"]["answer1"];
-    	echo '<pre>';
-    	var_dump($night);
-?>
+      <?php echo $this->Html->link(__('ویرایش'),array('controller'=>'mornings','action'=>'edit',$morning['Morning']['id']), array('class' => 'btn btn-warning pull-left', 'style'=>'margin:15px')); ?>
+        
+    </div>  
+          </div>
+     </div>   
+  </div>
+ </div><!-- end row -->
