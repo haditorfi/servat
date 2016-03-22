@@ -32,9 +32,12 @@
      <div class="form-group">
       <?php echo $this->Html->link(__('ویرایش'),array('controller'=>'mornings','action'=>'edit',$morning['Morning']['id']), array('class' => 'btn btn-warning pull-left', 'style'=>'margin:15px')); ?>
     </div>  
+<<<<<<< HEAD
      <div class="form-group">
       <?php echo $this->Html->link(__('مشاهده'),array('controller'=>'mornings','action'=>'view',$morning['Morning']['id']), array('class' => 'btn btn-success pull-left', 'style'=>'margin:15px')); ?>
     </div> 
+=======
+>>>>>>> origin/ver-6
     <?php endforeach; ?>
    <?php if(count($mornings) == 0):?>
   
