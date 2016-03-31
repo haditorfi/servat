@@ -1,6 +1,5 @@
 <?php
  	 $this->assign('title', 'ویرایش اقدامات');
- 	echo $this->Element('sidebar');
 ?>
 <?php echo $this->Form->create('GoalAction', array('role' => 'form')); ?>
 

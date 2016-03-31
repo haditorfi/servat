@@ -1,6 +1,5 @@
 <?php
  	 $this->assign('title', 'مدیریت تصاویر اهداف');
- 	echo $this->Element('sidebar');
    ?>
 <?php echo $this->Form->create('Goal', array('role' => 'form','type'=>'file')); ?>
 

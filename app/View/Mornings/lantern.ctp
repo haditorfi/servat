@@ -1,6 +1,5 @@
 <?php
-   $this->assign('title', 'لیست فانوس دریایی');
-  echo $this->Element('sidebar');
+   $this->assign('title', 'فانوس دریایی');
    ?>
  <div class="row">
  <br/>
@@ -29,15 +28,12 @@
       <div><?php echo ($ans6); ?><br/><br/>
       <?php echo h($morning['Morning']['answer6']); ?>
       </div><hr/>
-     <div class="form-group">
-      <?php echo $this->Html->link(__('ویرایش'),array('controller'=>'mornings','action'=>'edit',$morning['Morning']['id']), array('class' => 'btn btn-warning pull-left', 'style'=>'margin:15px')); ?>
+     <div>
+      <?php echo $this->Html->link(__('<span class="fa fa-edit"></span>'),array('controller'=>'mornings','action'=>'edit',$morning['Morning']['id']), array('escape'=> false,'class' => 'btn btn-warning pull-left btn-circle', 'style'=>'margin:5px','data-toggle'=>'tooltip','title'=>'ویرایش!')); ?>
     </div>  
-<<<<<<< HEAD
-     <div class="form-group">
-      <?php echo $this->Html->link(__('مشاهده'),array('controller'=>'mornings','action'=>'view',$morning['Morning']['id']), array('class' => 'btn btn-success pull-left', 'style'=>'margin:15px')); ?>
+     <div>
+      <?php echo $this->Html->link(__('<span class="fa fa-eye"></span>'),array('controller'=>'mornings','action'=>'view',$morning['Morning']['id']), array('escape'=> false,'class' => 'btn btn-success pull-left btn-circle', 'style'=>'margin:5px','data-toggle'=>'tooltip','title'=>'مشاهده!')); ?>
     </div> 
-=======
->>>>>>> origin/ver-6
     <?php endforeach; ?>
    <?php if(count($mornings) == 0):?>
   
@@ -76,13 +72,12 @@
       <div ><?php echo ($ansN7); ?><br/><br/>
       <div><?php echo h($night['Night']['answer7']); ?>
       </div><hr/>
-     <div class="form-group">
-      <?php echo $this->Html->link(__('ویرایش'),array('controller'=>'nights','action'=>'edit',$night['Night']['id']), array('class' => 'btn btn-warning pull-left', 'style'=>'margin:15px')); ?>
+     <div>
+      <?php echo $this->Html->link(__('<span class="fa fa-edit"></span>'),array('controller'=>'nights','action'=>'edit',$night['Night']['id']), array('escape'=> false,'class' => 'btn btn-warning pull-left btn-circle', 'style'=>'margin:5px','data-toggle'=>'tooltip','title'=>'ویرایش!')); ?>
     </div>  
-     <div class="form-group">
-      <?php echo $this->Html->link(__('مشاهده'),array('controller'=>'nights','action'=>'view',$night['Night']['id']), array('class' => 'btn btn-success pull-left', 'style'=>'margin:15px')); ?>
+     <div>
+      <?php echo $this->Html->link(__('<span class="fa fa-eye"></span>'),array('controller'=>'nights','action'=>'view',$night['Night']['id']), array('escape'=> false,'class' => 'btn btn-success pull-left btn-circle', 'style'=>'margin:5px','data-toggle'=>'tooltip','title'=>'مشاهده!')); ?>
     </div> 
-     
     <?php endforeach; ?>
    <?php if(count($nights) == 0):?>
   
@@ -96,3 +91,8 @@
  </div><!-- end row -->
 
 </div><!-- end containing of content -->
+<script>
+  $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip();   
+  });
+</script>

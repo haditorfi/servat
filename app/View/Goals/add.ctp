@@ -1,10 +1,7 @@
 <?php
- 	 $this->assign('title', 'افزدون هدف');
- 	echo $this->Element('sidebar');
-   ?>
+ 	 $this->assign('title', 'افزودن خواسته ها');
+?>
 <?php echo $this->Form->create('Goal', array('role' => 'form')); ?>
-
-
 <div class="goals form">
 	<div class="row">
 		     <h4 style="text-align: center;color: red"><?php echo __('افزدون هدف'); ?></h4>
@@ -28,6 +25,9 @@
 				<div class="form-group">
 					<?php echo $this->Form->input('thank', array('class' => 'form-control', 'placeholder' => 'شکرگذاری','label'=>'شکرگذاری'));?>
 				</div>
+		<div class="form-group" style="margin: 20px">
+			<?php echo $this->Form->input('Node.status', array('class' => 'form-control  col-md-1','label'=>'نمایش در داشبورد'));?>
+		</div>
 		</div><!-- end col md 12 -->
 
 		<div class="form-group col-xs-12">

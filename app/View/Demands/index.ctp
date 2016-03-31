@@ -1,7 +1,4 @@
-<?php
- 	 $this->assign('title', 'لیست خواسته ها');
- 	echo $this->Element('sidebar');
-?>
+<?php $this->assign('title', 'لیست خواسته ها');?>
 <br/>
 <h4 style="text-align: center;color: red"><?php echo __('لیست خواسته ها'); ?></h4>
    <div class="row">

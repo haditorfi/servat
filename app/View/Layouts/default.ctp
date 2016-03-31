@@ -13,18 +13,8 @@
 			'font-awesome.min',
 			'metisMenu',
 			'jspc-peach',
-			'freelancer',
 			'sb-admin',
 			'style'
-			));
-		echo $this->Html->script(array(
-			'jquery.min',
-			'bootstrap.min',
-			'metisMenu',
-			'js-persian-cal.min',
-			'jquery.easing.min',
-			'freelancer',
-			'sb-admin'
 			));
 
 		echo $this->fetch('meta');
@@ -33,12 +23,28 @@
 	?>
 </head>
 <body>
-	<div id="container">
-		<div id="header">
-		</div>
-		<div id="content">
+    <div id="wrapper">
+		<?php
+			echo $this->Element('sidebar');
+		   ?>
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
 			<?php echo $this->fetch('content'); ?>
-		</div>
-		</div>
+	</div>
+	</div>
+	</div>
+<?php
+
+		echo $this->Html->script(array(
+			'jquery.min',
+			'bootstrap.min',
+			'metisMenu',
+			'js-persian-cal.min',
+			'jquery.easing.min',
+			'sb-admin'
+			));
+?>
 </body>
 </html>

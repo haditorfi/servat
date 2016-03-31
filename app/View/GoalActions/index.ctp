@@ -1,6 +1,5 @@
 <?php
  	 $this->assign('title', 'لیست خواسته ها');
- 	echo $this->Element('sidebar');
 ?>
 <br/>
    <div class="col-xs-12">

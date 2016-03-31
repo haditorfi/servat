@@ -1,6 +1,5 @@
 <?php
    $this->assign('title', 'مشاهده سوالات صبح');
-  echo $this->Element('sidebar');
    ?> 
  <br/>
       <div class="col-md-12">
@@ -34,9 +33,11 @@
       <?php echo h($morning['Morning']['answer6']); ?>
       </div> 
     <div class="form-group">
-      <?php echo $this->Form->postLink(__('حذف'),array('action'=>'delete',$morning['Morning']['id']), array('class' => 'btn btn-danger pull-left', 'style'=>'margin:15px'), __('آیا از حذف سوالات صبح در تاریخ ( %s ) مطمئن هستید?', $this->jDateTime->date("d / m / Y", $time , true,true,"Asia/Tehran"))); ?>
+      <?php echo $this->Form->postLink(__('<span class="fa fa-trash"></span>'),array('action'=>'delete',$morning['Morning']['id']), array('escape'=> false,'class' => 'btn btn-danger pull-left btn-circle', 'style'=>'margin:5px','data-toggle'=>'tooltip','title'=>'حذف!'), __('آیا از حذف سوالات صبح در تاریخ ( %s ) مطمئن هستید?', $this->jDateTime->date("d / m / Y", $time , true,true,"Asia/Tehran"))); ?>
 
-      <?php echo $this->Html->link(__('ویرایش'),array('controller'=>'mornings','action'=>'edit',$morning['Morning']['id']), array('class' => 'btn btn-warning pull-left', 'style'=>'margin:15px')); ?>
+      <?php echo $this->Html->link(__('<span class="fa fa-edit"></span>'),array('controller'=>'mornings','action'=>'edit',$morning['Morning']['id']), array('escape'=> false,'class' => 'btn btn-warning pull-left  btn-circle', 'style'=>'margin:5px','data-toggle'=>'tooltip','title'=>'ویرایش!')); ?>
+
+      <?php echo $this->Html->link(__('<span class="fa fa-arrow-right"></span>'),array('controller'=>'mornings','action'=>'lantern'), array('escape'=> false,'class' => 'btn btn-default btn-circle pull-left', 'style'=>'margin:5px','data-toggle'=>'tooltip','title'=>'بازگشت!')); ?>
         
     </div>  
           </div>

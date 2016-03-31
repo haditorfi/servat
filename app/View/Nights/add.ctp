@@ -1,9 +1,8 @@
 <?php
  	 $this->assign('title', 'افزودن سوالات شب');
- 	echo $this->Element('sidebar');
    ?>
-<?php echo $this->Form->create('Night', array('role' => 'form')); ?>
    <?php if(count($nights) == 0):?>
+<?php echo $this->Form->create('Night', array('role' => 'form')); ?>
 
 <div class="Nights form">
 	<h4 style="text-align: center;color: red"><?php echo __('افزدون سوالات شب'); ?></h4>

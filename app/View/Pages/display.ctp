@@ -13,8 +13,8 @@
                 if ($profile !=" ") {
                  echo $this->Html->link("کاربر: $profile".__(''), array('controller' => '', 'action' => 'index'), array('escape' => false,'class'=>'navbar-brand')); 
                 }else{
-                   echo $this->Html->link("ورود".__(''), array('controller' => 'users', 'action' => 'login'), array('escape' => false,'class'=>'btn btn-primary','style'=>'margin:10px')); 
-                   echo $this->Html->link("ثبت نام".__(''), array('controller' => 'users', 'action' => 'add'), array('escape' => false,'class'=>'btn btn-success','style'=>'margin:10px')); 
+                   echo $this->Html->link("ورود".__(''), array('controller' => 'users', 'action' => 'login'), array('escape' => false,'class'=>'btn btn-info','style'=>'margin:10px')); 
+                   echo $this->Html->link("ثبت نام".__(''), array('controller' => 'users', 'action' => 'register'), array('escape' => false,'class'=>'btn btn-success','style'=>'margin:10px')); 
                 }
                 ?>
             </div>
@@ -33,7 +33,7 @@
                     </li>
                     <li class="page-scroll">
                     <?php
-                       echo $this->Html->link("خواسته ها".__(''), array('controller' => 'demands', 'action' => 'index'), array('escape' => false));  
+                       echo $this->Html->link("داشبورد".__(''), array('controller' => 'dashboards', 'action' => 'index'), array('escape' => false));  
                        ?>
                     </li>
                 </ul>
@@ -65,13 +65,7 @@
 </section>
     <!-- Portfolio Grid Section -->
     <section id="portfolio">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Portfolio</h2>
-                    <hr class="star-primary">
-                </div>
-            </div>
+        <div class="container"><br/>
             <div class="row">
                 <div class="col-sm-4 portfolio-item">
                     <a href="demands/index" class="portfolio-link" data-toggle="modal">
@@ -94,7 +88,7 @@
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
-                    <a href="dashboard/index" class="portfolio-link" data-toggle="modal">
+                    <a href="dashboards/index" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
@@ -142,7 +136,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>About</h2>
+                    <h3>توضیحات استفاده از برنامه</h3>
                     <hr class="star-light">
                 </div>
             </div>

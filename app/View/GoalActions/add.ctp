@@ -1,6 +1,5 @@
 <?php
  	 $this->assign('title', 'افزودن اقدام برای هدف');
- 	echo $this->Element('sidebar');
 ?>
 <?php echo $this->Form->create('GoalAction', array('role' => 'form')); ?>
 

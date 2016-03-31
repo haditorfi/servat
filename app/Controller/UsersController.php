@@ -16,7 +16,7 @@ class UsersController extends AppController {
 	public function beforeFilter() {
 	    parent::beforeFilter();
 	    // Allow users to register and logout.
-	    $this->Auth->allow('add', 'logout');
+	    $this->Auth->allow('register', 'logout');
 	}
 
 	public function login() {
@@ -64,7 +64,7 @@ class UsersController extends AppController {
  *
  * @return void
  */
-	public function add() {
+	public function addAdmin() {
 		if ($this->request->is('post')) {
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
@@ -77,7 +77,22 @@ class UsersController extends AppController {
 		$roles = $this->User->Role->find('list');
 		$this->set(compact('roles'));
 	}
-
+	public function register() {
+		$this->layout = "login";
+		if ($this->request->is('post')) {
+		$this->request->data['User']['status'] = '1';
+		$this->request->data['User']['role_id'] = '2';
+			$this->User->create();
+			if ($this->User->save($this->request->data)) {
+				$this->Flash(__('ثبت نام شما با موفقیت انجام شد.'), 'default', array('class' => 'alert alert-success'));
+				return $this->redirect(array('controller' => 'dashboards','action' => 'index'));
+			} else {
+				$this->Flash(__('لطفا دوباره امتحان نمایید.'), 'default', array('class' => 'alert alert-danger'));
+			}
+		}
+		$roles = $this->User->Role->find('list');
+		$this->set(compact('roles'));
+	}
 /**
  * edit method
  *

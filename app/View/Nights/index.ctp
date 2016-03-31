@@ -1,6 +1,5 @@
 <?php
    $this->assign('title', 'آرشیو سوالات شب');
-  echo $this->Element('sidebar');
    ?> 
     <br/>
 <h4 style="text-align: center;color: red"><?php echo __('آرشیو سوالات شب'); ?></h4>
@@ -26,8 +25,8 @@
     <?php endforeach; ?>
    <?php if(count($nights) == 0):?>
   
-          <div class="well text-center" style="color: blue">سوالات صبح ثبت نشده ، جهت پاسخ "سوالات صبح"  را بفشارید.<br/><br/><br/>
-          <?php echo $this->Html->link('سوالات صبح',array('controller'=>'mornings','action'=>'add'),array('class'=>"btn btn-success",'style'=>"margin-top:10px;")); ?>
+          <div class="well text-center" style="color: blue">سوالات شب ثبت نشده ، جهت پاسخ "سوالات شب"  را بفشارید.<br/><br/><br/>
+          <?php echo $this->Html->link('سوالات شب',array('controller'=>'nights','action'=>'add'),array('class'=>"btn btn-success",'style'=>"margin-top:10px;")); ?>
           </div>
 <?php endif;?>
  </div><!-- end row -->

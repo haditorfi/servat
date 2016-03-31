@@ -1,5 +1,5 @@
-    <div id="wrapper">
 
+ 
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
@@ -97,7 +97,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                        <?php echo $this->Html->link('<span class="fa fa-dashboard fa-fw"></span>&nbsp;&nbsp;ﺩاﺷﺒﻮﺭﺩ'.__(''), array('controller' => 'dashboard', 'action' => 'index'), array('escape' => false)); 
+                        <?php echo $this->Html->link('<span class="fa fa-dashboard fa-fw"></span>&nbsp;&nbsp;ﺩاﺷﺒﻮﺭﺩ'.__(''), array('controller' => 'dashboards', 'action' => 'index'), array('escape' => false)); 
                         ?>
                         </li>
                         <li>
@@ -132,7 +132,7 @@
                              <?php echo $this->Html->link('آرشیو سوالات شب'.__(''), array('controller' => 'nights', 'action' => 'index'), array('escape' => false)); ?>
                         </li>
                             </ul>
-                        <li class="active">
+                        <li>
                             <a href="#"><i class="fa fa-users fa-fw"></i> ﻧﺎﺣﯿﻪ ﮐﺎﺭﺑﺮﯼ<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
@@ -147,9 +147,3 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-
-        <!-- Page Content -->
-        <div id="page-wrapper">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">

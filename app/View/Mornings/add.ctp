@@ -1,10 +1,9 @@
 <?php
  	 $this->assign('title', 'افزودن سوالات صبح');
- 	echo $this->Element('sidebar');
    ?>
-<?php echo $this->Form->create('Morning', array('role' => 'form')); ?>
 
    <?php if(count($mornings) == 0):?>
+<?php echo $this->Form->create('Morning', array('role' => 'form')); ?>
   
 <div class="mornings form">
 <h4 style="text-align: center;color: red"><?php echo __('افزدون سوالات صبح'); ?></h4>

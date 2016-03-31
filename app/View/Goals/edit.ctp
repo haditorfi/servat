@@ -1,10 +1,7 @@
 <?php
- 	 $this->assign('title', 'ویرایش هدف');
- 	echo $this->Element('sidebar');
-   ?>
+ 	 $this->assign('title', 'ویرایش خواسته ها');
+?>
 <?php echo $this->Form->create('Goal', array('role' => 'form')); ?>
-
-
 <div class="goals form">
 	<div class="row">
 			<h4 style="text-align: center;color: red"><?php echo __('ویرایش '.$goal['Goal']['name']); ?>
@@ -12,6 +9,9 @@
 		<div class="col-md-12 well">
 				<div class="form-group">
 					<?php echo $this->Form->input('id', array('class' => 'form-control', 'placeholder' => 'Id'));?>
+				</div>
+				<div class="form-group">
+					<?php echo $this->Form->input('Node.id', array('class' => 'form-control', 'placeholder' => 'Id'));?>
 				</div>
 				<div class="form-group col-md-6">
 					<?php echo $this->Form->input('name', array('class' => 'form-control', 'placeholder' => 'عنوان هدف','label'=>'عنوان'));?>
@@ -31,6 +31,9 @@
 				<div class="form-group">
 					<?php echo $this->Form->input('thank', array('class' => 'form-control', 'placeholder' => 'شکرگذاری','label'=>'شکرگذاری'));?>
 				</div>
+		<div class="form-group" style="margin: 20px">
+			<?php echo $this->Form->input('Node.status', array('class' => 'form-control  col-md-1','label'=>'نمایش در داشبورد'));?>
+		</div>
 		</div><!-- end col md 12 -->
 
 		<div class="form-group col-xs-12">

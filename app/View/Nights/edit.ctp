@@ -1,6 +1,5 @@
 <?php
  	 $this->assign('title', 'ویرایش سوالات شب');
- 	echo $this->Element('sidebar');
    ?>
 <?php echo $this->Form->create('Night', array('role' => 'form')); ?>
 <div class="nights form">

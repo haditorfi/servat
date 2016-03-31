@@ -16,6 +16,9 @@ body{
 	margin-bottom:0px;
 	font-family:IRANSans,tahoma !important;
 }
+input[type="radio"], input[type="checkbox"] {
+    margin: -8px -1px;
+}
 h1,h2,h3,h4,h5,h6{
 	font-family:IRANSans,tahoma !important;
 }

@@ -1,11 +1,8 @@
-<?php
- 	 $this->assign('title', 'لیست خواسته ها');
-?>
-<div class="goalTypes view">
+<div class="dashboards view">
 	<div class="row">
 		<div class="col-md-12">
 			<div class="page-header">
-				<h1><?php echo __('Goal Type'); ?></h1>
+				<h1><?php echo __('Dashboard'); ?></h1>
 			</div>
 		</div>
 	</div>
@@ -25,21 +22,14 @@
 				<tr>
 		<th><?php echo __('Id'); ?></th>
 		<td>
-			<?php echo h($goalType['GoalType']['id']); ?>
+			<?php echo h($dashboard['Dashboard']['id']); ?>
 			&nbsp;
 		</td>
 </tr>
 <tr>
-		<th><?php echo __('Name'); ?></th>
+		<th><?php echo __('Node Id'); ?></th>
 		<td>
-			<?php echo h($goalType['GoalType']['name']); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('Created'); ?></th>
-		<td>
-			<?php echo h($goalType['GoalType']['created']); ?>
+			<?php echo h($dashboard['Dashboard']['node_id']); ?>
 			&nbsp;
 		</td>
 </tr>

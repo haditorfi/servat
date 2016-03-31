@@ -7,7 +7,6 @@ App::uses('ClassRegistry', 'Utility');
  * @property Morning $Morning
  * @property PaginatorComponent $Paginator
  */
-class NightsController extends AppController {}
 class MorningsController extends AppController {
 /**
  * Components
@@ -59,7 +58,6 @@ class MorningsController extends AppController {
 		$this->Morning->recursive = 0; 
 		$this->set('mornings', $this->Paginator->paginate());
 	}
-
 	public function lantern() {
 		$this->Morning->recursive = 0; 
 		$dayDate=date('Y-m-d');

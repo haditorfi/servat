@@ -1,8 +1,7 @@
 <?php
  	 $this->assign('title', 'لیست اهداف');
- 	echo $this->Element('sidebar');
-?>
-<br/>
+   ?>
+   <br/>
 <h4 style="text-align: center;color: red"><?php echo __('لیست اهداف'); ?></h4>
    <div class="row">
    <div class="col-xs-12">

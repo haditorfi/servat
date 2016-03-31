@@ -1,6 +1,5 @@
 <?php
  	 $this->assign('title', 'مشاهده هدف');
- 	echo $this->Element('sidebar');
    ?>
 <div class="row">
 	<div class="col-xs-12">
@@ -45,7 +44,7 @@
 </div>
 <?php foreach ($goal['GoalAction'] as $goalAction): ?>
 	<h4>
-		<?php echo $this->Html->link(__('<span class="fa fa-edit"></span>'), array('controller' => 'goal_actions', 'action' => 'edit', $goalAction['id']), array('data-toggle'=>'tooltip','title'=>'ویرایش اقدام!','escape' => false)); ?>
+		<?php echo $this->Html->link(__('<span class="fa fa-edit"></span>'), array('controller' => 'goal_actions', 'action' => 'edit', $goalAction['id']), array('class'=>'btn btn-circle btn-default','data-toggle'=>'tooltip','title'=>'ویرایش اقدام!','escape' => false)); ?>
 
 		<span>
 			<?php echo $goalAction['action']; ?>
