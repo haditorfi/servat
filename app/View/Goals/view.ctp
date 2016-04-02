@@ -16,7 +16,7 @@
 		</div>	
 	</div>
 </div>
-
+<div class="row">
 <div class="col-xs-12 col-md-8">
 	<h1 style="text-align: center;color: red;margin-top: 51px;"><?php echo $goal['Goal']['name'];?></h1>
 	<h4  style="text-align: center;color: blue; margin-top: 51px;"><?php echo $goal['Node']['title'];?></h4>
@@ -31,6 +31,7 @@
 			<?php endif;?>
 		<?php endforeach;?>
 	</div>
+</div>
 </div>
 <div class="col-xs-12">
 	<h4  style="color: #b94a48; margin-top: 51px;">شرح هدف: </h4>

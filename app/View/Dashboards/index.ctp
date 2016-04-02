@@ -120,7 +120,7 @@
               <div class="col-md-12">
  <h4 class="page-header">خواسته های شاخص</h4>
         <?php foreach ($statusDemands as $demand): ?>
-        <div class="col-xs-12 col-md-3">
+        <div class="col-xs-12 col-md-4">
             <div class="panel panel-primary">
               <div class="panel-body" style="background-color: #3F51B5">
               
@@ -137,7 +137,7 @@
               <hr/>
               <div class="row">
                 <div class="col-xs-12">
-                <?php echo $this->Html->link('مشاهده  '.$demand['Demand']['name'],array('controller'=>'Demands','action'=>'view',$demand['Demand']['id']),array('class'=>"btn btn-block btn-primary")); ?>
+                <?php echo $this->Html->link('مشاهده خواسته',array('controller'=>'Demands','action'=>'view',$demand['Demand']['id']),array('class'=>"btn btn-block btn-primary")); ?>
                 </div>
                
               </div>
@@ -154,7 +154,7 @@
 <div class="row">
  <h4 class="page-header">اهداف شاخص</h4>
  <?php foreach ($statusGoals as $goal): ?>
-        <div class="col-xs-12 col-md-3">
+        <div class="col-xs-12 col-md-4">
             <div class="panel panel-primary">
               <div class="panel-body" style="background-color: #5CB85C">
               
@@ -171,7 +171,7 @@
               <hr/>
               <div class="row">
                 <div class="col-xs-12">
-                <?php echo $this->Html->link('مشاهده  '.$goal['Goal']['name'],array('controller'=>'goals','action'=>'view',$goal['Goal']['id']),array('class'=>"btn btn-block btn-success")); ?>
+                <?php echo $this->Html->link('مشاهده هدف',array('controller'=>'goals','action'=>'view',$goal['Goal']['id']),array('class'=>"btn btn-block btn-success")); ?>
                 </div>
                
               </div>
