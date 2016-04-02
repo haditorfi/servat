@@ -30,7 +30,6 @@ class UsersController extends AppController {
 	}
 
 	public function logout() {
-		$this->Model->false;
 	    return $this->redirect($this->Auth->logout());
 	}
 

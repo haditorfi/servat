@@ -11,10 +11,10 @@
                 </button>
                 <?php
                 if ($profile !=" ") {
-                 echo $this->Html->link("کاربر: $profile".__(''), array('controller' => '', 'action' => 'index'), array('escape' => false,'class'=>'navbar-brand')); 
+                 echo $this->Html->link("ﮐﺎﺭﺑﺮ: $profile".__(''), array('controller' => '', 'action' => 'index'), array('escape' => false,'class'=>'navbar-brand')); 
                 }else{
-                   echo $this->Html->link("ورود".__(''), array('controller' => 'users', 'action' => 'login'), array('escape' => false,'class'=>'btn btn-info','style'=>'margin:10px')); 
-                   echo $this->Html->link("ثبت نام".__(''), array('controller' => 'users', 'action' => 'register'), array('escape' => false,'class'=>'btn btn-success','style'=>'margin:10px')); 
+                   echo $this->Html->link("ﻭﺭﻭﺩ".__(''), array('controller' => 'users', 'action' => 'login'), array('escape' => false,'class'=>'btn btn-info','style'=>'margin:10px')); 
+                   echo $this->Html->link("ﺛﺒﺖ ﻧﺎﻡ".__(''), array('controller' => 'users', 'action' => 'register'), array('escape' => false,'class'=>'btn btn-success','style'=>'margin:10px')); 
                 }
                 ?>
             </div>
@@ -23,23 +23,23 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="page-scroll">
-                        <a href="#page-top">خانه</a>
+                        <a href="#page-top">ﺧﺎﻧﻪ</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#portfolio">بخش ها</a>
+                        <a href="#portfolio">ﺑﺨﺶ ﻫﺎ</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#about">توضیحات</a>
+                        <a href="#about">ﺗﻮﺿﯿﺤﺎﺕ</a>
                     </li>
                     <li class="page-scroll">
                     <?php
-                       echo $this->Html->link("داشبورد".__(''), array('controller' => 'dashboards', 'action' => 'index'), array('escape' => false));  
+                       echo $this->Html->link("ﺩاﺷﺒﻮﺭﺩ".__(''), array('controller' => 'dashboards', 'action' => 'index'), array('escape' => false));  
                        ?>
                     </li>
                 </ul>
 <?php
             if ($profile !=" ") {
-                        echo $this->Html->link("خروج".__(''), array('controller' => 'users', 'action' => 'logout'), array('escape' => false,'class'=>'btn btn-danger','style'=>'margin:10px;float:left'));  
+                        echo $this->Html->link("ﺧﺮﻭﺝ".__(''), array('controller' => 'users', 'action' => 'logout'), array('escape' => false,'class'=>'btn btn-danger','style'=>'margin:10px;float:left'));  
                         
                                      }
 ?>
@@ -54,9 +54,9 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-text">
-                        <span class="name">برنامه ثروتمندان</span>
+                        <h2 class="name">ﺑﺮﻧﺎﻣﻪ ﺛﺮﻭﺗﻤﻨﺪاﻥ</h2>
                         <hr class="star-light">
-                        <span class="skills">برنامه ای برای افرادی که می خواهند ثروتمند شوند</span>
+                        <span class="skills"> ﺑﺮاﯼ اﻓﺮاﺩﯼ ﮐﻪ ﻣﯽ ﺧﻮاﻫﻨﺪ ﺛﺮﻭﺗﻤﻨﺪ ﺷﻮﻧﺪ و به اهداف و خواسته های خود برسند.</span>
                     </div>
                 </div>
             </div>
@@ -74,7 +74,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/demand.png" class="img-responsive" alt="لیست اهداف">
+                        <img src="img/portfolio/demand.png" class="img-responsive" alt="ﻟﯿﺴﺖ اﻫﺪاﻑ">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -135,68 +135,68 @@
     <section class="success" id="about">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h3>توضیحات استفاده از برنامه</h3>
+                <div class="col-lg-12 text-center"><br/>
+                    <h3>ﺗﻮﺿﯿﺤﺎﺕ اﺳﺘﻔﺎﺩﻩ اﺯ ﺑﺮﻧﺎﻣﻪ</h3>
                     <hr class="star-light">
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-lg-offset-2">
-                    <p>Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
+                     <div class="col-lg-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            ﺗﻮﺿﯿﺢ ﺑﺨﺶ ﻫﺎﯼ ﻣﺨﺘﻠﻒ ﺑﺮﻧﺎﻣﻪ
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-pills">
+                                <li class="active"><a href="#home-pills" data-toggle="tab">ﺧﻮاﺳﺘﻪ ﻫﺎ</a>
+                                </li>
+                                <li><a href="#profile-pills" data-toggle="tab">اﻫﺪاﻑ</a>
+                                </li>
+                                <li><a href="#messages-pills" data-toggle="tab">ﺳﻮاﻻﺕ ﺻﺒﺢ</a>
+                                </li>
+                                <li><a href="#settings-pills" data-toggle="tab">ﺳﻮاﻻﺕ ﺷﺐ</a>
+                                </li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content" style="color: blue">
+                                <div class="tab-pane fade in active" id="home-pills"><br/>
+                                    <h4>ﻧﮕﺎﺭﺵ ﺧﻮاﺳﺘﻪ ﻫﺎ</h4><br/>
+                                    <p>ﺑﺎ ﻧﻮﺷﺘﻦ ﺧﻮاﺳﺘﻪ ﻫﺎﯼ ﺧﻮﺩ ﺑﻪ ﻫﻤﻪ ﯼ ﺁﻧﻬﺎ ﺧﻮاﻫﯿﺪ ﺭﺳﯿﺪ . ﮐﺎﻓﯽ اﺳﺖ ﻫﺮ ﺧﻮاﺳﺘﻪ اﯼ ﮐﻪ ﺩﺭ ﺫﻫﻦ ﺩاﺭﯾﺪ ﺩﺭ ﺑﺮﻧﺎﻣﻪ ﯾﺎﺩﺩاﺷﺖ ﻧﻤﺎﯾﯿﺪ ﻭ ﻫﺮ ﺭﻭﺯ ﺑﻪ ﺁﻥ ﻧﮕﺎﻫﯽ ﺑﯿﻨﺪاﺯﯾﺪ ﺑﺪﯾﻦ ﺻﻮﺭﺕ ﺷﻤﺎ ﺑﺎ ﺗﮑﺮاﺭ ﻭ ﻣﺸﺎﻫﺪﻩ آن ﺑﻪ ﺧﻮاﺳﺘﻪ ﺧﻮﺩ ﻗﺪﺭﺕ ﻣﯽ ﺑﺨﺸﯿﺪ ﻭ ﺩﺭ ﻧﻬﺎﯾﺖ ﺑﻪ ﺁﻥ ﺧﻮاﻫﯿﺪ ﺭﺳﯿﺪ. ﯾﮑﯽ اﺯ ﺭاﻫﻬﺎﯼ ﭘﯿﺪا ﮐﺮﺩﻥ ﺧﻮاﺳﺘﻪ اﯾﻦ اﺳﺖ ﮐﻪ ﺑﻪ ﺧﻮﺩ ﺑﮕﻮﯾﯿﺪ ﻣﻦ ﭼﻪ ﭼﯿﺰﯼ ﻧﻤﯽ ﺧﻮاﻫﻢ ﺳﭙﺲ ﻋﮑﺲ ﺁﻥ ﺭا ﺩﺭ ﺑﺮﻧﺎﻣﻪ ﺑﻨﻮﯾﺴﯿﺪ اﯾﻦ ﺭاﻩ ﺣﻞ ﺧﻮﺑﯽ ﺑﺮاﯼ ﭘﯿﺪا ﮐﺮﺩﻥ ﺧﻮاﺳﺘﻪ ﻫﺎﯼ ﺧﻮﺩ اﺳﺖ.</p>
+                                </div>
+                                <div class="tab-pane fade" id="profile-pills"><br/>
+                                    <h4>ﻧﮕﺎﺭﺵ اﻫﺪاﻑ</h4><br/>
+                                    <p>اهداف خود را در برنامه بنویسید و معین کنید چه زمانی می خواهید به هدف خود برسید ، به یاد داشته باشید هر روز باید یک کار برای رسیدن و نزدیک شدن به هدف خود انجام دهید حتی اگر کار کوچکی باشد. با این کار شما به تمامی اهداف خود می رسید.طبق دستور العمل برنامه اهداف خود را معین نمایید.</p>
+                                </div>
+                                <div class="tab-pane fade" id="messages-pills"><br/>
+                                    <h4>ﻧﮕﺎﺭﺵ ﺳﻮاﻻﺕ ﺻﺒﺢ</h4><br/>
+                                    <p>هر روز صبح دقیقا پس از بیدار شدن از خواب باید به این سوالات پاسخ بدهید ، یادتان باشد اولین کاری که پس از چشم باز کردن باید انجام دهید پاسخ به سوالات صبح است ، با این کار ذهن شما برای آغاز یک روز خوب تنظیم می گردد. پس از چند مدت آثار شگفت انگیز آن را مشاهده می نمایید.</p>
+                                </div>
+                                <div class="tab-pane fade" id="settings-pills"><br/>
+                                    <h4>ﻧﮕﺎﺭﺵ ﺳﻮاﻻﺕ ﺷﺐ</h4><br/>
+                                    <p>آخرین کاری که باید انجام دهید پاسخ به سوالات شب است ، دقیقا زمانی که می خواهید به رختخواب بروید، با پاسخ به این سوالات ذهن خود را برنامه ریزی می نمایید که برای فردایی بهتر آماده باشد.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
                 </div>
-                <div class="col-lg-4">
-                    <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
-                </div>
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <a href="#" class="btn btn-lg btn-outline">
-                        <i class="fa fa-download"></i> Download Theme
-                    </a>
-                </div>
+                <!-- /.col-lg-12 -->
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="text-center">
-        <div class="footer-above">
-            <div class="container">
-                <div class="row">
-                    <div class="footer-col col-md-4">
-                        <h3>Location</h3>
-                        <p>3481 Melrose Place<br>Beverly Hills, CA 90210</p>
-                    </div>
-                    <div class="footer-col col-md-4">
-                        <h3>Around the Web</h3>
-                        <ul class="list-inline">
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer-col col-md-4">
-                        <h3>About Freelancer</h3>
-                        <p>Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+       
         <div class="footer-below">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        Copyright &copy; Your Website 2014
+                       ﻃﺮاﺣﯽ ﻭ ﺑﺮﻧﺎﻣﻪ ﻧﻮﯾﺴﯽ : <a href="http://haditorfi.ir" target="_blank" >ﻫﺎﺩﯼ ﻃﺮﻓﯽ</a> 
                     </div>
                 </div>
             </div>
@@ -209,230 +209,3 @@
             <i class="fa fa-chevron-up"></i>
         </a>
     </div>
-
-    <!-- Portfolio Modals -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/cabin.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/cake.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/circus.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/game.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/safe.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/submarine.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-   
