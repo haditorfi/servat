@@ -24,21 +24,21 @@
                                     <span class="pull-left text-muted">
                                         <em>اﻣﺮﻭﺯ</em>
                                     </span>
-                                    <strong>ﭘﯿﺎﻡ ﺟﺪﯾﺪ</strong>
+                                    <strong>پاسخ به سوالات صبح</strong>
                                 </div>
-                                <div>ﭘﺲ اﺯ ﭘﺎﯾﺎﻥ ﮐﺎﺭ اﺯ ﺑﺮﻧﺎﻣﻪ ﺧﺎﺭﺝ ﺷﻮﯾﺪ...</div>
+                                <div>به سوالات صبح حتما پاسخ بدهید...</div>
                             </a>
                         </li>
                         <li class="divider"></li>
                         <li>
                             <a href="#">
                                 <div>
-                                    <strong>ﮐﺎﺭﺗﺨﻮاﻥ</strong>
+                                    <strong>پاسخ بخ سوالات شب</strong>
                                     <span class="pull-left text-muted">
                                         <em>اﻣﺮﻭﺯ</em>
                                     </span>
                                 </div>
-                                <div>ﻟﻄﻔﺎ ﭘﺲ اﺯ ﻭﺭﻭﺩ ﺑﻪ ﻣﺤﻞ ﮐﺎﺭ ، ﮐﺎﺭﺗﺨﻮاﻥ ﺭا ﺭﻭﺷﻦ ﻧﻤﺎﯾﯿﺪ...</div>
+                                <div>به سوالات شب حتما پاسخ دهید...</div>
                             </a>
                         </li>
                         <li class="divider"></li>
@@ -84,17 +84,8 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
-                            <div class="input-group custom-search-form">
-                                <?php
-                                 echo $this->Form->input('', array('class'=>'form-control','placeholder'=>'ﺟﺴﺘﺠﻮ','id'=>'hadi'));
-                                 ?>
-                                <span class="input-group-btn">
-                                <?php echo $this->Html->link('<span class="fa fa-search"></span>', array('controller' => 'lanterns', 'action' => 'search'), array('escape' => false,'class'=>'btn btn-search')); 
-                                ?>
-                            </span>
-                            </div>
-                            <!-- /input-group -->
+                        <li>
+                            <!-- search -->
                         </li>
                         <li>
                         <?php echo $this->Html->link('<span class="fa fa-dashboard fa-fw"></span>&nbsp;&nbsp;ﺩاﺷﺒﻮﺭﺩ'.__(''), array('controller' => 'dashboards', 'action' => 'index'), array('escape' => false)); 
@@ -132,7 +123,7 @@
                              <?php echo $this->Html->link('آرشیو سوالات شب'.__(''), array('controller' => 'nights', 'action' => 'index'), array('escape' => false)); ?>
                         </li>
                             </ul>
-                        <li>
+                        <li class="active">
                             <a href="#"><i class="fa fa-users fa-fw"></i> ﻧﺎﺣﯿﻪ ﮐﺎﺭﺑﺮﯼ<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
