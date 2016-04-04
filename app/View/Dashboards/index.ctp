@@ -2,7 +2,26 @@
    $this->assign('title', 'داشبورد برنامه ثروتمندان');
    ?>
    <br/>
-            <div class="row">
+            <div class="row"> 
+            <?php if(count($dashMornings) != 0):?>
+             <div class="col-lg-12">
+                <div class="panel panel-danger">
+                   <div class="panel-heading">
+                       <h4 class="panel-title" style="text-align: center;color: red"><?php echo __('کارهایی که امروز باید انجام داد'); ?></h4>
+                  </div>
+                  <div class="panel-body" style="color: #b94a48;background-color: rgba(251, 238, 213, 0.15);">
+        
+                  <div class="text-center" style="color: blue">
+                      <?php 
+                         foreach ($dashMornings as $morning):
+                            echo h($morning['Morning']['answer6']);
+                        endforeach
+                       ?>
+                 </div>
+                  </div> 
+                   </div> 
+                      </div> 
+                <?php endif ?>
                 <div class="col-lg-3 col-md-6">
                     <div class="panel panel-primary">
                         <div class="panel-heading">

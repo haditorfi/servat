@@ -14,22 +14,22 @@
 					<?php echo $this->Form->input('id', array('class' => 'form-control', 'placeholder' => 'Id'));?>
 				</div>
 				<div class="form-group col-md-6">
-					<?php echo $this->Form->input('answer1', array('class' => 'form-control','label'=>$ans1, 'placeholder' => 'سوال 1'));?>
+					<?php echo $this->Form->input('answer1', array('class' => 'form-control','label'=>$ans1, 'placeholder' => 'به خاطر چه چیزی'));?>
 				</div>
 				<div class="form-group col-md-6">
-					<?php echo $this->Form->input('answer2', array('class' => 'form-control','label'=>$ans2, 'placeholder' => 'سوال 2'));?>
+					<?php echo $this->Form->input('answer2', array('class' => 'form-control','label'=>$ans2, 'placeholder' => 'به خاطر چه کسی'));?>
 				</div>
 				<div class="form-group col-md-6">
-					<?php echo $this->Form->input('answer3', array('class' => 'form-control','label'=>$ans3, 'placeholder' => 'سوال 3'));?>
+					<?php echo $this->Form->input('answer3', array('class' => 'form-control','label'=>$ans3, 'placeholder' => 'چه اتفاقی '));?>
 				</div>
 				<div class="form-group col-md-6">
-					<?php echo $this->Form->input('answer4', array('class' => 'form-control','label'=>$ans4, 'placeholder' => 'سوال 4'));?>
+					<?php echo $this->Form->input('answer4', array('class' => 'form-control','label'=>$ans4, 'placeholder' => 'چه وظایفی'));?>
 				</div>
 				<div class="form-group">
-					<?php echo $this->Form->input('answer5', array('class' => 'form-control','label'=>$ans5, 'placeholder' => 'سوال 5'));?>
+					<?php echo $this->Form->input('answer5', array('class' => 'form-control','label'=>$ans5, 'placeholder' => 'هدف اصلی امسال '));?>
 				</div>
 				<div class="form-group">
-					<?php echo $this->Form->input('answer6', array('class' => 'form-control','label'=>$ans6, 'placeholder' => 'سوال 6'));?>
+					<?php echo $this->Form->input('answer6', array('class' => 'form-control','label'=>$ans6, 'placeholder' => 'لطفا کارها را شماره گذاری نمایید.'));?>
 				</div>
 		</div><!-- end col md 12 -->
 		<div class="form-group">
