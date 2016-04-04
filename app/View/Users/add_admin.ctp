@@ -31,9 +31,6 @@
 					<?php echo $this->Form->input('رمز عبور', array('class' => 'form-control', 'placeholder' => 'رمز عبور'));?>
 				</div>
 				<div class="form-group">
-					<?php echo $this->Form->input('id', array('class' => 'form-control', 'placeholder' => 'id'));?>
-				</div>
-				<div class="form-group">
 					<?php echo $this->Form->input('نام', array('class' => 'form-control', 'placeholder' => 'نام'));?>
 				</div>
 				<div class="form-group">

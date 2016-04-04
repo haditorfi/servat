@@ -20,8 +20,6 @@
 			<?php echo $this->Form->submit(__('ذخیره'), array('class' => 'btn btn-success pull-left', 'style'=>'margin-right:15px')); ?>
 				
 			<?php echo $this->Html->link(__('انصراف'),array('controller'=>'goals','action'=>'index'), array('class' => 'btn btn-warning pull-left')); ?>
-
-			<?php echo $this->Html->link(__('لیست اقدامات'),array('action'=>'index'), array('class' => 'btn btn-info ')); ?>
 		</div>	
 	</div><!-- end row -->
 </div>

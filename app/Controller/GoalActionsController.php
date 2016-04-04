@@ -14,7 +14,6 @@ class GoalActionsController extends AppController {
  * @var array
  */
 	public $components = array('Paginator');
-
 /**
  * index method
  *
@@ -23,6 +22,7 @@ class GoalActionsController extends AppController {
 	public function index() {
 		$this->GoalAction->recursive = 0;
 		$this->set('goalActions', $this->Paginator->paginate());
+		return $this->redirect($this->referer());
 	}
 
 /**

@@ -63,7 +63,7 @@ class UsersController extends AppController {
  *
  * @return void
  */
-	public function addAdmin() {
+	public function add_admin() {
 		if ($this->request->is('post')) {
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {

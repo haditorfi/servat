@@ -1,14 +1,13 @@
 <?php
  	 $this->assign('title', 'لیست کاربران');
- 	echo $this->Element('sidebar');
    ?>
 <div class="users index">
 
 	<div class="row">
 		<div class="col-md-12">
 			<div class="page-header">
-				<div class='pull-left'><?php echo $this->Html->link('<span class="fa fa-plus"></span>&nbsp;&nbsp;New'.__(''), array('controller' => 'users', 'action' => 'add'), array('escape' => false,'class'=>'btn btn-raised btn-primary')); ?> </div>
-				<h1><?php echo __('Users'); ?></h1>
+				<div class='pull-left'><?php echo $this->Html->link('<span class="fa fa-plus"></span>&nbsp;&nbsp;افزودن کاربر'.__(''), array('controller' => 'users', 'action' => 'add_admin'), array('escape' => false,'class'=>'btn btn-raised btn-primary')); ?> </div>
+				<h1><?php echo __('لیست کاربران'); ?></h1>
 			</div>
 		</div><!-- end col md 12 -->
 	</div><!-- end row -->
@@ -21,11 +20,11 @@
 			<table cellpadding="0" cellspacing="0" class="table table-striped table-hover">
 				<thead>
 					<tr>
-						<th nowrap><?php echo $this->Paginator->sort('id'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('username'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('name'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('family'); ?></th>
-						<th nowrap><?php echo $this->Paginator->sort('role_id'); ?></th>
+					<th nowrap><?php echo $this->Paginator->sort('id'); ?></th>
+						<th nowrap><?php echo $this->Paginator->sort('نام کاربری'); ?></th>
+						<th nowrap><?php echo $this->Paginator->sort('نام'); ?></th>
+						<th nowrap><?php echo $this->Paginator->sort('نام خانوادگی'); ?></th>
+						<th nowrap><?php echo $this->Paginator->sort('نقش'); ?></th>
 						<th class="actions"></th>
 					</tr>
 				</thead>
@@ -40,10 +39,11 @@
 			<?php echo $this->Html->link($user['Role']['title'], array('controller' => 'roles', 'action' => 'view', $user['Role']['id'])); ?>
 		</td>
 						
-						<td class="actions">
-							<?php echo $this->Html->link('<span class="fa fa-eye fa-2"></span>', array('action' => 'view', $user['User']['id']), array('escape' => false)); ?>
-							<?php echo $this->Html->link('<span class="fa fa-pencil-square-o fa-2"></span>', array('action' => 'edit', $user['User']['id']), array('escape' => false)); ?>
-							<?php echo $this->Form->postLink('<span class="fa fa-trash-o fa-2"></span>', array('action' => 'delete', $user['User']['id']), array('escape' => false), __('Are you sure you want to delete # %s?', $user['User']['id'])); ?>
+			<td class="actions">
+			<?php echo $this->Html->link('<span class="fa fa-eye fa-2"></span>', array('action' => 'view', $user['User']['id']), array('escape' => false)); 
+			?>
+			<?php echo $this->Html->link('<span class="fa fa-pencil-square-o fa-2"></span>', array('action' => 'edit', $user['User']['id']), array('escape' => false)); ?>
+			<?php echo $this->Form->postLink('<span class="fa fa-trash-o fa-2"></span>', array('action' => 'delete', $user['User']['id']), array('escape' => false), __('Are you sure you want to delete # %s?', $user['User']['id'])); ?>
 						</td>
 					</tr>
 				<?php endforeach; ?>

@@ -15,7 +15,7 @@
 		<div class="form-group col-xs-12">
 			<?php echo $this->Form->submit(__('ذخیره'), array('class' => 'btn btn-success pull-left', 'style'=>'margin-right:15px')); ?>
 				
-			<?php echo $this->Html->link(__('انصراف'),array('action'=>'index'), array('class' => 'btn btn-danger pull-left')); ?>
+			<?php echo $this->Html->link(__('انصراف'),array('controller'=>'goals','action'=>'index'), array('class' => 'btn btn-danger pull-left')); ?>
 		</div>	
 	</div><!-- end row -->
 </div>
