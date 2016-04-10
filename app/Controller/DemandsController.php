@@ -94,16 +94,6 @@ class DemandsController extends AppController {
 		$this->set(compact('nodes'));
 	}
 
-    public function delete_attachment($id = null) {
-        $attachModel = ClassRegistry::init('FileManager.Attachment');
-        $attach = $attachModel->find('first',array('conditions'=>array('Attachment.id'=>$id)));
-        $this->Demand->deleteAllFiles($attach);
-        $attachModel->id = $attach['Attachment']['id'];
-        $attachModel->delete();
-             $this->Flash->error(__('تصویر مورد نظر با موفقیت حذف شد.'), 'default', array('class' => 'alert alert-danger'));
-        return $this->redirect($this->referer());
-
-    }
 /**
  * edit method
  *
@@ -134,6 +124,16 @@ class DemandsController extends AppController {
 		$this->set('demand', $this->Demand->find('first', $options));
 	}
 
+    public function delete_attachment($id = null) {
+        $attachModel = ClassRegistry::init('FileManager.Attachment');
+        $attach = $attachModel->find('first',array('conditions'=>array('Attachment.id'=>$id)));
+        $this->Demand->deleteAllFiles($attach);
+        $attachModel->id = $attach['Attachment']['id'];
+        $attachModel->delete();
+             $this->Flash->error(__('تصویر مورد نظر با موفقیت حذف شد.'), 'default', array('class' => 'alert alert-danger'));
+        return $this->redirect($this->referer());
+
+    }
 /**
  * delete method
  *
@@ -141,13 +141,16 @@ class DemandsController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+	public function delete($id = null,$nodeId = null) {
 		$this->Demand->id = $id;
 		if (!$this->Demand->exists()) {
 			throw new NotFoundException(__('Invalid demand'));
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Demand->delete()) {
+       		        $nodeModel = ClassRegistry::init('Node'); 
+		        $nodeModel->id = $nodeId;
+		        $nodeModel->delete();
 			$this->Flash(__('The demand has been deleted.'), 'default', array('class' => 'alert alert-success'));
 		} else {
 			$this->Flash(__('The demand could not be deleted. Please, try again.'), 'default', array('class' => 'alert alert-danger'));

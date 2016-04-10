@@ -46,16 +46,7 @@ class GoalsController extends AppController {
 		$this->set('id',$id);
 	}
 
-    public function delete_attachment($id = null) {
-        $attachModel = ClassRegistry::init('FileManager.Attachment');
-        $attach = $attachModel->find('first',array('conditions'=>array('Attachment.id'=>$id)));
-        $this->Goal->deleteAllFiles($attach);
-        $attachModel->id = $attach['Attachment']['id'];
-        $attachModel->delete();
-             $this->Flash->error(__('تصویر مورد نظر با موفقیت حذف شد.'), 'default', array('class' => 'alert alert-danger'));
-        return $this->redirect($this->referer());
 
-    }
 /**
  * index method
  *
@@ -134,7 +125,16 @@ class GoalsController extends AppController {
 		$options = array('conditions' => array('Goal.' . $this->Goal->primaryKey => $id));
 		$this->set('goal', $this->Goal->find('first', $options));
 	}
+    public function delete_attachment($id = null) {
+        $attachModel = ClassRegistry::init('FileManager.Attachment');
+        $attach = $attachModel->find('first',array('conditions'=>array('Attachment.id'=>$id)));
+        $this->Goal->deleteAllFiles($attach);
+        $attachModel->id = $attach['Attachment']['id'];
+        $attachModel->delete();
+             $this->Flash->error(__('تصویر مورد نظر با موفقیت حذف شد.'), 'default', array('class' => 'alert alert-danger'));
+        return $this->redirect($this->referer());
 
+    }
 /**
  * delete method
  *
@@ -142,13 +142,21 @@ class GoalsController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+public function delete($id = null,$nodeId = null) {
 		$this->Goal->id = $id;
 		if (!$this->Goal->exists()) {
 			throw new NotFoundException(__('Invalid goal'));
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Goal->delete()) {
+       		        $nodeModel = ClassRegistry::init('Node');
+		        $nodeModel->id = $nodeId;
+		        $nodeModel->delete();
+
+       		        $goalActionModel = ClassRegistry::init('GoalAction');  
+       		        $act = $goalActionModel->find('list',array('conditions'=>array('GoalAction.goal_id'=>$id)));
+		        $goalActionModel->id = $act;
+		        $goalActionModel->delete();
 			$this->Flash(__('The goal has been deleted.'), 'default', array('class' => 'alert alert-success'));
 		} else {
 			$this->Flash(__('The goal could not be deleted. Please, try again.'), 'default', array('class' => 'alert alert-danger'));

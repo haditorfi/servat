@@ -36,7 +36,9 @@ class GoalActionsController extends AppController {
 		if (!$this->GoalAction->exists($id)) {
 			throw new NotFoundException(__('Invalid goal action'));
 		}
-		return $this->redirect(array('controller' => 'goals','action' => 'view/'.$id));
+
+		$options = array('conditions' => array('GoalAction.' . $this->GoalAction->primaryKey => $id));
+		$this->set('goalAction', $this->GoalAction->find('first', $options));
 	}
 
 /**
@@ -102,6 +104,6 @@ class GoalActionsController extends AppController {
 		} else {
 			$this->Flash(__('The goal action could not be deleted. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
 		}
-		return $this->redirect(array('action' => 'index'));
+		return $this->redirect(array('controller' => 'goals','action' => 'index'));
 	}
 }

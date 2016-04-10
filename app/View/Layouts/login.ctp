@@ -10,6 +10,7 @@
 
         echo $this->Html->css(array(
             'bootstrap.min',
+            'font-awesome.min',
             'login'
             ));
         echo $this->Html->script(array(

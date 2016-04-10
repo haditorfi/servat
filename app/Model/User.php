@@ -122,32 +122,6 @@ public function beforeSave($options = array()) {
  * @var array
  */
 	public $hasMany = array(
-		'Demand' => array(
-			'className' => 'Demand',
-			'foreignKey' => 'user_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
-		'Lantern' => array(
-			'className' => 'Lantern',
-			'foreignKey' => 'user_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
 		'Node' => array(
 			'className' => 'Node',
 			'foreignKey' => 'user_id',

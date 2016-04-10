@@ -36,7 +36,7 @@
       <?php echo h($night['Night']['answer7']); ?>
       </div> 
     <div class="form-group">
-      <?php echo $this->Form->postLink(__('<span class="fa fa-trash"></span>'),array('action'=>'delete',$night['Night']['id']), array('escape'=> false,'class' => 'btn btn-danger btn-circle pull-left', 'style'=>'margin:5px','data-toggle'=>'tooltip','title'=>'حذف!'), __('آیا از حذف سوالات شب در تاریخ ( %s ) مطمئن هستید؟', $this->jDateTime->date("d / m / Y", $time , true,true,"Asia/Tehran"))); ?>
+      <?php echo $this->Form->postLink(__('<span class="fa fa-trash"></span>'),array('action'=>'delete',$night['Night']['id'],$night['Node']['id']), array('escape'=> false,'class' => 'btn btn-danger btn-circle pull-left', 'style'=>'margin:5px','data-toggle'=>'tooltip','title'=>'حذف!'), __('آیا از حذف سوالات شب در تاریخ ( %s ) مطمئن هستید؟', $this->jDateTime->date("d / m / Y", $time , true,true,"Asia/Tehran"))); ?>
 
       <?php echo $this->Html->link(__('<span class="fa fa-edit"></span>'),array('controller'=>'nights','action'=>'edit',$night['Night']['id']), array('escape'=> false,'class' => 'btn btn-warning btn-circle pull-left', 'style'=>'margin:5px','data-toggle'=>'tooltip','title'=>'ویرایش!')); ?>
 

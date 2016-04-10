@@ -10,7 +10,7 @@
 	
 			<?php echo $this->Html->link(__('<span class="fa fa-photo"></span>  مدیریت تصاویر'),array('action'=>'attach',$goal['Goal']['id']),array('escape'=> false,'class' => 'btn btn-info')); ?>
 	
-			<?php echo $this->Form->postLink('<span class="fa fa-trash"></span> حذف هدف', array('action' => 'delete', $goal['Goal']['id']), array('escape' => false,'class' => 'btn btn-danger'), __('آیا از حذف هدف # %s # مطمئن هستید?', $goal['Goal']['name']));?>
+			<?php echo $this->Form->postLink('<span class="fa fa-trash"></span> حذف هدف', array('action' => 'delete', $goal['Goal']['id'], $goal['Node']['id']), array('escape' => false,'class' => 'btn btn-danger'), __('آیا از حذف هدف # %s # مطمئن هستید?', $goal['Goal']['name']));?>
 	
 			<?php echo $this->Html->link(__('<span class="fa fa-plus"></span>  افزودن اقدام'),array('controller'=>'goal_actions','action'=>'add',$goal['Goal']['id']),array('escape'=> false,'class' => 'btn btn-success pull-left')); ?>
 		</div>	
@@ -40,12 +40,11 @@
 	<h4  style="color: #b94a48; margin-top: 51px;">شکرگزاری: </h4>
 		<br/>
 			<?php echo $goal['Goal']['thank'];?>
-	<h4 style="color: #b94a48; margin-top: 51px;">کارهای که باید انجام داد: </h4>
-		<?php echo $this->Html->link(__('لیست اقدامات'),  array('controller' =>'goal_actions' ,'action'=>'index')); ?>
+	<h4 style="color: #b94a48; margin-top: 51px;">اقدامات انجام شده: </h4>
 </div>
 <?php foreach ($goal['GoalAction'] as $goalAction): ?>
-	<h4>
-		<?php echo $this->Html->link(__('<span class="fa fa-edit"></span>'), array('controller' => 'goal_actions', 'action' => 'edit', $goalAction['id']), array('class'=>'btn btn-circle btn-default','data-toggle'=>'tooltip','title'=>'ویرایش اقدام!','escape' => false)); ?>
+	<h4 style="color: blue">
+		<?php echo $this->Html->link(__('<span class="fa fa-eye"></span>'), array('controller' => 'goal_actions', 'action' => 'view', $goalAction['id']), array('class'=>'btn btn-circle btn-default','data-toggle'=>'tooltip','title'=>'مشاهده اقدام!','escape' => false)); ?>
 
 		<span>
 			<?php echo $goalAction['action']; ?>

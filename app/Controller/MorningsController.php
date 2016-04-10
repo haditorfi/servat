@@ -143,13 +143,16 @@ class MorningsController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+	public function delete($id = null, $nodeId = null) {
 		$this->Morning->id = $id;
 		if (!$this->Morning->exists()) {
 			throw new NotFoundException(__('Invalid morning'));
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Morning->delete()) {
+       		        $nodeModel = ClassRegistry::init('Node'); 
+		        $nodeModel->id = $nodeId;
+		        $nodeModel->delete();
 			$this->Flash(__('The morning has been deleted.'), 'default', array('class' => 'alert alert-success'));
 		} else {
 			$this->Flash(__('The morning could not be deleted. Please, try again.'), 'default', array('class' => 'alert alert-danger'));

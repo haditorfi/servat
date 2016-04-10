@@ -1,65 +1,30 @@
 <?php
  	 $this->assign('title', 'لیست خواسته ها');
-<div class="goalActions view">
-	<div class="row">
-		<div class="col-md-12">
-			<div class="page-header">
-				<h1><?php echo __('Goal Action'); ?></h1>
+?>
+<br/>
+   <div class="col-xs-12">
+   <div class="row">
+		<div class="col-xs-12 ">
+			<div class="panel panel-success">
+			  <div class="panel-heading">
+			    <div class="text-center">
+			    	<h4 style="color: blue">هدف: <?php echo h($goalAction['Goal']['name']); ?></h4>
+			    </div>
+			  </div>
+			  <div class="panel-body">
+			  	<div class="col-xs-12">
+			  	<div>اقدام: <h3 style="color: red"><?php echo h($goalAction['GoalAction']['action']); ?></h3></div>
+			  	</div>
+			  </div>
+			  <div class="panel-footer">
+			  	<?php echo $this->Html->link('بازگشت به هدف',array('controller' => 'goals', 'action' => 'view', $goalAction['Goal']['id']),array('class'=>"btn btn-primary",'style'=>"margin-top:10px;")); ?>
+			  	<div style="float: left;">
+			  	<?php echo $this->Html->link('ویرایش اقدام',array('controller'=>'goal_actions','action'=>'edit',$goalAction['GoalAction']['id']),array('class'=>"btn btn-success",'style'=>"margin-top:10px;")); ?>
+			  	<?php echo $this->Form->postLink('حذف اقدام',array('controller'=>'goal_actions','action'=>'delete',$goalAction['GoalAction']['id']),array('class'=>"btn btn-danger",'style'=>"margin-top:10px;"), __('آیا از حذف # %s # مطمئن هستید؟', $goalAction['GoalAction']['action'])); ?>
+			  	</div>
+			  </div>
+			  </div>
 			</div>
 		</div>
-	</div>
-
-	<div class="row">
-
-		<div class="col-md-3">
-			<div class="well">
-				<?php echo $this->Html->link(__('Back To List'),array('action'=>'index'), array('class' => 'btn btn-block btn-danger')); ?>
-			
-			</div>
-		</div><!-- end col md 3 -->
-
-		<div class="col-md-9">			
-			<table cellpadding="0" cellspacing="0" class="table table-striped">
-				<tbody>
-				<tr>
-		<th><?php echo __('Id'); ?></th>
-		<td>
-			<?php echo h($goalAction['GoalAction']['id']); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('Goal'); ?></th>
-		<td>
-			<?php echo $this->Html->link($goalAction['Goal']['title'], array('controller' => 'goals', 'action' => 'view', $goalAction['Goal']['id'])); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('Action'); ?></th>
-		<td>
-			<?php echo h($goalAction['GoalAction']['action']); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('Created'); ?></th>
-		<td>
-			<?php echo h($goalAction['GoalAction']['created']); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('Updated'); ?></th>
-		<td>
-			<?php echo h($goalAction['GoalAction']['updated']); ?>
-			&nbsp;
-		</td>
-</tr>
-				</tbody>
-			</table>
-
-		</div><!-- end col md 9 -->
-
 	</div>
 </div>
