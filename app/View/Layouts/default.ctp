@@ -45,7 +45,7 @@
 			'metisMenu',
 			'js-persian-cal.min',
 			'jquery.easing.min',
-			'sb-admin'
+			'sb-admin-2'
 			));
 ?>
 </body>

@@ -103,7 +103,37 @@
                     </div>
                     </div>
                 </div>  
-
+<div class="row">
+ <?php if(count($goals) == 0):?>
+  <div class="col-md-6">
+  <div class="panel panel-success">
+     <div class="panel-heading">
+       <h4 class="panel-title" style="text-align: center;color: red"><?php echo __('ایجاد هدف جدید'); ?></h4>
+     </div>
+     <div class="panel-body" style="color: #b94a48;background-color: rgba(251, 238, 213, 0.15);">
+  
+          <div class="text-center" style="color: blue">با فشردن دکمه ی "ایجاد هدف" ، اهداف خود را ثبت نمایید.<br/><br/><br/>
+          <?php echo $this->Html->link('ایجاد هدف',array('controller'=>'goals','action'=>'add'),array('class'=>"btn btn-primary",'style'=>"margin-top:10px;")); ?>
+          </div>
+ </div> </div> 
+ </div> 
+<?php endif;?>
+   <?php if(count($demands) == 0):?>
+  <div class="col-md-6">
+  <div class="panel panel-info">
+     <div class="panel-heading">
+       <h4 class="panel-title" style="text-align: center;color: red"><?php echo __('افزودن خواسته'); ?></h4>
+     </div>
+     <div class="panel-body" style="color: #b94a48;background-color: rgba(214, 233, 198, 0.12);">
+  
+          <div class="text-center" style="color: blue">با فشردن دکمه ی "ایجاد خواسته"، خواسته های خود را ثبت نمایید.<br/><br/><br/>
+          <?php echo $this->Html->link('ایجاد خواسته',array('controller'=>'demands','action'=>'add'),array('class'=>"btn btn-primary",'style'=>"margin-top:10px;")); ?>
+          </div>
+ </div>
+  </div> 
+ </div>
+<?php endif;?>
+</div>
  <?php if(count($dashMornings) == 0):?>
   <div class="col-md-6">
   <div class="panel panel-info">

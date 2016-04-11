@@ -33,7 +33,7 @@
                         <li>
                             <a href="#">
                                 <div>
-                                    <strong>پاسخ بخ سوالات شب</strong>
+                                    <strong>پاسخ به سوالات شب</strong>
                                     <span class="pull-left text-muted">
                                         <em>اﻣﺮﻭﺯ</em>
                                     </span>
@@ -91,28 +91,40 @@
                         <?php echo $this->Html->link('<span class="fa fa-dashboard fa-fw"></span>&nbsp;&nbsp;ﺩاﺷﺒﻮﺭﺩ'.__(''), array('controller' => 'dashboards', 'action' => 'index'), array('escape' => false)); 
                         ?>
                         </li>
+                        <li >
+                            <a href="#"><i class="fa fa-list-ul fa-fw"></i>   خواسته ها<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
                         <li>
-                          <?php echo $this->Html->link('<span class="fa fa-list-ul"></span>&nbsp;&nbsp;لیست ﺧواسته ها'.__(''), array('controller' => 'demands', 'action' => 'index'), array('escape' => false)); ?>
+                          <?php echo $this->Html->link('  لیست ﺧواسته ها'.__(''), array('controller' => 'demands', 'action' => 'index'), array('escape' => false)); ?>
                         </li>
                         <li>
-                          <?php echo $this->Html->link('<span class="fa fa-plus"></span>&nbsp;&nbsp;اﻓﺰﻭﺩﻥ ﺧواسته'.__(''), array('controller' => 'demands', 'action' => 'add'), array('escape' => false)); ?>
+                          <?php echo $this->Html->link('  اﻓﺰﻭﺩﻥ ﺧواسته'.__(''), array('controller' => 'demands', 'action' => 'add'), array('escape' => false)); ?>
                         </li>
-
+                        </ul>
+                        
+                        <li >
+                            <a href="#"><i class="fa fa-sun-o fa-fw"></i>   فانوس دریایی<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
                         <li>
-                          <?php echo $this->Html->link('<span class="fa fa-list-ul"></span>&nbsp;&nbsp;لیست اهداف'.__(''), array('controller' => 'goals', 'action' => 'index'), array('escape' => false)); ?>
-                        </li>
-                        <li>
-                          <?php echo $this->Html->link('<span class="fa fa-plus"></span>&nbsp;&nbsp;اﻓﺰﻭﺩﻥ هدف'.__(''), array('controller' => 'goals', 'action' => 'add'), array('escape' => false)); ?>
-                        </li>
-                        <li>
-                             <?php echo $this->Html->link('<span class="fa fa-list-ul"></span>&nbsp;&nbsp;فانوس دریایی امروز'.__(''), array('controller' => 'mornings', 'action' => 'lantern'), array('escape' => false)); ?>
+                             <?php echo $this->Html->link('فانوس دریایی امروز'.__(''), array('controller' => 'mornings', 'action' => 'lantern'), array('escape' => false)); ?>
                         </li>
                         <li>
-                             <?php echo $this->Html->link('<span class="fa fa-sun-o"></span>&nbsp;&nbsp;سوالات صبح'.__(''), array('controller' => 'mornings', 'action' => 'add'), array('escape' => false)); ?>
+                             <?php echo $this->Html->link('افزودن سوالات صبح'.__(''), array('controller' => 'mornings', 'action' => 'add'), array('escape' => false)); ?>
                         </li>
                         <li>
-                             <?php echo $this->Html->link('<span class="fa fa-moon-o"></span>&nbsp;&nbsp;سوالات شب'.__(''), array('controller' => 'nights', 'action' => 'add'), array('escape' => false)); ?>
+                             <?php echo $this->Html->link('افزودن سوالات شب'.__(''), array('controller' => 'nights', 'action' => 'add'), array('escape' => false)); ?>
                         </li>
+                        </ul>
+                        <li >
+                            <a href="#"><i class="fa fa-tasks fa-fw"></i>   اهداف<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                        <li>
+                          <?php echo $this->Html->link('لیست اهداف'.__(''), array('controller' => 'goals', 'action' => 'index'), array('escape' => false)); ?>
+                        </li>
+                        <li>
+                          <?php echo $this->Html->link('اﻓﺰﻭﺩﻥ هدف'.__(''), array('controller' => 'goals', 'action' => 'add'), array('escape' => false)); ?>
+                        </li>
+                        </ul>
                         <li >
                             <a href="#"><i class="fa fa-archive fa-fw"></i>   آرشیو سوالات<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">

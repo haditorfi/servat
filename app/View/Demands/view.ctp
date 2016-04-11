@@ -2,17 +2,10 @@
 <div class="row">
 	<div class="col-xs-12">
 		<div class="btnha well"  style="margin-top: 10px">
-			<div class="col-xs-3 ">
-				<?php echo $this->Html->link('<span class="fa fa-list"></span>    لیست خواسته ها',array('action'=>'index',$demand['Demand']['id']),array('escape'=> false,'class' => 'btn btn-block btn-primary')); ?>
-			</div>	
-			<div class="col-xs-3">
-				<?php echo $this->Html->link(__('<span class="fa fa-photo"></span>  مدیریت تصاویر'),array('action'=>'attach',$demand['Demand']['id']),array('escape'=> false,'class' => 'btn btn-block btn-success')); ?>
-			</div>	
-			<div class="col-xs-3">
-				<?php echo $this->Html->link(__('<span class="fa fa-edit"></span>  ویرایش خواسته'),array('action'=>'edit',$demand['Demand']['id']),array('escape'=> false,'class' => 'btn btn-block btn-info')); ?>
-			</div>		
-			<div class="col-xs-3">
-				<?php echo $this->Form->postLink('<span class="fa fa-trash"></span> حذف خواسته', array('action' => 'delete', $demand['Demand']['id'],$demand['Node']['id']), array('escape' => false,'class' => 'btn btn-block btn-danger'), __('آیا از حذف خواسته # %s # مطمئن هستید?', $demand['Demand']['name']));?>
+				<?php echo $this->Html->link('<span class="fa fa-list"></span>    لیست خواسته ها',array('action'=>'index',$demand['Demand']['id']),array('escape'=> false,'class' => 'btn btn-primary')); ?>
+				<?php echo $this->Html->link(__('<span class="fa fa-photo"></span>  مدیریت تصاویر'),array('action'=>'attach',$demand['Demand']['id']),array('escape'=> false,'class' => 'btn btn-success')); ?>
+				<?php echo $this->Html->link(__('<span class="fa fa-edit"></span>  ویرایش خواسته'),array('action'=>'edit',$demand['Demand']['id']),array('escape'=> false,'class' => 'btn  btn-info')); ?>
+				<?php echo $this->Form->postLink('<span class="fa fa-trash"></span> حذف خواسته', array('action' => 'delete', $demand['Demand']['id'],$demand['Node']['id']), array('escape' => false,'class' => 'btn btn-danger'), __('آیا از حذف خواسته # %s # مطمئن هستید?', $demand['Demand']['name']));?>
 			</div>	
 <hr>
 	</div>	
