@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html class="tm-background uk-height-viewport">
     <head>
@@ -10,11 +9,7 @@
 
         echo $this->Html->css(array(
             'bootstrap.min',
-            'font-awesome.min',
             'login'
-            ));
-        echo $this->Html->script(array(
-            'jquery.min',
             ));
     ?>
                     </head>
@@ -29,6 +24,5 @@
                 
             </div>
         </div>
-
     </body>
 </html>
